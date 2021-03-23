@@ -3,7 +3,7 @@ baseUrl: "https://studioember.com"
 title: "Studio Ember"
 theme: "anubis"
 paginate: 10
-disqusShortname: yourdiscussshortname
+disqusShortname: overtfuture
 googleAnalytics: UA-123-45
 enableRobotsTXT: true
 
