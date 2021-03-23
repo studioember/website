@@ -1,0 +1,23 @@
+# version: '3.8'
+# 
+# services:
+#   ghost:
+#     image: "ghost:alpine"
+#     restart: "always"
+#     networks:
+#       - backend
+#     ports:
+#       - "8080:2368"
+#     environment:
+#       # see https://ghost.org/docs/config/#configuration-options
+#       - database__client=mysql
+#       - database__connection__host=db
+#       - database__connection__user=ghost
+#       - database__connection__password="Zor@zAkdYRKEronn@K(0c0G0qaq"
+#       - database__connection__database=ghost
+#       # this url value is just an example, and is likely wrong for your environment!
+#       - url="http://localhost:8080"
+#       # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
+#       #NODE_ENV: development
+# networks:
+#   backend: {}
