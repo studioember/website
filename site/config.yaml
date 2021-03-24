@@ -1,6 +1,6 @@
 languageCode: "en-us"
 baseUrl: "https://studioember.com"
-title: "Studio Ember"
+title: "🔥 Studio Ember"
 theme: "anubis"
 paginate: 10
 disqusShortname: studioember
@@ -13,7 +13,17 @@ menu:
       name: Archive
       title: Archive
       url: /posts/
-      weight: 0    
+      weight: 0
+    - identifier: categories
+      name: Categories
+      title: Categories
+      url: /categories/
+      weight: 1
+    - identifier: tags
+      name: Tags
+      title: Tags
+      url: /tags/
+      weight: 2
 
 params:
   author: "Nathan Grey"
@@ -40,7 +50,22 @@ params:
     login: hugo-theme-anubis
     pingback: true
 
+pygmentsCodefences: true
+pygmentsStyle: "pygments"
+
 markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: dracula
+    tabWidth: 4
   goldmark:
     renderer:
       unsafe: true # enable raw HTML in Markdown
