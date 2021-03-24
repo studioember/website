@@ -5,7 +5,7 @@ date:  2021-03-23
 slug: "new-blog"
 categories: ["Tutorials"]
 author: Nathan Grey
-tags: ["hugo","hosting","github","ci-cd"]
+tags: ["hugo","hosting","github","cicd"]
 ---
 
 When starting a new project, picking the right frameworks and stack can make further development a lot more pleasant for your future self. Thinking about how I wanted to develop this blog was not an easy task. My first instinct was to purchase a monthly subscription to [Ghost Blog](https://ghost.org). At the time, the lowest subscription was about $30 / month billed annually. For a casual blog with no revenue, this was way too expensive. 
