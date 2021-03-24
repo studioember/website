@@ -41,7 +41,8 @@ created with MonoDraw &amp;lt;3
 &lt;p>Finally, add a markdown file in &lt;code>content/&lt;/code> and configure you &lt;code>config.yaml|.toml|.json&lt;/code> file. This did get me, yes the config file can be in 3 different formats, all are valid. Just pay attention you are not inserting &lt;code>TOML&lt;/code> into a &lt;code>YAML&lt;/code> config. Your site should auto refresh at &lt;a href="http://localhost:1313">localhost:1313&lt;/a> now.&lt;/p>
 &lt;h2 id="hosting">Hosting&lt;/h2>
 &lt;p>A lot of this was taken care of with &lt;a href="https://github.com/marketplace/actions/hugo-setup">this Hugo GitHub Pages Action&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">name&lt;/span>: github pages
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#6272a4"># .github/workflows/gh-pages.yml&lt;/span>
+&lt;span style="color:#ff79c6">name&lt;/span>: github pages
 &lt;span style="color:#ff79c6">on&lt;/span>:
 &lt;span style="color:#ff79c6">push&lt;/span>:
 &lt;span style="color:#ff79c6">branches&lt;/span>:
