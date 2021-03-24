@@ -74,6 +74,8 @@ Finally, add a markdown file in `content/` and configure you `config.yaml|.toml|
 A lot of this was taken care of with [this Hugo GitHub Pages Action](https://github.com/marketplace/actions/hugo-setup):
 
 ```yaml
+# .github/workflows/gh-pages.yml
+
 name: github pages
 
 on:
