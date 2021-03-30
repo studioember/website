@@ -33,7 +33,7 @@ menu:
 params:
   author: "Nathan Grey"
   email: contact@studioember.com # used for microformats
-  avatar: "/images/profile.jpeg" # used for microformats
+  avatar: "/images/profile.jpg" # used for microformats
   description: ""
   # images:
   #   - images/og-featured.png # relative path to "static" directory
