@@ -8,9 +8,9 @@ author: Nathan Grey
 tags: ["development", "ssh"]
 ---
 
-tldr;
+tldr; 
 ```
-curl https://github.com/overtfuture.keys >> $HOME/.ssh/authorized_keys
+curl https://github.com/YOUR_GITHUB_USERNAME.keys >> $HOME/.ssh/authorized_keys
 ```
 
 When working on server or connecting to remote hosts, having ssh access is vital. It took me by surprise that GitHub and GitLab both host these pages for public ssh keys. This makes it super easy to access for times when you cannot paste into a remote server.
