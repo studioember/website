@@ -1,5 +1,5 @@
 ---
-title: Creating this Blog
+title: Creating this Blog via Hugo
 description: Building a freely hosted & backed up blog with Hugo
 date:  2021-03-23
 slug: "new-blog"

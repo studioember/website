@@ -3,7 +3,7 @@ baseUrl: "https://studioember.com"
 title: "🔥 Studio Ember"
 theme: "anubis"
 paginate: 10
-# disqusShortname: studioember
+# disqusShortname: studioember # this just adds ads :/
 googleAnalytics: UA-156727998-1
 enableRobotsTXT: true
 
