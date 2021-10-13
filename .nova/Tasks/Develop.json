@@ -2,7 +2,7 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "hugo -s site\/"
+      "script" : "#!\/bin\/sh\n\ndocker run --rm \\\n  -v $(pwd)\/site:\/src \\\n  klakegg\/hugo"
     },
     "clean" : {
       "enabled" : true,
@@ -10,7 +10,7 @@
     },
     "run" : {
       "enabled" : true,
-      "script" : "hugo server -s site\/ --disableFastRender"
+      "script" : "#!\/bin\/sh\n\ndocker run --rm \\\n  -v $(pwd)\/site:\/src \\\n  -p 1313:1313 \\\n  klakegg\/hugo \\\n  server"
     }
   },
   "identifier" : "20B844D2-D33C-43B5-A064-91F7777EDEBC",
