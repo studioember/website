@@ -1,7 +1,9 @@
 languageCode: "en-us"
 baseUrl: "https://studioember.com"
-title: "🔥 Studio Ember"
-theme: "anubis"
+title: "Studio Ember"
+theme:
+  - "override"
+  - "hello-friend-ng"
 paginate: 10
 # disqusShortname: studioember # this just adds ads :/
 googleAnalytics: UA-156727998-1
@@ -9,14 +11,14 @@ enableRobotsTXT: true
 
 menu:
   main:
-    - identifier: projects
-      name: Projects
-      title: Projects
-      url: /projects/
+    - identifier: billsio
+      name: Bills io
+      title: Bills io
+      url: /billsio/
       weight: 1
-    - identifier: archive
-      name: Archive
-      title: Archive
+    - identifier: blog
+      name: Blog
+      title: Blog
       url: /posts/
       weight: 2
     - identifier: categories
@@ -31,29 +33,28 @@ menu:
       weight: 4
 
 params:
-  author: "Nathan Grey"
-  email: contact@studioember.com # used for microformats
-  avatar: "/images/profile.jpg" # used for microformats
-  description: ""
-  # images:
-  #   - images/og-featured.png # relative path to "static" directory
+  dateform: "Jan 2, 2006"
+  dateformShort: "Jan 2"
+  dateformNum: "2006-01-02"
+  dateformNumTime: "2006-01-02 15:04"
+
+  # Subtitle for home
+  homeSubtitle: ""
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts: true
+
+  # Enable sharing buttons, if you like
+  enableSharingButtons: false
+
+  # Metadata mostly used in document's head
+  description: "My new homepage or blog"
+  keywords: "blog"
+  images: [""]
   customCSS:
-    - css/override.css # relative path to "assets" directory (don't use main.css filename)
-  # customJS:
-  #   - js/main.js # relative path to "assets" directory
-  dateFormat: "2006-01-02"
-  paginationSinglePost: false
-  style: auto
-  readMore: true
-  # utteranc.es support
-  utterancesRepo: ""  # mandatory
-  utterancesTheme: "" # optional
-  utterancesIssue: "" # optional
-  utterancesLabel: "" # optional
-  webmentions:
-    url: https://yourdomain.com/webemntions/receive
-    login: hugo-theme-anubis
-    pingback: true
+    - "/css/override.css"
+  logo:
+    logoText: "studioember"
 
 pygmentsCodefences: true
 pygmentsStyle: "pygments"

@@ -4,3 +4,6 @@
 [submodule "site/themes/hugo-coder"]
 	path = site/themes/hugo-coder
 	url = https://github.com/luizdepra/hugo-coder.git
+[submodule "site/themes/hello-friend-ng"]
+	path = site/themes/hello-friend-ng
+	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git
