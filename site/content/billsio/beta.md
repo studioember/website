@@ -11,15 +11,13 @@ Ongoing list of updates and changes to Bills io. If you have a feature request o
 
 Create a new bug or feature request:
 
-If you have a request / bug, please use [GitHub](https://github.com/studioember/billsio.app/issues/new)
-
-- [GitHub](https://github.com/studioember/billsio.app/issues/new)
+If you have a request / bug, please use [GitHub - New Issue](https://github.com/studioember/billsio.app/issues/new)
 
 ## TestFlight Information
 
 Join the public [TestFlight](https://testflight.apple.com/join/3v2BZlrx)
 
-macOS Monterey Betas will be coming soon. I am waiting on Apple to release a new Xcode Beta for submissions. This should be available next week. 🤞🏻
+macOS now has the [TestFlight App](https://apps.apple.com/us/app/testflight/id899247664) in the App Store and macOS beta builds will be submitted there.
 
 ## General Details
 
