@@ -11,16 +11,17 @@ Ongoing list of updates and changes to Bills io. If you have a feature request o
 
 [Create a new bug or feature request](https://github.com/studioember/billsio.app/issues/new)
 
-## v2.1.1 - Coming Soon
+## v2.1.1 - Saying hi to macOS
 
 ### Features
 
-- Payment note copying
-- Limited Markdown support in Payment notes
-- Testing calculated costs for bills without a specific amount
-- New swipe actions throughout the app
-- Archived bills are now more distinguished from active bills
-- Future payments now have a dedicated overview feature
+- 🪟 Bills io is now written for the Mac with native macOS window management
+- 📝 Payment note copying
+- 🧑‍💻 Markdown support in Payment notes
+- 🧮 Testing calculated costs for bills without a specific amount
+- 👆 New swipe actions throughout the app
+- 🗑 Archived bills are now more distinguished from active bills
+- 💸 Future payments now have a dedicated overview feature
 
 ## v2.0.0 - Data Layer Rewrite
 
