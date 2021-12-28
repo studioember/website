@@ -2,7 +2,7 @@
 title: Changelog & Updates
 description: A full list for versions and changes
 date:  2021-11-01
-slug: "billsio-changelog"
+slug: "changelog"
 author: Nathan Grey
 draft: false
 ---
