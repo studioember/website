@@ -7,3 +7,9 @@ img[src*="#icon"] {
 	height:200px;
 	border-radius: 20%;
 }
+
+img[src*="#screenshot"] {
+	width:300px;
+	height: auto;
+	margin: auto;
+}
