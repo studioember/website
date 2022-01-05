@@ -1,4 +1,73 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Studio Ember</title><link>https://studioember.com/posts/</link><description>Recent content in Posts on Studio Ember</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://studioember.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Bills io, the origin</title><link>https://studioember.com/posts/blog/origin-bills-io/</link><pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate><guid>https://studioember.com/posts/blog/origin-bills-io/</guid><description>The idea for Bills io first originated in late 2019 as a way to put an end to my tireless switching of various productivity apps. Prior to creating this app, I used to use apps like Reminders, Todoist, Things, Numbers, etc. to try and create a system for remembering which bills to pay and when. In this process, I was able to create a system, but no app fit that payment flow.</description><content type="html"><![CDATA[<p>The idea for <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjLrpzg_6r0AhUymnIEHfzMBXUQFnoECBsQAQ&amp;url=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbills-io-track-your-expenses%2Fid1499730119&amp;usg=AOvVaw3qqFXmvp1JdMuBBHaREH47">Bills io</a> first originated in late 2019 as a way to put an end to my tireless switching of various productivity apps. Prior to creating this app, I used to use apps like <a href="https://support.apple.com/en-us/HT205890">Reminders</a>, <a href="https://todoist.com">Todoist</a>, <a href="https://culturedcode.com/things/">Things</a>, <a href="https://www.apple.com/numbers/">Numbers</a>, etc. to try and create a system for remembering which bills to pay and when. In this process, I was able to create a system, but no app fit that payment flow. I decided that I had enough with the other apps, and I wanted an app that was dedicated to managing bills. <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjLrpzg_6r0AhUymnIEHfzMBXUQFnoECBsQAQ&amp;url=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbills-io-track-your-expenses%2Fid1499730119&amp;usg=AOvVaw3qqFXmvp1JdMuBBHaREH47">Bills io</a> was formed.</p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Studio Ember</title><link>https://studioember.com/posts/</link><description>Recent content in Posts on Studio Ember</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 04 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://studioember.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Redirects with GitHub Actions</title><link>https://studioember.com/posts/blog/github-redirects/</link><pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate><guid>https://studioember.com/posts/blog/github-redirects/</guid><description>Ever have a problem purchasing domains to use later? I do, and started to collect a few without a destination or time to set up a use. Some of these domains had secure only top level domains (.dev &amp;amp; .app specifically). I wanted to set a couple of these domains to redirect here, studioember.com. Unfortunately, Hover only allows redirects for regular domains that support http connections, basically anything besides the TLD&amp;rsquo;s I have.</description><content type="html"><![CDATA[<p>Ever have a problem purchasing domains to use later? I do, and started to collect a few without a destination or time to set up a use. Some of these domains had secure only top level domains (.dev &amp; .app specifically). I wanted to set a couple of these domains to redirect here, <a href="https://studioember.com">studioember.com</a>. Unfortunately, <a href="https://hover.com">Hover</a> only allows redirects for regular domains that support http connections, basically anything besides the TLD&rsquo;s I have.</p>
+<h2 id="github-pages">GitHub Pages</h2>
+<p>I will quickly go over the first step in this process, setting up a standard GitHub Page with a custom domain. At the time of writing, GitHub has a <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">great tutorial</a> that specifies these domain records:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Host</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CNAME</td>
+<td>@</td>
+<td>GITHUB_USERNAME.github.io</td>
+</tr>
+<tr>
+<td>CNAME</td>
+<td>WWW</td>
+<td>GITHUB_USERNAME.github.io</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>185.199.108.153</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>185.199.109.153</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>185.199.110.153</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>185.199.111.153</td>
+</tr>
+</tbody>
+</table>
+<p>Then, in your redirect project, create a CNAME file with the custom domain. See the <a href="https://github.com/overtfuture/profile/blob/b47efc04f840a9198227b308463d2a23185024af/CNAME">CNAME file</a> in my <a href="https://github.com/overtfuture/profile">profile redirect repository</a> for an example.</p>
+<p>file: <code>CNAME</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">nathangrey.dev
+</code></pre></div><p>Once you have a pages site published, DNS resolving, and everything is green in the repository settings, you can set up the redirects.</p>
+<p><img src="assets/github_pages_complete.png" alt="github pages settings"></p>
+<h2 id="redirecting">Redirecting</h2>
+<p>By default GitHub pages uses Jekyll for a frontend. This redirect setup uses the standard Jekyll markdown files and includes a simple plugin to handle the redirects.</p>
+<p>Below is the full basic setup for a root redirect</p>
+<p><a href="https://github.com/overtfuture/profile/blob/fe83b26b3f17b9ee76c57465e70cc5addae93089/_config.yml">file</a> <code>_config.yml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ff79c6">theme</span>: jekyll-theme-cayman <span style="color:#6272a4"># any theme is fine</span>
+<span style="color:#ff79c6">plugins</span>:
+  - jekyll-redirect-from   <span style="color:#6272a4"># Relevant plugin</span>
+</code></pre></div><p><a href="https://github.com/overtfuture/profile/blob/fe83b26b3f17b9ee76c57465e70cc5addae93089/index.md">file</a> <code>index.md</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">---
+title: Studio Ember
+redirect_to: https://studioember.com
+---
+</code></pre></div><p>This setup gives the bare minimum to redirect a root domain to another url. To add other paths or a fallback for all paths, add the explicit path as a markdown file and a <code>404.md</code> file. For instance, on my profile site, I set up a redirect to Linkedin with a simple file.</p>
+<p><a href="https://github.com/overtfuture/profile/blob/fe83b26b3f17b9ee76c57465e70cc5addae93089/linkedin.md">file</a> <code>linkedin.md</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">---
+title: My LinkedIn Profile
+redirect_to: https://www.linkedin.com/in/nathangrey/
+---
+</code></pre></div><p>This file takes the path from <a href="nathangrey.dev/linkedin">nathangrey.dev/linkedin</a> and resolves to <a href="https://www.linkedin.com/in/nathangrey/">https://www.linkedin.com/in/nathangrey/</a>. Super simple, but a quick way to have a portfolio type link to hand out and be able to change the destination after the fact.</p>
+<p>Hope this helps, and the full repository can be found on my <a href="https://github.com/overtfuture/profile/tree/v1.0.0">GitHub profile repository</a>.</p>
+]]></content></item><item><title>Bills io, the origin</title><link>https://studioember.com/posts/blog/origin-bills-io/</link><pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate><guid>https://studioember.com/posts/blog/origin-bills-io/</guid><description>The idea for Bills io first originated in late 2019 as a way to put an end to my tireless switching of various productivity apps. Prior to creating this app, I used to use apps like Reminders, Todoist, Things, Numbers, etc. to try and create a system for remembering which bills to pay and when. In this process, I was able to create a system, but no app fit that payment flow.</description><content type="html"><![CDATA[<p>The idea for <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjLrpzg_6r0AhUymnIEHfzMBXUQFnoECBsQAQ&amp;url=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbills-io-track-your-expenses%2Fid1499730119&amp;usg=AOvVaw3qqFXmvp1JdMuBBHaREH47">Bills io</a> first originated in late 2019 as a way to put an end to my tireless switching of various productivity apps. Prior to creating this app, I used to use apps like <a href="https://support.apple.com/en-us/HT205890">Reminders</a>, <a href="https://todoist.com">Todoist</a>, <a href="https://culturedcode.com/things/">Things</a>, <a href="https://www.apple.com/numbers/">Numbers</a>, etc. to try and create a system for remembering which bills to pay and when. In this process, I was able to create a system, but no app fit that payment flow. I decided that I had enough with the other apps, and I wanted an app that was dedicated to managing bills. <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjLrpzg_6r0AhUymnIEHfzMBXUQFnoECBsQAQ&amp;url=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbills-io-track-your-expenses%2Fid1499730119&amp;usg=AOvVaw3qqFXmvp1JdMuBBHaREH47">Bills io</a> was formed.</p>
 <p>The system that made it into the app took a few days of planning in a massive Numbers spreadsheet compiling every single expense I had and where it came from. I wanted to replicate the flow of money from the payee to the bill&rsquo;s payment portal. Many apps have tracking expenses down, but I wanted more. I wanted to know how much my rotating credit card balance would be every month because all my subscriptions are on that card. Managing recurring expenses was my primary focus from the beginning and continues to be a core component in the app.</p>
 <p>Keeping a predictable and logical flow for managing finances is not easy. Everyone has different bills, and they probably have various methods of managing them. I wanted to have <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjLrpzg_6r0AhUymnIEHfzMBXUQFnoECBsQAQ&amp;url=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbills-io-track-your-expenses%2Fid1499730119&amp;usg=AOvVaw3qqFXmvp1JdMuBBHaREH47">Bills io</a> fill in the gap between an overly rigid budget system (<a href="https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator">50 - 30 - 20 rule</a> for example) that tracks every single expense and an overly simplified one that just accounts for a list of bills in a month (think putting bills in the <a href="https://support.apple.com/en-us/HT205890">Reminders</a> app). My financial strategy is to have all my bills organized into lists based on accounts and to have a running counter of how much per month I owe in expenses (always a good number to know). This is basically the hybrid system I created for the app. I didn&rsquo;t want to bog down a new user with heavy financial management tools, but at the same time, wanted to guide them into the system I use every month. If they don&rsquo;t like the core idea, that is fine, everyone is different. There are other apps or services that might fit their need, but I don&rsquo;t want to break the core system that is used. Instead, I hope to grow and evolve it with more and more features down the road.</p>
 <p>Managing bills and paying bills is probably not the most looked forward to activity ever month, but it is a necessary one for many people. I wanted to give as many people access to a financial app as possible. <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjLrpzg_6r0AhUymnIEHfzMBXUQFnoECBsQAQ&amp;url=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbills-io-track-your-expenses%2Fid1499730119&amp;usg=AOvVaw3qqFXmvp1JdMuBBHaREH47">Bills io</a> is free with an option to upgrade to some more advanced management features. If someone wants to better themselves financially and take that first step in organizing their financial life, I didn&rsquo;t want a subscription to yet another app be the blocker on this path. So for that reason, a fully functional free to use app with no ads or distractions was my goal. If you do find <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjLrpzg_6r0AhUymnIEHfzMBXUQFnoECBsQAQ&amp;url=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbills-io-track-your-expenses%2Fid1499730119&amp;usg=AOvVaw3qqFXmvp1JdMuBBHaREH47">Bills io</a> has helped you in some way financial, it is always appreciated to buy the premium version or simply recommend it to your friends and family. Dropping a review in the App Store is another great free way to show support.</p>
