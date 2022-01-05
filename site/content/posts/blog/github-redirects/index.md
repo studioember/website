@@ -1,6 +1,6 @@
 ---
-title: Redirects with GitHub Actions
-description: Using GitHub to Redirect Domain Names
+title: Redirects with GitHub Pages
+description: Using GitHub to redirect domain names for free
 date:  2022-01-04
 slug: "github-redirects"
 categories: ["Tutorials"]
