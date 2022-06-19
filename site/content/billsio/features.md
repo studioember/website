@@ -34,3 +34,7 @@ Quickly calculate your monthly costs, including bills that occur more or less fr
 ## iPhone, iPad, and macOS Apps
 
 Check your Bills from any Apple device, all with native support
+
+## CSV / Excel Exporting
+
+Export any list of Bills or payments to an Excel CSV file. This makes it very easy to use Bills io to track payments over time for business or create a graph in Excel of electricity costs over the year.
