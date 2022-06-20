@@ -45,4 +45,4 @@ There are 3 main organization types in the premium version:
 		* Tagging bills as a **Credit** to see all short term loans
 		* Tagging bills with **Check** to prepare for any snail mail bills that need an actual check written for
 
-![](filters.png#screenshot)
+![](assets/filters.png#screenshot)
