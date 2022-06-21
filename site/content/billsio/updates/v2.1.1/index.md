@@ -11,7 +11,7 @@ draft: false
 
 ### 🪟 Native macOS windowing
 
-> ![](assets/macos-windowing.png)
+> ![macOS Windowing](assets/macos-windowing.png)
 > Bills io is now written for the Mac with native macOS window management
 
 ### 📝 Payment note copying
@@ -21,27 +21,27 @@ draft: false
 
 🧑‍💻 Markdown support in Payment notes
 
-> ![](assets/payment-markdown.png)
+> ![Markdown rendering in Payment notes](assets/payment-markdown.png)
 > Notes for payments will now render with basic markdown syntax
 
 🧮 Calculated costs for bills without a specific amount
 
-> ![](assets/calculated-average.png)
-> Bills don't have to have an exact amount due. Just enter the amount you pay every month and let Bills io calculate the average amount. Oh, and yes, this is automatically added to your average Bill spend caclulations.
+> ![Calculated costs pop over with explanation](assets/calculated-average.png)
+> Bills don't have to have an exact amount due. Just enter the amount you pay every month and let Bills io calculate the average amount. Oh, and yes, this is automatically added to your average Bill spend calculations.
 
 👆 New swipe actions throughout the app
 
-> ![](assets/swipe-actions.png)
+> ![iOS swipe actions](assets/swipe-actions.png)
 > Swipe to pay, swipe to archive, and swipe to restore that accidentally archived Bill.
 
 ## Fixes
 
 🗑 Archived bills are now more distinguished from active bills
 
-> ![](assets/archived-notes.png)
+> ![Archived Bills Section](assets/archived-notes.png)
 > Bills io now includes a dedicated archived Bills section.
 
 💸 Future payments now have a dedicated overview feature
 
-> ![](assets/scheduled-payment.png)
+> ![Future scheduled payments](assets/scheduled-payment.png)
 > Schedule a payment for a later date online, and now you can record that in Bills io in a dedicated section. Come back later to remind yourself of what payments are still processing.
