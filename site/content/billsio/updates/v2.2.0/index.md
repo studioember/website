@@ -9,7 +9,7 @@ draft: true
 
 ## Overview
 
-Happy 🏖 summer! This update has a long requested feature for   many, data exporting. You can now export all of your Bills or Payments to a CSV (Comma Separated Value) file and open in Excel / Numbers. Drilling down into a filtered list will allow you to export a subset of Bills or Payments. For instance, if you have a Collection for Work, you can just export those payments.
+Happy 🏖 summer! This update has a long requested feature for many, data exporting. You can now export all of your Bills or Payments to a CSV (Comma Separated Value) file and open in Excel / Numbers. Drilling down into a filtered list will allow you to export a subset of Bills or Payments. For instance, if you have a Collection for Work, you can just export those payments.
 
 There are many changes planned for this fall, but before that, the Bill listing page has been cleaned up. There is now an accented calendar icon that shows your next due dates. Feel free to tap that for a quick way to access the context menu.
 
@@ -31,5 +31,6 @@ Thanks for everyone's support, and enjoy 🍻
 
 ## 🔨 Fixes
 
-- Monthly cost calculation for non-repeating bills is resolved
-- Deletion bug on archiving all bills in section
+Monthly cost calculation for non-repeating bills is resolved
+
+Deletion bug on archiving all bills in section
