@@ -31,5 +31,6 @@ Thanks for everyone's support, and enjoy 🍻
 
 ## 🔨 Fixes
 
-- Monthly cost calculation for non-repeating bills is resolved
-- Deletion bug on archiving all bills in section
+Monthly cost calculation for non-repeating bills is resolved
+
+Deletion bug on archiving all bills in section
