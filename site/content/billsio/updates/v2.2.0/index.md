@@ -22,15 +22,17 @@ Thanks for everyone's support, and enjoy 🍻
 > ![Export Bills & Payments](assets/export-bills.gif)
 > Pro tip, filter Bills by Account, Collection, or Tag to export specific Bills or Payments
 
-## 🎨 Refreshed Bill UI
+### 🎨 Refreshed Bill UI
 
 > ![New Bill UI](assets/bill-ui.png)
 > Easier to see due dates
-> Quick tap the favicon to jump to the Bill website URL
-> Tags are now visible in the Bill list
+
+### 🕸 Quick tap the favicon to jump to the Bill website URL
+
+### 🏷 Tags are now visible in the Bill list
 
 ## 🔨 Fixes
 
-Monthly cost calculation for non-repeating bills is resolved
-
-Deletion bug on archiving all bills in section
+- Monthly cost calculation for non-repeating bills is resolved
+- Deletion bug on archiving all bills in section
+- Updated Spanish translations
