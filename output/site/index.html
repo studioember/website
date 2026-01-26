@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Typography Showcase · Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+    <script>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = stored || (prefersDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/css/generated/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/theme/theme.css">
+  </head>
+
+  <body class="bg-background text-foreground antialiased">
+    
+    
+    
+  <navigation>
+    <nav class="flex items-center my-4 mx-12">
+      <div class="flex gap-4">
+        <a href="/" class="text-lg font-semibold font-logo text-foreground hover:text-primary transition-colors">Studio Ember</a>
+      </div>
+      <div class="flex-grow"></div>
+      <div class="ml-auto flex items-center gap-4">
+        <a href="/posts/" class="text-foreground hover:text-primary transition-colors">Posts</a>
+        <button id="theme-toggle" class="px-2 py-2 rounded border border-border bg-card text-foreground hover:bg-muted transition-colors" type="button">
+          Theme
+        </button>
+      </div>
+    </nav>
+  </navigation>
+
+
+    
+    
+
+    
+    <main id="content" class="mx-auto max-w-2xl px-4 sm:px-6 py-10">
+    
+      
+      
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight">Typography Showcase</h1>
+        
+        
+          <p class="mt-8 text-muted">Testing Markdown support</p>
+        
+        
+        
+          <p class="text-muted">January 26, 2026 9:22 AM</p>
+        
+        
+        <hr class="mt-8 border-border">
+      </header>
+      
+      
+
+      
+      <article class="prose max-w-none prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-a:text-primary prose-hr:border-border prose-blockquote:text-foreground prose-code:text-foreground prose-li:text-foreground prose-th:text-foreground prose-td:text-foreground">
+        
+        <div class="bg-background text-foreground min-h-screen">
+  <div class="bg-card border border-border rounded-xl p-6">
+    <h1 class="text-3xl font-bold text-primary">
+      Studio Ember
+    </h1>
+<p><p class="text-muted mt-2">
+DevOps • Kubernetes • Systems
+</p></p>
+<p><button class="mt-6 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:opacity-90">
+Get Started
+</button></p>
+  </div>
+</div>
+<h1>Heading 1</h1>
+<p>This is a sample paragraph to demonstrate Tailwind's typography plugin styling for markdown content. It includes <strong>bold text</strong>, <em>italic text</em>, and <a href="https://google.com">links</a>.</p>
+<h2>Heading 2</h2>
+<blockquote>
+<p>This is a blockquote. It should be styled with nice left borders and slightly different typography.</p>
+</blockquote>
+<h3>Heading 3</h3>
+<p>Here’s an example of a list:</p>
+<ul>
+<li>Unordered list item one</li>
+<li>Unordered list item two
+<ul>
+<li>Nested list item</li>
+<li>Another nested list</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Ordered list item one</li>
+<li>Ordered list item two
+<ol>
+<li>Nested ordered item</li>
+<li>Another nested ordered item</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2>Code Examples</h2>
+<p>Here’s some inline code: <code>console.log(&quot;Hello World&quot;)</code>.</p>
+<p>Here’s a fenced code block with JavaScript:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">greet</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">greet</span><span class="token punctuation">(</span><span class="token string">"Nathan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<hr>
+<h2>Tables</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headings</td>
+<td>Various sizes from h1 to h6</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Lists</td>
+<td>Ordered, unordered, nested</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>Inline and fenced code blocks</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Tables</td>
+<td>Styled tables with borders and padding</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Images</h2>
+<p>Below is an example image:</p>
+<p><img src="https://picsum.photos/800/400" alt="Sample Landscape"></p>
+<hr>
+<h2>Horizontal Rule</h2>
+<p>This is a section above the horizontal rule.</p>
+<hr>
+<p>This is a section below the horizontal rule.</p>
+
+        
+      </article>
+      
+    </main>
+    <script>
+      (() => {
+        const button = document.getElementById("theme-toggle");
+        if (!button) return;
+
+        const setLabel = () => {
+          const current = document.documentElement.dataset.theme || "light";
+          button.textContent = current === "dark" ? "Light" : "Dark";
+        };
+
+        button.addEventListener("click", () => {
+          const current = document.documentElement.dataset.theme || "light";
+          const next = current === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem("theme", next);
+          setLabel();
+        });
+
+        setLabel();
+      })();
+    </script>
+  </body>
+</html>

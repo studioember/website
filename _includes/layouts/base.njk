@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if title %}{{ title }} · {% endif %}{{ site.name or 'Site' }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+    <script>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = stored || (prefersDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/css/generated/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/theme/theme.css">
+  </head>
+
+  <body class="bg-background text-foreground antialiased">
+    {# Navigation - Start #}
+    {% block navigation %}
+    {% include 'components/navigation.njk' %}
+    {% endblock %}
+    {# Navigation - End #}
+
+    {% if full_width %}
+    <main id="content" class="mx-auto px-4 sm:px-6 py-10">
+    {% else %}
+    <main id="content" class="mx-auto max-w-2xl px-4 sm:px-6 py-10">
+    {% endif %}
+      {# Title - Start #}
+      {% if title and title_hidden != true %}
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight">{{ title }}</h1>
+        {# Description #}
+        {% if description %}
+          <p class="mt-8 text-muted">{{ description }}</p>
+        {% endif %}
+        {# Date #}
+        {% if date_hidden != true %}
+          <p class="text-muted">{{ page.date | dateSimple }}</p>
+        {% endif %}
+        {# -------- #}
+        <hr class="mt-8 border-border">
+      </header>
+      {% endif %}
+      {# Title - End #}
+
+      {# Content - Start #}
+      <article class="prose max-w-none prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-a:text-primary prose-hr:border-border prose-blockquote:text-foreground prose-code:text-foreground prose-li:text-foreground prose-th:text-foreground prose-td:text-foreground">
+        {% block content %}
+        {{ content | safe }}
+        {% endblock %}
+      </article>
+      {# Content - End #}
+    </main>
+    <script>
+      (() => {
+        const button = document.getElementById("theme-toggle");
+        if (!button) return;
+
+        const setLabel = () => {
+          const current = document.documentElement.dataset.theme || "light";
+          button.textContent = current === "dark" ? "Light" : "Dark";
+        };
+
+        button.addEventListener("click", () => {
+          const current = document.documentElement.dataset.theme || "light";
+          const next = current === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem("theme", next);
+          setLabel();
+        });
+
+        setLabel();
+      })();
+    </script>
+  </body>
+</html>

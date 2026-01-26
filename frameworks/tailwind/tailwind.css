@@ -1,0 +1,58 @@
+@config "../../tailwind.config.js";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* app/theme.css */
+:root {
+  /* Base */
+  --bg: 28 100% 97%; /* ember-cream */
+  --fg: 224 28% 12%;
+
+  /* Brand */
+  --primary: 18 76% 46%; /* ember */
+  --primary-foreground: 0 0% 100%;
+
+  --accent: 38 94% 57%; /* gold */
+  --accent-foreground: 18 80% 18%;
+
+  /* Secondary */
+  --secondary: 24 85% 54%; /* flame */
+  --secondary-foreground: 0 0% 100%;
+
+  /* Destructive */
+  --destructive: 3 100% 35%; /* crimson */
+  --destructive-foreground: 0 0% 100%;
+
+  /* Surfaces */
+  --card: 0 0% 100%;
+  --card-foreground: 224 28% 12%;
+  --border: 24 30% 86%;
+  --muted: 24 18% 68%;
+}
+
+[data-theme="dark"] {
+  /* Base */
+  --bg: 224 77% 22%; /* midnight */
+  --fg: 0 0% 100%;
+
+  /* Brand */
+  --primary: 18 76% 46%; /* ember */
+  --primary-foreground: 0 0% 100%;
+
+  --accent: 38 94% 57%; /* gold */
+  --accent-foreground: 18 80% 18%;
+
+  /* Secondary */
+  --secondary: 24 85% 54%; /* flame */
+  --secondary-foreground: 0 0% 100%;
+
+  /* Destructive */
+  --destructive: 3 100% 35%; /* crimson */
+  --destructive-foreground: 0 0% 100%;
+
+  /* Surfaces */
+  --card: 224 77% 18%;
+  --card-foreground: 0 0% 100%;
+  --border: 224 50% 30%;
+  --muted: 224 28% 55%;
+}

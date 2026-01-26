@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Updates · Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+    <script>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = stored || (prefersDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/css/generated/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/theme/theme.css">
+  </head>
+
+  <body class="bg-background text-foreground antialiased">
+    
+    
+    
+  <navigation>
+    <nav class="flex items-center my-4 mx-12">
+      <div class="flex gap-4">
+        <a href="/" class="text-lg font-semibold font-logo text-foreground hover:text-primary transition-colors">Studio Ember</a>
+      </div>
+      <div class="flex-grow"></div>
+      <div class="ml-auto flex items-center gap-4">
+        <a href="/posts/" class="text-foreground hover:text-primary transition-colors">Posts</a>
+        <button id="theme-toggle" class="px-2 py-2 rounded border border-border bg-card text-foreground hover:bg-muted transition-colors" type="button">
+          Theme
+        </button>
+      </div>
+    </nav>
+  </navigation>
+
+
+    
+    
+
+    
+    <main id="content" class="mx-auto max-w-2xl px-4 sm:px-6 py-10">
+    
+      
+      
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight">Updates</h1>
+        
+        
+          <p class="mt-8 text-muted">Posts, news, and other content</p>
+        
+        
+        
+        
+        <hr class="mt-8 border-border">
+      </header>
+      
+      
+
+      
+      <article class="prose max-w-none prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-a:text-primary prose-hr:border-border prose-blockquote:text-foreground prose-code:text-foreground prose-li:text-foreground prose-th:text-foreground prose-td:text-foreground">
+        
+
+
+
+
+  <h2 class="text-2xl font-bold mb-4">No Posts Found</h2>
+
+
+<ul>
+</ul>
+
+      </article>
+      
+    </main>
+    <script>
+      (() => {
+        const button = document.getElementById("theme-toggle");
+        if (!button) return;
+
+        const setLabel = () => {
+          const current = document.documentElement.dataset.theme || "light";
+          button.textContent = current === "dark" ? "Light" : "Dark";
+        };
+
+        button.addEventListener("click", () => {
+          const current = document.documentElement.dataset.theme || "light";
+          const next = current === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem("theme", next);
+          setLabel();
+        });
+
+        setLabel();
+      })();
+    </script>
+  </body>
+</html>
