@@ -9,11 +9,8 @@ export default async function (eleventyConfig) {
   // Configure Eleventy
   eleventyConfig.setOutputDirectory("output/site");
 
-  // Copy `images/` to `output/site/assets/images/`
-  eleventyConfig.addPassthroughCopy("assets/images/**/*");
-
-  // Copy `css/fonts/` to `output/site/assets/css`
-  eleventyConfig.addPassthroughCopy("assets/css/**/*");
+  // Copy `assets` to `output/site/assets`
+  eleventyConfig.addPassthroughCopy("assets/**/*");
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);

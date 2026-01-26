@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
     <script>
       (() => {
-        const stored = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const theme = stored || (prefersDark ? "dark" : "light");
-        document.documentElement.dataset.theme = theme;
+        const root = document.documentElement;
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const applyTheme = () => {
+          const theme = media.matches ? "dark" : "light";
+          root.dataset.theme = theme;
+          root.style.colorScheme = theme;
+        };
+
+        applyTheme();
+        media.addEventListener("change", applyTheme);
       })();
     </script>
     <link rel="stylesheet" href="/assets/css/generated/tailwind.css">
@@ -26,14 +32,14 @@
   <navigation>
     <nav class="flex items-center my-4 mx-12">
       <div class="flex gap-4">
-        <a href="/" class="text-lg font-semibold font-logo text-foreground hover:text-primary transition-colors">Studio Ember</a>
+        <a href="/" class="flex items-center gap-3 text-lg font-semibold font-logo text-foreground hover:text-primary transition-colors">
+          <img src="/assets/img/logo-clear-small.png" alt="Studio Ember logo" class="h-10 w-auto" width="40" height="40" loading="lazy" decoding="async" />
+          <span>Studio Ember</span>
+        </a>
       </div>
       <div class="flex-grow"></div>
       <div class="ml-auto flex items-center gap-4">
         <a href="/posts/" class="text-foreground hover:text-primary transition-colors">Posts</a>
-        <button id="theme-toggle" class="px-2 py-2 rounded border border-border bg-card text-foreground hover:bg-muted transition-colors" type="button">
-          Theme
-        </button>
       </div>
     </nav>
   </navigation>
@@ -55,7 +61,7 @@
         
         
         
-          <p class="text-muted">January 26, 2026 9:22 AM</p>
+          <p class="text-muted">January 26, 2026 11:23 AM</p>
         
         
         <hr class="mt-8 border-border">
@@ -66,20 +72,7 @@
       
       <article class="prose max-w-none prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-a:text-primary prose-hr:border-border prose-blockquote:text-foreground prose-code:text-foreground prose-li:text-foreground prose-th:text-foreground prose-td:text-foreground">
         
-        <div class="bg-background text-foreground min-h-screen">
-  <div class="bg-card border border-border rounded-xl p-6">
-    <h1 class="text-3xl font-bold text-primary">
-      Studio Ember
-    </h1>
-<p><p class="text-muted mt-2">
-DevOps • Kubernetes • Systems
-</p></p>
-<p><button class="mt-6 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:opacity-90">
-Get Started
-</button></p>
-  </div>
-</div>
-<h1>Heading 1</h1>
+        <h1>Heading 1</h1>
 <p>This is a sample paragraph to demonstrate Tailwind's typography plugin styling for markdown content. It includes <strong>bold text</strong>, <em>italic text</em>, and <a href="https://google.com">links</a>.</p>
 <h2>Heading 2</h2>
 <blockquote>
@@ -160,26 +153,5 @@ Get Started
       </article>
       
     </main>
-    <script>
-      (() => {
-        const button = document.getElementById("theme-toggle");
-        if (!button) return;
-
-        const setLabel = () => {
-          const current = document.documentElement.dataset.theme || "light";
-          button.textContent = current === "dark" ? "Light" : "Dark";
-        };
-
-        button.addEventListener("click", () => {
-          const current = document.documentElement.dataset.theme || "light";
-          const next = current === "dark" ? "light" : "dark";
-          document.documentElement.dataset.theme = next;
-          localStorage.setItem("theme", next);
-          setLabel();
-        });
-
-        setLabel();
-      })();
-    </script>
   </body>
 </html>

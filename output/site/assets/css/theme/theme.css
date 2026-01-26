@@ -1,4 +1,8 @@
 /* app/theme.css */
+html {
+  background-color: hsl(var(--bg));
+}
+
 :root {
   /* Base */
   --bg: 28 100% 97%; /* ember-cream */
@@ -51,4 +55,23 @@
   --card-foreground: 0 0% 100%;
   --border: 224 50% 30%;
   --muted: 224 28% 55%;
+}
+
+pre {
+  background-color: hsl(var(--card));
+}
+
+code {
+  background-color: hsl(var(--card));
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-radius: 0.4em;
+}
+
+[data-theme="dark"] pre {
+  background-color: black;
+}
+
+[data-theme="dark"] code {
+  background-color: black;
 }

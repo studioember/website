@@ -7,22 +7,6 @@ date_hidden: false
 layout: layouts/base.njk
 ---
 
-<div class="bg-background text-foreground min-h-screen">
-  <div class="bg-card border border-border rounded-xl p-6">
-    <h1 class="text-3xl font-bold text-primary">
-      Studio Ember
-    </h1>
-
-    <p class="text-muted mt-2">
-      DevOps • Kubernetes • Systems
-    </p>
-
-    <button class="mt-6 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:opacity-90">
-      Get Started
-    </button>
-  </div>
-</div>
-
 # Heading 1
 
 This is a sample paragraph to demonstrate Tailwind's typography plugin styling for markdown content. It includes **bold text**, *italic text*, and [links](https://google.com).
