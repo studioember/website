@@ -61,7 +61,13 @@
         {{ content | safe }}
         {% endblock %}
       </article>
-      {# Content - End #}
+    {# Content - End #}
     </main>
+
+    {# Footer - Start #}
+    {% block footer %}
+    {% include 'components/footer.njk' %}
+    {% endblock %}
+    {# Footer - End #}
   </body>
 </html>

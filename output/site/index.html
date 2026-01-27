@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Typography Showcase · Site</title>
+    <title>Home · Site</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
@@ -34,15 +34,106 @@
       <div class="flex gap-4">
         <a href="/" class="flex items-center gap-3 text-lg font-semibold font-logo text-foreground hover:text-primary transition-colors">
           <img src="/assets/img/logo-clear-small.png" alt="Studio Ember logo" class="h-10 w-auto" width="40" height="40" loading="lazy" decoding="async" />
-          <span>Studio Ember</span>
+          <span class="hidden sm:inline">Studio Ember</span>
         </a>
       </div>
       <div class="flex-grow"></div>
       <div class="ml-auto flex items-center gap-4">
-        <a href="/posts/" class="text-foreground hover:text-primary transition-colors">Posts</a>
+        <a href="/posts/" class="text-foreground hover:text-primary transition-colors">Blog</a>
+        <div class="relative">
+          <button
+            type="button"
+            class="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+            aria-haspopup="true"
+            aria-expanded="false"
+            data-pages-toggle
+          >
+            <span>Pages</span>
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.24 4.5a.75.75 0 0 1-1.08 0l-4.24-4.5a.75.75 0 0 1 .02-1.06z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <div
+            class="absolute right-0 z-20 mt-2 hidden w-56 rounded-md border border-foreground/20 bg-foreground/5 backdrop-blur shadow-lg"
+            data-pages-menu
+          >
+            <ul class="py-2">
+              
+                <li>
+                  <a
+                    href="/pages/cloud-sovereignty/"
+                    class="block px-4 py-2 text-sm text-foreground/90 hover:text-primary hover:bg-foreground/5 transition-colors"
+                  >
+                    Cloud Sovereignty
+                  </a>
+                </li>
+              
+                <li>
+                  <a
+                    href="/pages/contact/"
+                    class="block px-4 py-2 text-sm text-foreground/90 hover:text-primary hover:bg-foreground/5 transition-colors"
+                  >
+                    Contact
+                  </a>
+                </li>
+              
+                <li>
+                  <a
+                    href="/pages/services/"
+                    class="block px-4 py-2 text-sm text-foreground/90 hover:text-primary hover:bg-foreground/5 transition-colors"
+                  >
+                    Services
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   </navigation>
+  <script>
+    (() => {
+      const toggle = document.querySelector("[data-pages-toggle]");
+      const menu = document.querySelector("[data-pages-menu]");
+      if (!toggle || !menu) return;
+
+      const closeMenu = () => {
+        menu.classList.add("hidden");
+        toggle.setAttribute("aria-expanded", "false");
+      };
+
+      const openMenu = () => {
+        menu.classList.remove("hidden");
+        toggle.setAttribute("aria-expanded", "true");
+      };
+
+      toggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (menu.classList.contains("hidden")) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
 
 
     
@@ -53,105 +144,76 @@
     
       
       
-      <header class="mb-8">
-        <h1 class="text-3xl md:text-5xl font-bold tracking-tight">Typography Showcase</h1>
-        
-        
-          <p class="mt-8 text-muted">Testing Markdown support</p>
-        
-        
-        
-          <p class="text-muted">January 26, 2026 11:23 AM</p>
-        
-        
-        <hr class="mt-8 border-border">
-      </header>
-      
       
 
       
       <article class="prose max-w-none prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-a:text-primary prose-hr:border-border prose-blockquote:text-foreground prose-code:text-foreground prose-li:text-foreground prose-th:text-foreground prose-td:text-foreground">
         
-        <h1>Heading 1</h1>
-<p>This is a sample paragraph to demonstrate Tailwind's typography plugin styling for markdown content. It includes <strong>bold text</strong>, <em>italic text</em>, and <a href="https://google.com">links</a>.</p>
-<h2>Heading 2</h2>
-<blockquote>
-<p>This is a blockquote. It should be styled with nice left borders and slightly different typography.</p>
-</blockquote>
-<h3>Heading 3</h3>
-<p>Here’s an example of a list:</p>
-<ul>
-<li>Unordered list item one</li>
-<li>Unordered list item two
-<ul>
-<li>Nested list item</li>
-<li>Another nested list</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>Ordered list item one</li>
-<li>Ordered list item two
-<ol>
-<li>Nested ordered item</li>
-<li>Another nested ordered item</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2>Code Examples</h2>
-<p>Here’s some inline code: <code>console.log(&quot;Hello World&quot;)</code>.</p>
-<p>Here’s a fenced code block with JavaScript:</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">greet</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token function">greet</span><span class="token punctuation">(</span><span class="token string">"Nathan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<hr>
-<h2>Tables</h2>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Description</th>
-<th>Available</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Headings</td>
-<td>Various sizes from h1 to h6</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Lists</td>
-<td>Ordered, unordered, nested</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Code</td>
-<td>Inline and fenced code blocks</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Tables</td>
-<td>Styled tables with borders and padding</td>
-<td>✅</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2>Images</h2>
-<p>Below is an example image:</p>
-<p><img src="https://picsum.photos/800/400" alt="Sample Landscape"></p>
-<hr>
-<h2>Horizontal Rule</h2>
-<p>This is a section above the horizontal rule.</p>
-<hr>
-<p>This is a section below the horizontal rule.</p>
-
+        
         
       </article>
-      
+    
     </main>
+
+    
+    
+    
+  <footer class="border-t border-border mt-16">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 py-10">
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-lg font-semibold font-logo text-foreground">
+            <img src="/assets/img/logo-clear-small.png" alt="Studio Ember logo" class="h-8 w-auto" width="32" height="32" loading="lazy" decoding="async" />
+            <span>Studio Ember</span>
+          </div>
+          <p class="text-sm text-muted">
+            Independent studio focused on thoughtful software, resilient systems, and long-term partnerships.
+          </p>
+        </div>
+        <div class="space-y-3">
+          <p class="text-sm font-semibold text-foreground">Contact</p>
+          <ul class="space-y-2 text-sm text-muted">
+            <li>
+              <a href="/contact/" class="hover:text-primary transition-colors">Start a project</a>
+            </li>
+            <li>
+              <a href="/services/" class="hover:text-primary transition-colors">Services</a>
+            </li>
+            <li>
+              <a href="/posts/" class="hover:text-primary transition-colors">Posts</a>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <p class="text-sm font-semibold text-foreground">Company</p>
+          <ul class="space-y-2 text-sm text-muted">
+            <li>
+              <a href="/cloud-sovereignty/" class="hover:text-primary transition-colors">Cloud sovereignty</a>
+            </li>
+            <li>
+              <span>Remote-first</span>
+            </li>
+            <li>
+              <span>United States</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <p>© <span data-footer-year></span> Studio Ember. All rights reserved.</p>
+        <p>Built with Eleventy and Tailwind.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const year = document.querySelector("[data-footer-year]");
+      if (year) year.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+
+    
+    
   </body>
 </html>
