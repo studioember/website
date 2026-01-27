@@ -9,10 +9,10 @@
   "type": "module",
   "dependencies": {
     "@11ty/eleventy": "4.0.0-alpha.6",
-    "@tailwindcss/cli": "^4.1.12",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-navigation": "^1.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@tailwindcss/cli": "^4.1.12",
     "moment": "^2.30.1"
   },
   "devDependencies": {

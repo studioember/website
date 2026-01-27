@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if title %}{{ title }} · {% endif %}{{ site.name or 'Site' }}</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
@@ -35,7 +39,7 @@
     {% if full_width %}
     <main id="content" class="mx-auto px-4 sm:px-6 py-10">
     {% else %}
-    <main id="content" class="mx-auto max-w-2xl px-4 sm:px-6 py-10">
+    <main id="content" class="mx-auto max-w-5xl px-4 sm:px-6 py-10">
     {% endif %}
       {# Title - Start #}
       {% if title and title_hidden != true %}
@@ -56,12 +60,16 @@
       {# Title - End #}
 
       {# Content - Start #}
-      <article class="prose max-w-none prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-a:text-primary prose-hr:border-border prose-blockquote:text-foreground prose-code:text-foreground prose-li:text-foreground prose-th:text-foreground prose-td:text-foreground">
-        {% block content %}
+      {% block content %}
+      {% if no_prose %}
         {{ content | safe }}
-        {% endblock %}
-      </article>
-    {# Content - End #}
+      {% else %}
+        <article class="prose max-w-none prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-a:text-primary prose-hr:border-border prose-blockquote:text-foreground prose-code:text-foreground prose-li:text-foreground prose-th:text-foreground prose-td:text-foreground">
+          {{ content | safe }}
+        </article>
+      {% endif %}
+      {% endblock %}
+      {# Content - End #}
     </main>
 
     {# Footer - Start #}
