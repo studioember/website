@@ -39,9 +39,9 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
           Studio Ember helps companies assess cloud dependency, reduce unnecessary cost, and design infrastructure they can control.
         </p>
         <p class="text-lg text-foreground">
-          We identify where cloud services add value, where they create risk, and how to build a practical exit path without disrupting operations.
+          We identify where cloud services add value, where they create risk, and how to build a practical cloud exit strategy without disrupting operations.
         </p>
-        <p class="text-sm text-muted">Assess your cloud risk. Reduce lock-in. Keep your options.</p>
+        <p class="text-sm text-muted">Assess your cloud risk with a vendor lock-in assessment. Reduce lock-in. Keep your options.</p>
         <p class="text-sm text-muted">
           Studio Ember designs cloud-native infrastructure that balances flexibility, cost, and long-term control.
         </p>
@@ -93,9 +93,95 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
         Fixed scope, engineer-led, and no obligation to migrate. We’ll map risk, cost, and an exit path you control.
       </p>
     </div>
-    <a href="/contact/" class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold !text-white no-underline shadow-lg shadow-primary/30 transition hover:-translate-y-0.5 not-prose">
+    <a href="/pages/contact/" class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold !text-white no-underline shadow-lg shadow-primary/30 transition hover:-translate-y-0.5 not-prose">
       Work with us
     </a>
+  </div>
+</section>
+
+<section class="mt-16">
+  <div class="flex items-center justify-between gap-6">
+    <h2 class="text-2xl font-semibold text-foreground sm:text-3xl">How It Works</h2>
+    <div class="hidden h-px flex-1 bg-border sm:block"></div>
+  </div>
+  <div class="mt-8 grid gap-6 md:grid-cols-3">
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.35em] text-muted">Step 1</p>
+      <p class="mt-3 text-lg font-semibold text-foreground">Lorem ipsum</p>
+      <p class="mt-2 text-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.35em] text-muted">Step 2</p>
+      <p class="mt-3 text-lg font-semibold text-foreground">Lorem ipsum</p>
+      <p class="mt-2 text-sm text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.35em] text-muted">Step 3</p>
+      <p class="mt-3 text-lg font-semibold text-foreground">Lorem ipsum</p>
+      <p class="mt-2 text-sm text-muted">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mt-16">
+  <div class="flex items-center justify-between gap-6">
+    <h2 class="text-2xl font-semibold text-foreground sm:text-3xl">Deliverables</h2>
+    <div class="hidden h-px flex-1 bg-border sm:block"></div>
+  </div>
+  <div class="mt-8 grid gap-6 md:grid-cols-2">
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.35em] text-muted">Lorem ipsum</p>
+      <p class="mt-3 text-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.35em] text-muted">Lorem ipsum</p>
+      <p class="mt-3 text-sm text-muted">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.35em] text-muted">Lorem ipsum</p>
+      <p class="mt-3 text-sm text-muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.35em] text-muted">Lorem ipsum</p>
+      <p class="mt-3 text-sm text-muted">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mt-16">
+  <div class="flex items-center justify-between gap-6">
+    <h2 class="text-2xl font-semibold text-foreground sm:text-3xl">FAQ</h2>
+    <div class="hidden h-px flex-1 bg-border sm:block"></div>
+  </div>
+  <div class="mt-8 grid gap-4">
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-sm font-semibold text-foreground">What is a cloud exit strategy, and when does it make sense?</p>
+      <p class="mt-2 text-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-sm font-semibold text-foreground">How do you assess vendor lock-in risk across services?</p>
+      <p class="mt-2 text-sm text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-sm font-semibold text-foreground">What does a cloud exit assessment include?</p>
+      <p class="mt-2 text-sm text-muted">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-sm font-semibold text-foreground">How long does a cloud exit assessment take?</p>
+      <p class="mt-2 text-sm text-muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-sm font-semibold text-foreground">How do you estimate the cost to exit a hyperscaler?</p>
+      <p class="mt-2 text-sm text-muted">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-sm font-semibold text-foreground">What are common blockers to cloud portability?</p>
+      <p class="mt-2 text-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-sm font-semibold text-foreground">Can we reduce lock-in without a full migration?</p>
+      <p class="mt-2 text-sm text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
   </div>
 </section>
 
