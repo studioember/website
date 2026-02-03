@@ -195,36 +195,36 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
   </p>
   <div class="mt-8 grid gap-6 md:grid-cols-2">
     <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm">
-      <p class="flex items-start gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
         <span>Highly regulated or audit-driven engagements</span>
       </p>
       <p class="mt-3 text-sm text-foreground/80">Formal compliance certifications, regulatory attestations, or ongoing audit support.</p>
     </div>
     <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm">
-      <p class="flex items-start gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
         <span>Large enterprise or government projects</span>
       </p>
       <p class="mt-3 text-sm text-foreground/80">Complex procurement, multi-vendor contracts, or long approval cycles.</p>
     </div>
     <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm">
-      <p class="flex items-start gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
         <span>Pure security consulting or policy work</span>
       </p>
       <p class="mt-3 text-sm text-foreground/80">We focus on building and operating systems, not writing governance frameworks.</p>
     </div>
     <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm">
-      <p class="flex items-start gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
         <span>Lift-and-shift hyperscaler migrations</span>
       </p>
       <p class="mt-3 text-sm text-foreground/80">We don’t replicate cloud sprawl on a different provider.</p>
     </div>
     <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm md:col-span-2">
-      <p class="flex items-start gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
         <span>One-off DevOps tasks</span>
       </p>
       <p class="mt-3 text-sm text-foreground/80">We work best when we can design systems holistically.</p>
