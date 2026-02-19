@@ -8,15 +8,16 @@ no_prose: true
 description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, and design infrastructure they control with practical, engineer-led exit paths."
 ---
 
+<!-- Hero -->
 <section class="relative overflow-hidden rounded-3xl border border-border bg-foreground/5 px-6 py-16 sm:px-10">
   <div class="absolute -left-24 -top-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl"></div>
   <div class="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-foreground/10 blur-3xl"></div>
   <div class="relative z-10 mx-auto max-w-3xl text-center">
-    <p class="text-xs uppercase tracking-[0.4em] text-muted">Studio Ember</p>
+    <p class="text-xs uppercase tracking-[0.4em] text-foreground/90">Studio Ember</p>
     <h1 class="mt-6 text-4xl font-semibold leading-tight text-foreground sm:text-5xl md:text-6xl">
       Cloud-native infrastructure you control
     </h1>
-    <p class="mt-5 text-lg text-muted sm:text-xl">Reduce vendor lock-in and scale on your own terms.</p>
+    <p class="mt-5 text-lg text-foreground/90 sm:text-xl">Reduce vendor lock-in and scale on your own terms.</p>
     <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row not-prose">
       <a href="/pages/contact/" class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold !text-white no-underline shadow-lg shadow-primary/30 transition hover:-translate-y-0.5">
         Request a Cloud Exit Assessment
@@ -25,12 +26,13 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
         See if we are a fit
       </a>
     </div>
-    <p class="mt-4 text-xs uppercase tracking-[0.35em] text-muted">
+    <p class="mt-4 text-xs uppercase tracking-[0.35em] text-foreground/90">
       Fixed scope assessment, engineer-led, and no obligation to migrate
     </p>
   </div>
 </section>
 
+<!-- Overview -->
 <section class="mt-16">
   <div class="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-y border-border bg-foreground/5">
     <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6">
@@ -41,8 +43,8 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
         <p class="text-lg text-foreground">
           We identify where cloud services add value, where they create risk, and how to build a practical cloud exit strategy without disrupting operations.
         </p>
-        <p class="text-sm text-muted">Assess your cloud risk with a vendor lock-in assessment. Reduce lock-in. Keep your options.</p>
-        <p class="text-sm text-muted">
+        <p class="text-sm text-foreground/90">Assess your cloud risk with a vendor lock-in assessment. Reduce lock-in. Keep your options.</p>
+        <p class="text-sm text-foreground/90">
           Studio Ember designs cloud-native infrastructure that balances flexibility, cost, and long-term control.
         </p>
       </div>
@@ -50,6 +52,7 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
   </div>
 </section>
 
+<!-- Who It’s For -->
 <section class="mt-16">
   <div class="flex items-center justify-between gap-6">
     <h2 class="text-2xl font-semibold text-foreground sm:text-3xl">Who It’s For</h2>
@@ -57,39 +60,40 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
   </div>
   <div class="mt-8 grid gap-6 md:grid-cols-3">
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">SaaS Platforms &amp; Early-Stage Startups</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">SaaS Platforms &amp; Early-Stage Startups</p>
       <p class="mt-3 text-lg font-semibold text-foreground">Modern application teams</p>
-      <p class="mt-2 text-sm text-muted">Teams building and operating modern applications with growing infrastructure complexity.</p>
+      <p class="mt-2 text-sm text-foreground/90">Teams building and operating modern applications with growing infrastructure complexity.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Web Agencies &amp; App Studios</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Web Agencies &amp; App Studios</p>
       <p class="mt-3 text-lg font-semibold text-foreground">Multi-client environments</p>
-      <p class="mt-2 text-sm text-muted">Agencies managing multiple client environments and shared deployment pipelines.</p>
+      <p class="mt-2 text-sm text-foreground/90">Agencies managing multiple client environments and shared deployment pipelines.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">No-Code / Low-Code Agencies</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">No-Code / Low-Code Agencies</p>
       <p class="mt-3 text-lg font-semibold text-foreground">Platform limits</p>
-      <p class="mt-2 text-sm text-muted">Teams hitting scaling, cost, or reliability limits on managed platforms.</p>
+      <p class="mt-2 text-sm text-foreground/90">Teams hitting scaling, cost, or reliability limits on managed platforms.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">E-commerce Businesses</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">E-commerce Businesses</p>
       <p class="mt-3 text-lg font-semibold text-foreground">Predictable performance</p>
-      <p class="mt-2 text-sm text-muted">Online stores and commerce platforms seeking predictable performance and costs.</p>
+      <p class="mt-2 text-sm text-foreground/90">Online stores and commerce platforms seeking predictable performance and costs.</p>
     </div>
-    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm md:col-span-2">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Teams Modernizing CI/CD &amp; Platform Tooling</p>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Teams Modernizing CI/CD &amp; Platform Tooling</p>
       <p class="mt-3 text-lg font-semibold text-foreground">Standardized delivery</p>
-      <p class="mt-2 text-sm text-muted">Companies looking to standardize deployments and simplify operations.</p>
+      <p class="mt-2 text-sm text-foreground/90">Companies looking to standardize deployments and simplify operations.</p>
     </div>
   </div>
 </section>
 
+<!-- Work with us -->
 <section class="mt-10 rounded-3xl border border-border bg-foreground/5 px-6 py-10 sm:px-10">
   <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
     <div>
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Work with us</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Work with us</p>
       <h3 class="mt-3 text-2xl font-semibold text-foreground">Start with a Cloud Exit Assessment</h3>
-      <p class="mt-2 text-sm text-muted">
+      <p class="mt-2 text-sm text-foreground/90">
         Fixed scope, engineer-led, and no obligation to migrate. We’ll map risk, cost, and an exit path you control.
       </p>
     </div>
@@ -99,6 +103,7 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
   </div>
 </section>
 
+<!-- How It Works -->
 <section class="mt-16">
   <div class="flex items-center justify-between gap-6">
     <h2 class="text-2xl font-semibold text-foreground sm:text-3xl">How It Works</h2>
@@ -106,23 +111,24 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
   </div>
   <div class="mt-8 grid gap-6 md:grid-cols-3">
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Step 1</p>
-      <p class="mt-3 text-lg font-semibold text-foreground">Lorem ipsum</p>
-      <p class="mt-2 text-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Step 1</p>
+      <p class="mt-3 text-lg font-semibold text-foreground">Assess</p>
+      <p class="mt-2 text-sm text-foreground/90">We evaluate your current infrastructure to understand how it operates, where risks exist, and how it can best support your future needs.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Step 2</p>
-      <p class="mt-3 text-lg font-semibold text-foreground">Lorem ipsum</p>
-      <p class="mt-2 text-sm text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Step 2</p>
+      <p class="mt-3 text-lg font-semibold text-foreground">Design</p>
+      <p class="mt-2 text-sm text-foreground/90">We design a reliable, reproducible infrastructure approach with clear checkpoints and ongoing evaluation throughout the process.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Step 3</p>
-      <p class="mt-3 text-lg font-semibold text-foreground">Lorem ipsum</p>
-      <p class="mt-2 text-sm text-muted">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Step 3</p>
+      <p class="mt-3 text-lg font-semibold text-foreground">Deliver</p>
+      <p class="mt-2 text-sm text-foreground/90">We implement the solution and provide code, documentation, and training to ensure a smooth transition and long-term independence.</p>
     </div>
   </div>
 </section>
 
+<!-- Deliverables -->
 <section class="mt-16">
   <div class="flex items-center justify-between gap-6">
     <h2 class="text-2xl font-semibold text-foreground sm:text-3xl">Deliverables</h2>
@@ -130,24 +136,29 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
   </div>
   <div class="mt-8 grid gap-6 md:grid-cols-2">
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Lorem ipsum</p>
-      <p class="mt-3 text-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Architecture Diagrams</p>
+      <p class="mt-3 text-sm text-foreground/90">Clear diagrams illustrating your current infrastructure and future system architecture.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Lorem ipsum</p>
-      <p class="mt-3 text-sm text-muted">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Deployment runbooks</p>
+      <p class="mt-3 text-sm text-foreground/90">Run your infrastructure with confidence using step-by-step documentation for deployments, changes, and recovery procedures.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Lorem ipsum</p>
-      <p class="mt-3 text-sm text-muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Cost clarity reports</p>
+      <p class="mt-3 text-sm text-foreground/90">Understand where your infrastructure costs come from and use that insight to make informed decisions.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
-      <p class="text-xs uppercase tracking-[0.35em] text-muted">Lorem ipsum</p>
-      <p class="mt-3 text-sm text-muted">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Infrastructure-as-code repositories</p>
+      <p class="mt-3 text-sm text-foreground/90">Receive version-controlled infrastructure repositories that allow you to reliably recreate and manage deployments.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.35em] text-foreground/90">Backup & recovery procedures</p>
+      <p class="mt-3 text-sm text-foreground/90">Backups are important, but recovery is essential. We test recovery procedures to ensure your data is not only backed up, but truly restorable.</p>
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
 <section class="mt-16">
   <div class="flex items-center justify-between gap-6">
     <h2 class="text-2xl font-semibold text-foreground sm:text-3xl">FAQ</h2>
@@ -156,88 +167,89 @@ description: "Studio Ember helps teams assess cloud dependency, reduce lock-in, 
   <div class="mt-8 grid gap-4">
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
       <p class="text-sm font-semibold text-foreground">What is a cloud exit strategy, and when does it make sense?</p>
-      <p class="mt-2 text-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="mt-2 text-sm text-foreground/90">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
       <p class="text-sm font-semibold text-foreground">How do you assess vendor lock-in risk across services?</p>
-      <p class="mt-2 text-sm text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p class="mt-2 text-sm text-foreground/90">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
       <p class="text-sm font-semibold text-foreground">What does a cloud exit assessment include?</p>
-      <p class="mt-2 text-sm text-muted">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      <p class="mt-2 text-sm text-foreground/90">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
       <p class="text-sm font-semibold text-foreground">How long does a cloud exit assessment take?</p>
-      <p class="mt-2 text-sm text-muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+      <p class="mt-2 text-sm text-foreground/90">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
       <p class="text-sm font-semibold text-foreground">How do you estimate the cost to exit a hyperscaler?</p>
-      <p class="mt-2 text-sm text-muted">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+      <p class="mt-2 text-sm text-foreground/90">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
       <p class="text-sm font-semibold text-foreground">What are common blockers to cloud portability?</p>
-      <p class="mt-2 text-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="mt-2 text-sm text-foreground/90">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
     <div class="rounded-2xl border border-border bg-background px-6 py-6 shadow-sm">
       <p class="text-sm font-semibold text-foreground">Can we reduce lock-in without a full migration?</p>
-      <p class="mt-2 text-sm text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p class="mt-2 text-sm text-foreground/90">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
   </div>
 </section>
 
+<!-- Who We’re Not a Fit For -->
 <section class="mt-16">
   <div class="flex items-center justify-between gap-6">
     <h2 class="text-2xl font-semibold text-foreground sm:text-3xl">Who We’re Not a Fit For</h2>
     <div class="hidden h-px flex-1 bg-border sm:block"></div>
   </div>
-  <p class="mt-4 text-foreground/80">
+  <p class="mt-4 text-foreground/90">
     Studio Ember focuses on practical, execution-led infrastructure work. We may not be the right partner if you’re looking for:
   </p>
   <div class="mt-8 grid gap-6 md:grid-cols-2">
     <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm">
-      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/80">×</span>
         <span>Highly regulated or audit-driven engagements</span>
       </p>
-      <p class="mt-3 text-sm text-foreground/80">Formal compliance certifications, regulatory attestations, or ongoing audit support.</p>
+      <p class="mt-3 text-sm text-foreground/90">Formal compliance certifications, regulatory attestations, or ongoing audit support.</p>
     </div>
     <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm">
-      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/80">×</span>
         <span>Large enterprise or government projects</span>
       </p>
-      <p class="mt-3 text-sm text-foreground/80">Complex procurement, multi-vendor contracts, or long approval cycles.</p>
+      <p class="mt-3 text-sm text-foreground/90">Complex procurement, multi-vendor contracts, or long approval cycles.</p>
     </div>
     <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm">
-      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/80">×</span>
         <span>Pure security consulting or policy work</span>
       </p>
-      <p class="mt-3 text-sm text-foreground/80">We focus on building and operating systems, not writing governance frameworks.</p>
+      <p class="mt-3 text-sm text-foreground/90">We focus on building and operating systems, not writing governance frameworks.</p>
     </div>
     <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm">
-      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/80">×</span>
         <span>Lift-and-shift hyperscaler migrations</span>
       </p>
-      <p class="mt-3 text-sm text-foreground/80">We don’t replicate cloud sprawl on a different provider.</p>
+      <p class="mt-3 text-sm text-foreground/90">We don’t replicate cloud sprawl on a different provider.</p>
     </div>
-    <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm md:col-span-2">
-      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground/85">
-        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/60">×</span>
+    <div class="rounded-2xl border border-foreground/20 bg-background px-6 py-6 shadow-sm">
+      <p class="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-foreground">
+        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] text-foreground/80">×</span>
         <span>One-off DevOps tasks</span>
       </p>
-      <p class="mt-3 text-sm text-foreground/80">We work best when we can design systems holistically.</p>
+      <p class="mt-3 text-sm text-foreground/90">We work best when we can design systems holistically.</p>
     </div>
   </div>
 </section>
 
 <section class="mt-16 rounded-3xl border border-border bg-foreground/5 px-6 py-12 sm:px-10">
   <div class="rounded-2xl border border-border bg-background px-6 py-8">
-    <div class="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.35em] text-muted">
-      <span>Assessment-led</span>
-      <span>Cloud portability</span>
-      <span>Practical exit paths</span>
+    <div class="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.35em] text-foreground/90">
+      <span>Assessment-led • </span>
+      <span>Cloud portability • </span>
+      <span>Practical exit paths • </span>
       <span>Engineer-driven</span>
     </div>
   </div>
