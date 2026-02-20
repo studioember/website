@@ -1,7 +1,7 @@
 ---
 title: Contact
 title_hidden: false
-description: Say hi 👋
+description: Reach out to discuss your infrastructure, ask questions, or get a second opinion. We’re happy to start with a simple conversation — no pressure or commitments required.
 date: "git Last Modified"
 date_hidden: true
 layout: layouts/base.njk
@@ -9,8 +9,6 @@ layout: layouts/base.njk
 
 Have questions about your infrastructure? Let’s talk.
 We work with small teams to clarify architecture, reduce unnecessary complexity, and plan practical improvements. Even if you’re still exploring options, we’re happy to help you think through the right path forward.
-
----
 
 <form
   action="https://formspree.io/f/xlgwwkgg"
@@ -82,5 +80,7 @@ We work with small teams to clarify architecture, reduce unnecessary complexity,
         Send
       </button>
     </div>
+
   </div>
 </form>
+
