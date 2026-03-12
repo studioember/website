@@ -1,5 +1,6 @@
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import { RenderPlugin } from "@11ty/eleventy";
 import moment from "moment";
 
 export default async function (eleventyConfig) {
@@ -7,11 +8,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.setOutputDirectory("output/site");
 
   // Copy `assets` to `output/site/assets`
-  eleventyConfig.addPassthroughCopy("assets/**/*");
+  eleventyConfig.addPassthroughCopy("assets");
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(RenderPlugin);
 
   // Collections
   eleventyConfig.addCollection("pages", function (collectionApi) {
@@ -27,4 +29,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter("dateSimple", function (date) {
     return moment(date).format("LLL");
   });
+
+  eleventyConfig.addFilter("dateISO", function (date) {
+    return moment(date).toISOString().split("T")[0];
+  });
+
+  return {
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "/",
+  };
 }

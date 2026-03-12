@@ -3,7 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if title %}{{ title }} · {% endif %}{{ site.name or 'Site' }}</title>
+    <title>{% if title %}{{ title }} · {% endif %}{{ site.name }}</title>
+
+    {# SEO #}
+    {% set metaDescription = description or site.description %}
+    {% set metaTitle %}{% if title %}{{ title }} · {% endif %}{{ site.name }}{% endset %}
+    {% set canonicalUrl %}{{ site.url }}{{ page.url }}{% endset %}
+    <meta name="description" content="{{ metaDescription }}">
+    <link rel="canonical" href="{{ canonicalUrl }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ metaTitle }}">
+    <meta property="og:description" content="{{ metaDescription }}">
+    <meta property="og:url" content="{{ canonicalUrl }}">
+    <meta property="og:locale" content="{{ site.locale }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ metaTitle }}">
+    <meta name="twitter:description" content="{{ metaDescription }}">
+
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">

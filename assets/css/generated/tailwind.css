@@ -41,7 +41,6 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --tracking-tight: -0.025em;
-    --tracking-normal: 0em;
     --leading-tight: 1.25;
     --radius-md: 0.375rem;
     --radius-xl: 0.75rem;
@@ -1119,6 +1118,9 @@
   }
   .block {
     display: block;
+  }
+  .contents {
+    display: contents;
   }
   .flex {
     display: flex;
