@@ -4,7 +4,7 @@
     {
       "title": "A solid foundation.",
       "label": "01 / DESIGN & BUILD",
-      "text": "Private Kubernetes infrastructure built around your workloads. Secure access, storage, networking, monitoring, and automated delivery\u2014working together on hardware you own."
+      "text": "Private Kubernetes infrastructure built around your workloads. Secure access, storage, networking, monitoring, and automated delivery—working together on hardware you own."
     },
     {
       "title": "Ready for real life.",
@@ -19,10 +19,10 @@
   ],
   "packages": [
     {
-      "name": "Private Foundation",
+      "name": "Core Platform",
       "price": "$20,000",
-      "tag": "THE ESSENTIALS",
-      "text": "A private home for a few important internal services.",
+      "tag": "KUBERNETES, ACCESS & MONITORING",
+      "text": "A private Kubernetes platform with secure access and monitoring.",
       "features": [
         "Three-node Kubernetes foundation",
         "Secure remote access and ingress",
@@ -31,24 +31,24 @@
       ]
     },
     {
-      "name": "Managed Private Foundation",
+      "name": "Automated Platform",
       "price": "$28,000",
-      "tag": "THE COMPLETE PLATFORM",
-      "text": "An integrated platform, ready for your team to operate.",
+      "tag": "AUTOMATED DELIVERY & BACKUPS",
+      "text": "Your platform, plus automated software delivery and tested backups.",
       "features": [
-        "Everything in Private Foundation",
+        "Everything in Core Platform",
         "Source control and delivery automation",
         "Storage integration and backup verification",
         "Recovery test and operational runbooks"
       ]
     },
     {
-      "name": "Resilient Small Platform",
+      "name": "Resilient Platform",
       "price": "$35,000",
-      "tag": "ROOM TO GROW",
-      "text": "Stronger recovery and capacity for more important workloads.",
+      "tag": "CAPACITY, RECOVERY & STABILIZATION",
+      "text": "More capacity, stronger data recovery, and a supported stabilization period.",
       "features": [
-        "Everything in Managed Private Foundation",
+        "Everything in Automated Platform",
         "Fourth node or dedicated worker capacity",
         "Enhanced database, storage, and monitoring",
         "Recovery exercise and 90-day stabilization review"
@@ -57,14 +57,14 @@
   ],
   "care": [
     {
-      "name": "Foundation care",
+      "name": "Monthly Care",
       "price": "$1,000",
       "text": "Monthly platform health review, planned upgrades, backup verification, monitoring review, and routine maintenance."
     },
     {
-      "name": "Enhanced care",
+      "name": "Twice-Monthly Care",
       "price": "$2,000",
-      "text": "Foundation care plus twice-monthly reviews, change coordination, recovery review, capacity planning, and maintenance records."
+      "text": "Monthly Care plus twice-monthly reviews, change coordination, recovery review, capacity planning, and maintenance records."
     }
   ],
   "options": [
@@ -150,8 +150,8 @@
       "a": "We begin with a consultation, followed by a paid assessment from $3,000. That produces the scope, assumptions, acceptance criteria, and fixed implementation proposal. A 50% deposit schedules the build, with a milestone payment before handoff. Changes are separately scoped."
     },
     {
-      "q": "What does \u201cmanaged\u201d include?",
-      "a": "Scheduled infrastructure maintenance and paid business-hours support\u2014not round-the-clock operations. Care is required for a minimum of 12 months, starting at $1,000 per month. Covered infrastructure issues receive a best-effort response within two business days; there is no guaranteed restoration time or 24/7 emergency coverage."
+      "q": "What does ongoing platform care include?",
+      "a": "Scheduled infrastructure maintenance and paid business-hours support—not round-the-clock operations. Care is required for a minimum of 12 months, starting at $1,000 per month. Covered infrastructure issues receive a best-effort response within two business days; there is no guaranteed restoration time or 24/7 emergency coverage."
     },
     {
       "q": "Can our legacy virtual machines move into the cluster?",
