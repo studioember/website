@@ -82,7 +82,7 @@
     },
     {
       "name": "Legacy VMs, meet Kubernetes.",
-      "price": "Assessment from $5,000",
+      "price": "Assessment from $10,000",
       "text": "Run compatible virtual machines alongside containers using KubeVirt. Keep selected legacy workflows running while you modernize in stages. Migration implementation is quoted after assessment.",
       "symbol": "VM"
     }

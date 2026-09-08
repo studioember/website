@@ -1196,3 +1196,36 @@ cal-floating-button {
     transform: none;
   }
 }
+
+/* A compact invitation for separately scoped Kubernetes projects. */
+.custom-work {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-block: 56px 24px;
+  padding: 36px;
+  border: 1px solid var(--line);
+  background: #f3e7d9;
+}
+.custom-work > div {
+  flex: 1;
+}
+.custom-work h3 {
+  font-size: 23px;
+}
+.custom-work p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.custom-work .button {
+  flex-shrink: 0;
+}
+@media (max-width: 760px) {
+  .custom-work {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    margin-block: 40px 16px;
+    padding: 28px;
+  }
+}
