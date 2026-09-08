@@ -1,0 +1,1231 @@
+/* Fixed Studio Ember palette. Section colors are intentional in every system theme. */
+:root {
+  --cream: #fff7f0;
+  --ink: #172653;
+  --midnight: #0d2463;
+  --ember: #c4431b;
+  --gold: #f9a825;
+  --line: #d9c8b9;
+  --bg: 28 100% 97%;
+  --fg: 224 28% 12%;
+  --primary: 18 76% 46%;
+  --accent: 38 94% 57%;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  background: var(--cream);
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+h1,
+h2 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+h1 {
+  font-size: clamp(54px, 5.9vw, 86px);
+}
+h2 {
+  font-size: clamp(40px, 4.1vw, 60px);
+}
+h3 {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+em {
+  font-weight: 400;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--ember);
+  outline-offset: 5px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+p {
+  text-wrap: pretty;
+}
+.wrap {
+  width: min(1240px, calc(100% - 96px));
+  margin-inline: auto;
+}
+.section {
+  padding-block: 104px;
+}
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+}
+.micro {
+  font-size: 12px;
+  line-height: 1.55;
+}
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 15px 23px;
+  background: var(--ember);
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid var(--ember);
+  border-radius: 3px;
+  transition:
+    transform 0.18s,
+    box-shadow 0.18s;
+  line-height: 1.4;
+}
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.button span {
+  font-size: 22px;
+  line-height: 1;
+}
+.button-small {
+  font-size: 12px;
+  padding: 12px 16px;
+  gap: 16px;
+}
+.button-dark {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.button-outline {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  background: var(--cream);
+  padding: 10px;
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: none;
+}
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 96px;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 21px;
+}
+.brand img {
+  width: 34px;
+}
+.brand-dot {
+  color: var(--ember);
+}
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+}
+nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 54px;
+  align-items: center;
+  padding-block: 66px 76px;
+}
+.hero-copy > .eyebrow {
+  margin-bottom: 25px;
+  font-size: 9px;
+  letter-spacing: 0.09em;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.status-dot {
+  background: var(--ember);
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.hero h1 em {
+  color: var(--ember);
+}
+.hero-intro {
+  margin-top: 28px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.hero-description {
+  max-width: 440px;
+  font-size: 16px;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+.hero .button {
+  margin-top: 28px;
+}
+.hero .micro {
+  margin-top: 12px;
+  font-size: 11px;
+}
+.hero-poster {
+  overflow: hidden;
+  background: var(--ember);
+  color: var(--cream);
+  padding: 21px 26px 23px;
+  position: relative;
+  transform: rotate(2deg);
+  border: 1px solid var(--ink);
+  box-shadow: 9px 9px 0 #e9d5c3;
+  min-height: 530px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero-poster:before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #fff7f070;
+  pointer-events: none;
+}
+.poster-top {
+  display: flex;
+  justify-content: space-between;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  gap: 15px;
+}
+.poster-title {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 45px;
+  line-height: 1.04;
+  text-align: center;
+  margin-top: 26px;
+  letter-spacing: -0.035em;
+}
+.platform-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 250px;
+}
+.platform-art img {
+  width: 225px;
+  z-index: 1;
+  transform: rotate(-9deg);
+  filter: drop-shadow(9px 13px 0 #792c2a);
+}
+.orbit {
+  position: absolute;
+  width: 290px;
+  height: 160px;
+  border: 1px solid #fff7f070;
+  border-radius: 50%;
+  transform: rotate(-28deg);
+}
+.orbit-two {
+  transform: rotate(29deg);
+}
+.art-label {
+  position: absolute;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  padding: 6px 10px;
+  z-index: 2;
+  border: 1px solid var(--ink);
+}
+.label-one {
+  left: 0;
+  top: 30px;
+  transform: rotate(-9deg);
+}
+.label-two {
+  right: -9px;
+  bottom: 26px;
+  transform: rotate(5deg);
+  background: var(--gold);
+}
+.poster-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.55;
+}
+.seal {
+  border: 1px solid var(--cream);
+  border-radius: 50%;
+  width: 81px;
+  height: 81px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: rotate(12deg);
+  font-size: 10px;
+}
+.seal b {
+  font-size: 21px;
+  line-height: 1;
+}
+.ticker {
+  background: var(--ink);
+  color: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+  padding: 20px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+.ticker > span {
+  white-space: nowrap;
+}
+.section-split {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 23px;
+}
+.section-split > p {
+  max-width: 420px;
+}
+.outcomes {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 42px;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+}
+.services-section {
+  background: #f3e7d9;
+  border-block: 1px solid var(--line);
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 42px;
+}
+.section-heading h2,
+.options-section h2,
+.delivery-intro h2,
+.faq-section h2 {
+  margin-top: 18px;
+}
+.small-stamp {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+  display: grid;
+  place-items: center;
+  width: 110px;
+  height: 110px;
+  border: 1px solid var(--ember);
+  border-radius: 50%;
+  color: var(--ember);
+  transform: rotate(12deg);
+  flex-shrink: 0;
+  text-align: center;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.service-card {
+  padding: 28px 26px;
+  background: var(--cream);
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.service-card:nth-child(2) {
+  background: var(--gold);
+}
+.service-card:nth-child(3) {
+  background: var(--ink);
+  color: var(--cream);
+}
+.service-number {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 88px;
+  line-height: 1.4;
+  display: block;
+}
+.service-card h3 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 33px;
+  margin-bottom: 18px;
+}
+.service-card > p:last-child {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.heading-aside {
+  max-width: 290px;
+  font-size: 14px;
+}
+.assessment {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  border: 1px solid var(--ink);
+  background: var(--gold);
+  padding: 30px 34px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.assessment h3 {
+  margin-block: 8px 10px;
+}
+.assessment p:not(.eyebrow) {
+  font-size: 14px;
+  max-width: 600px;
+}
+.assessment-price {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: end;
+  max-width: 235px;
+}
+.assessment-price > span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+}
+.assessment-price strong {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1;
+}
+.assessment-price .button {
+  width: 100%;
+  font-size: 12px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.price-card {
+  border: 1px solid var(--line);
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+}
+.price-card.featured {
+  border-color: var(--ink);
+  background: #f3e7d9;
+}
+.price-card h3 {
+  font-size: 25px;
+  margin-top: 17px;
+  min-height: 60px;
+  max-width: 240px;
+}
+.price-card > p:not(.price, .eyebrow, .micro) {
+  font-size: 14px;
+  margin-top: 12px;
+  min-height: 48px;
+}
+.price {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 48px;
+  letter-spacing: -0.035em;
+  margin-block: 22px 8px;
+}
+.price span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  display: block;
+  letter-spacing: 0;
+}
+.price-card ul {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 16px 0 26px;
+  flex: 1;
+}
+.price-card li {
+  padding: 9px 0 9px 21px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+.price-card li:before {
+  content: "↗";
+  position: absolute;
+  left: 0;
+}
+.price-card .button {
+  font-size: 12px;
+  gap: 14px;
+}
+.price-card .micro {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 10px;
+}
+.care-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin: 46px 0 20px;
+}
+.care-heading h3 {
+  font-size: 23px;
+}
+.care-heading p {
+  font-size: 11px;
+}
+.care-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.care-grid article {
+  border-top: 2px solid var(--ink);
+  display: flex;
+  gap: 22px;
+  padding-top: 18px;
+}
+.care-grid article p:not(.care-price) {
+  font-size: 13px;
+  margin-top: 7px;
+}
+.care-price {
+  white-space: nowrap;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 30px;
+  line-height: 1.3;
+}
+.care-price span {
+  display: block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  text-align: right;
+}
+.support-note {
+  font-size: 12px;
+  margin-block: 24px 18px;
+  max-width: 850px;
+}
+.terms {
+  border-block: 1px solid var(--line);
+  font-size: 13px;
+}
+.terms p {
+  padding: 0 0 20px;
+  max-width: 960px;
+}
+summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding: 22px 35px 22px 0;
+  font-weight: 500;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary:after {
+  content: "+";
+  position: absolute;
+  right: 5px;
+  font-size: 24px;
+  line-height: 1;
+  top: 22px;
+}
+details[open] > summary:after {
+  content: "−";
+}
+.options-section {
+  background: var(--midnight);
+  color: var(--cream);
+}
+.options-section h2 em {
+  color: var(--gold);
+}
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin-top: 48px;
+}
+.option-symbol {
+  border: 1px solid #fff7f080;
+  display: inline-block;
+  padding: 12px 16px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 24px;
+  margin-bottom: 28px;
+  box-shadow: 4px 4px 0 var(--gold);
+  transform: rotate(-4deg);
+}
+.options-grid h3 {
+  font-size: 27px;
+  max-width: 250px;
+  min-height: 65px;
+}
+.option-price {
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--gold);
+  font-size: 12px;
+  margin-block: 13px;
+}
+.options-grid article > p:last-child {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.migration {
+  border-top: 1px solid #fff7f050;
+  margin-top: 45px;
+  padding-top: 30px;
+}
+.migration > p {
+  font-size: 14px;
+  margin-top: 9px;
+}
+.migration ol {
+  padding: 0;
+  list-style: none;
+  counter-reset: move;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px;
+  margin-block: 25px;
+}
+.migration li {
+  counter-increment: move;
+  border-top: 1px solid #fff7f050;
+  padding-top: 14px;
+  font-size: 12px;
+}
+.migration li:before {
+  content: "0" counter(move);
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.migration .micro {
+  font-size: 11px;
+  max-width: 950px;
+}
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 22px;
+}
+.example-card {
+  grid-column: span 2;
+  border: 1px solid var(--line);
+}
+.example-card:nth-child(n + 4) {
+  grid-column: span 3;
+}
+.example-visual {
+  height: 220px;
+  background: #f3e7d9;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  background-image: radial-gradient(#17265325 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+.example-card:nth-child(2n) .example-visual {
+  background-color: #f7d998;
+}
+.example-index {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+}
+.diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transform: rotate(-3deg);
+}
+.diagram span {
+  display: block;
+  background: var(--cream);
+  border: 1px solid var(--ink);
+  padding: 7px 15px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.diagram b {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+}
+.example-copy {
+  padding: 24px;
+}
+.example-copy h3 {
+  font-size: 22px;
+  margin-block: 12px;
+}
+.example-copy > p:last-child {
+  font-size: 13px;
+  line-height: 1.75;
+}
+.example-copy .eyebrow {
+  font-size: 8px;
+  color: #854023;
+}
+.delivery-section {
+  background: #f3e7d9;
+  border-block: 1px solid var(--line);
+}
+.delivery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+}
+.delivery-intro > p:not(.eyebrow) {
+  max-width: 375px;
+  margin-top: 25px;
+  font-size: 15px;
+}
+.handoff-note {
+  border: 1px solid var(--ink);
+  padding: 22px;
+  display: inline-block;
+  transform: rotate(-3deg);
+  margin-top: 35px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  background: var(--gold);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.handoff-note strong {
+  display: block;
+  margin-top: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.steps li {
+  display: flex;
+  gap: 22px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line);
+}
+.steps li:first-child {
+  padding-top: 0;
+}
+.steps li > span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--ember);
+  padding-top: 4px;
+}
+.steps h3 {
+  font-size: 24px;
+}
+.steps p {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.faq-section {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 65px;
+}
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+.faq-list details:first-child {
+  border-top: 1px solid var(--line);
+}
+.faq-list summary {
+  font-size: 15px;
+}
+.faq-list p {
+  font-size: 14px;
+  padding-bottom: 24px;
+}
+.closing {
+  background: var(--ember);
+  color: var(--cream);
+  text-align: center;
+  padding: 75px 0 85px;
+}
+.closing-spark {
+  display: block;
+  font-size: 65px;
+  line-height: 1;
+  color: var(--gold);
+  margin-bottom: 25px;
+}
+.closing h2 {
+  font-size: clamp(44px, 5vw, 72px);
+  margin-top: 22px;
+}
+.closing p:not(.eyebrow) {
+  margin-top: 25px;
+  font-size: 15px;
+}
+.closing .button {
+  margin-top: 28px;
+}
+.closing .button:hover {
+  box-shadow: 4px 4px 0 var(--gold);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  min-height: 120px;
+  padding-block: 28px;
+}
+.footer-inner .brand {
+  font-size: 17px;
+}
+.footer-inner p {
+  font-size: 11px;
+}
+.site-footer {
+  padding-bottom: 64px;
+}
+cal-floating-button {
+  z-index: 40 !important;
+}
+@media (min-width: 1500px) {
+  .hero {
+    padding-block: 80px 90px;
+  }
+  .hero-poster {
+    min-height: 570px;
+  }
+  .platform-art {
+    height: 280px;
+  }
+  .platform-art img {
+    width: 245px;
+  }
+}
+@media (max-width: 1050px) {
+  .wrap {
+    width: calc(100% - 56px);
+  }
+  nav {
+    gap: 17px;
+  }
+  .brand {
+    font-size: 18px;
+  }
+  .hero {
+    gap: 30px;
+  }
+  .hero h1 {
+    font-size: 58px;
+  }
+  .hero-poster {
+    min-height: 490px;
+    padding-inline: 22px;
+  }
+  .poster-title {
+    font-size: 38px;
+  }
+  .platform-art img {
+    width: 190px;
+  }
+  .orbit {
+    width: 220px;
+  }
+  .poster-top {
+    font-size: 6px;
+  }
+  .hero-copy > .eyebrow {
+    font-size: 8px;
+  }
+  .hero-intro {
+    font-size: 17px;
+  }
+  .hero-description {
+    font-size: 14px;
+  }
+  .ticker {
+    gap: 25px;
+    font-size: 10px;
+  }
+  .section {
+    padding-block: 76px;
+  }
+  .price-card {
+    padding: 24px 18px;
+  }
+  .price-card h3 {
+    font-size: 22px;
+  }
+  .care-heading {
+    align-items: start;
+  }
+  .delivery-grid {
+    gap: 45px;
+  }
+  .faq-section {
+    gap: 35px;
+  }
+}
+@media (max-width: 760px) {
+  .wrap {
+    width: calc(100% - 40px);
+  }
+  .header-inner {
+    min-height: 80px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-block: 16px;
+  }
+  .header-inner nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 12px;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+  }
+  .brand {
+    font-size: 17px;
+  }
+  .brand img {
+    width: 29px;
+  }
+  .button-small {
+    font-size: 10px;
+    padding: 10px 11px;
+    gap: 9px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 43px;
+    padding-block: 43px 48px;
+  }
+  .hero h1 {
+    font-size: clamp(44px, 10.5vw, 75px);
+  }
+  .hero-description {
+    font-size: 15px;
+    max-width: 470px;
+  }
+  .hero-copy > .eyebrow {
+    font-size: 8px;
+    margin-bottom: 20px;
+  }
+  .hero-intro {
+    font-size: 19px;
+  }
+  .hero-poster {
+    width: min(450px, 95%);
+    margin: auto;
+    min-height: 490px;
+  }
+  .poster-title {
+    font-size: 43px;
+  }
+  .poster-top {
+    font-size: 7px;
+  }
+  .platform-art img {
+    width: 210px;
+  }
+  .orbit {
+    width: 260px;
+  }
+  .ticker {
+    padding: 18px 20px;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 9px;
+  }
+  .ticker span:last-of-type {
+    display: none;
+  }
+  .section {
+    padding-block: 62px;
+  }
+  .section-split {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .outcomes {
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .section-heading {
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .small-stamp {
+    display: none;
+  }
+  .service-grid,
+  .pricing-grid,
+  .care-grid,
+  .options-grid,
+  .delivery-grid,
+  .faq-section {
+    grid-template-columns: 1fr;
+  }
+  .service-card {
+    padding: 25px;
+  }
+  .service-number {
+    font-size: 70px;
+  }
+  .service-card h3 {
+    font-size: 35px;
+  }
+  .service-card > p:last-child {
+    font-size: 15px;
+  }
+  .assessment {
+    flex-direction: column;
+    align-items: start;
+    padding: 24px;
+    gap: 24px;
+  }
+  .assessment-price {
+    justify-content: start;
+    max-width: none;
+    width: 100%;
+  }
+  .assessment-price .button {
+    width: auto;
+    margin-left: auto;
+  }
+  .price-card {
+    padding: 28px;
+  }
+  .price-card h3 {
+    min-height: 0;
+    max-width: none;
+    font-size: 28px;
+  }
+  .price-card > p:not(.price, .eyebrow, .micro) {
+    min-height: 0;
+  }
+  .price-card li {
+    font-size: 14px;
+  }
+  .price-card .button {
+    font-size: 14px;
+  }
+  .care-heading {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 35px;
+  }
+  .care-grid {
+    gap: 26px;
+  }
+  .options-grid {
+    gap: 36px;
+    margin-top: 35px;
+  }
+  .options-grid h3 {
+    min-height: 0;
+    max-width: none;
+    font-size: 30px;
+  }
+  .option-symbol {
+    margin-bottom: 20px;
+  }
+  .migration ol {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .migration li {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+  }
+  .migration li:before {
+    margin: 0;
+  }
+  .example-grid {
+    grid-template-columns: 1fr;
+  }
+  .example-card,
+  .example-card:nth-child(n + 4) {
+    grid-column: auto;
+  }
+  .example-copy > p:last-child {
+    font-size: 14px;
+  }
+  .delivery-grid {
+    gap: 45px;
+  }
+  .handoff-note {
+    margin-top: 26px;
+  }
+  .faq-section {
+    gap: 28px;
+  }
+  .closing {
+    padding-block: 60px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+    padding-block: 28px;
+  }
+  .site-footer {
+    padding-bottom: 86px;
+  }
+  .heading-aside {
+    max-width: 420px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+    animation: none !important;
+  }
+  .button:hover {
+    transform: none;
+  }
+}
+
+/* A compact invitation for separately scoped Kubernetes projects. */
+.custom-work {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-block: 56px 24px;
+  padding: 36px;
+  border: 1px solid var(--line);
+  background: #f3e7d9;
+}
+.custom-work > div {
+  flex: 1;
+}
+.custom-work h3 {
+  font-size: 23px;
+}
+.custom-work p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.custom-work .button {
+  flex-shrink: 0;
+}
+@media (max-width: 760px) {
+  .custom-work {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    margin-block: 40px 16px;
+    padding: 28px;
+  }
+}
