@@ -142,22 +142,37 @@ title: Private infrastructure your team can run
     <h3>A little ongoing care goes a long way.</h3>
     <p>Required with every build · 12-month minimum</p>
   </div>
-  <div class="care-grid">
-    {% for care in landing.care %}
-    <article>
-      <div>
-        <h4>{{ care.name }}</h4>
-        <p>{{ care.text }}</p>
+  <div class="care-layout">
+    <div class="care-copy">
+      <div class="care-grid">
+        {% for care in landing.care %}
+        <article>
+          <div>
+            <h4>{{ care.name }}</h4>
+            <p>{{ care.text }}</p>
+          </div>
+          <p class="care-price">{{ care.price }}<span>/ month</span></p>
+        </article>
+        {% endfor %}
       </div>
-      <p class="care-price">{{ care.price }}<span>/ month</span></p>
-    </article>
-    {% endfor %}
+      <p class="support-note">
+        Scheduled maintenance and business-hours support. Best-effort response
+        within two business days for covered infrastructure issues. No 24/7
+        emergency coverage or guaranteed restoration time.
+      </p>
+    </div>
+    <div class="care-art" aria-hidden="true">
+      <span class="care-art-label">A LITTLE TLC FOR YOUR STACK</span>
+      <div class="care-art-stack">
+        <div class="care-art-server"><i></i><span></span><b>01</b></div>
+        <div class="care-art-server"><i></i><span></span><b>02</b></div>
+        <div class="care-art-server"><i></i><span></span><b>03</b></div>
+      </div>
+      <span class="care-art-spark">✳</span>
+      <span class="care-art-ticket">REVIEW<br />MAINTAIN<br />REPEAT ↻</span>
+      <span class="care-art-caption">GOOD CARE. SOLID FOUNDATIONS.</span>
+    </div>
   </div>
-  <p class="support-note">
-    Scheduled maintenance and business-hours support. Best-effort response
-    within two business days for covered infrastructure issues. No 24/7
-    emergency coverage or guaranteed restoration time.
-  </p>
   <details class="terms">
     <summary>The practical details: scope, payments & exclusions</summary>
     <p>
@@ -170,7 +185,7 @@ title: Private infrastructure your team can run
       application support, and unapproved changes require separate scope.
     </p>
   </details>
-  <br>
+  <br />
   <aside class="custom-work" aria-labelledby="custom-work-title">
     <div>
       <h3 id="custom-work-title">Something else in mind?</h3>
@@ -180,7 +195,7 @@ title: Private infrastructure your team can run
         We’ll help define a focused scope around your Kubernetes platform.
       </p>
     </div>
-    <br>
+    <br />
     {{ booking('button button-outline') }}
   </aside>
 </section>

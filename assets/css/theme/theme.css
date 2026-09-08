@@ -563,8 +563,9 @@ nav a:hover {
   font-size: 11px;
 }
 .care-grid {
+  max-width: 780px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 .care-grid article {
@@ -1227,5 +1228,134 @@ cal-floating-button {
     gap: 22px;
     margin-block: 40px 16px;
     padding: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .care-grid article {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .care-price span {
+    text-align: left;
+  }
+}
+
+/* Decorative maintenance illustration, intentionally not a live status panel. */
+.care-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 780px) minmax(230px, 1fr);
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.care-art {
+  position: relative;
+  min-height: 240px;
+  background: #f3e7d9;
+  border: 1px solid var(--line);
+  background-image: radial-gradient(#17265325 1px, transparent 1px);
+  background-size: 12px 12px;
+  overflow: hidden;
+}
+.care-art-label,
+.care-art-caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  font:
+    8px/1.5 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+.care-art-label {
+  top: 16px;
+}
+.care-art-caption {
+  bottom: 15px;
+}
+.care-art-stack {
+  position: absolute;
+  width: 150px;
+  top: 65px;
+  left: calc(50% - 95px);
+  transform: rotate(-7deg);
+}
+.care-art-server {
+  height: 33px;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  background: var(--ink);
+  color: var(--cream);
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--gold);
+}
+.care-art-server i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.care-art-server span {
+  width: 48px;
+  height: 7px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--cream) 0 2px,
+    transparent 2px 6px
+  );
+  opacity: 0.6;
+}
+.care-art-server b {
+  margin-left: auto;
+  font:
+    9px "IBM Plex Mono",
+    monospace;
+}
+.care-art-spark {
+  position: absolute;
+  top: 34px;
+  right: 25px;
+  font-size: 45px;
+  line-height: 1;
+  color: var(--ember);
+}
+.care-art-ticket {
+  position: absolute;
+  right: 17px;
+  bottom: 40px;
+  padding: 10px 13px;
+  transform: rotate(8deg);
+  background: var(--gold);
+  border: 1px solid var(--ink);
+  font:
+    9px/1.5 "IBM Plex Mono",
+    monospace;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+@media (max-width: 1050px) {
+  .care-layout {
+    gap: 28px;
+  }
+  .care-grid article {
+    flex-direction: column;
+  }
+  .care-price span {
+    text-align: left;
+  }
+}
+@media (max-width: 760px) {
+  .care-layout {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .care-art {
+    width: 100%;
+    max-width: 360px;
+    justify-self: center;
   }
 }

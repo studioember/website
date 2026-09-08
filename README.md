@@ -22,7 +22,7 @@ Deployment examples are explicitly labeled unfinished placeholders. Replace each
 
 All conversion actions book the same Cal.com consultation. Links work directly when JavaScript is disabled or the embed script cannot load. If changing the event, update both the booking URL in the data and the event path in `booking.js`.
 
-The care commitment is required for 12 months. Monthly Care is $1,000/month; Twice-Monthly Care is $2,000/month. VM assessment pricing is separate from migration implementation.
+The care commitment is required for 12 months. Monthly Care starts at $1,000/month, with higher pricing depending on the desired maintenance scope and frequency. VM assessment pricing is separate from migration implementation.
 
 ## Verification
 

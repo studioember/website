@@ -58,13 +58,8 @@
   "care": [
     {
       "name": "Monthly Care",
-      "price": "$1,000",
-      "text": "Monthly platform health review, planned upgrades, backup verification, monitoring review, and routine maintenance."
-    },
-    {
-      "name": "Twice-Monthly Care",
-      "price": "$2,000",
-      "text": "Monthly Care plus twice-monthly reviews, change coordination, recovery review, capacity planning, and maintenance records."
+      "price": "From $1,000",
+      "text": "Monthly platform health review, planned upgrades, backup verification, monitoring review, and routine maintenance. Pricing may be higher depending on your desired maintenance scope and frequency."
     }
   ],
   "options": [
@@ -151,7 +146,7 @@
     },
     {
       "q": "What does ongoing platform care include?",
-      "a": "Scheduled infrastructure maintenance and paid business-hours support—not round-the-clock operations. Care is required for a minimum of 12 months, starting at $1,000 per month. Covered infrastructure issues receive a best-effort response within two business days; there is no guaranteed restoration time or 24/7 emergency coverage."
+      "a": "Scheduled infrastructure maintenance and paid business-hours support—not round-the-clock operations. Care is required for a minimum of 12 months, starting at $1,000 per month. Pricing may be higher depending on your desired maintenance scope and frequency. Covered infrastructure issues receive a best-effort response within two business days; there is no guaranteed restoration time or 24/7 emergency coverage."
     },
     {
       "q": "Can our legacy virtual machines move into the cluster?",
