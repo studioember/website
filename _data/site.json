@@ -1,7 +1,9 @@
 {
   "name": "Studio Ember",
   "url": "https://studioember.com",
-  "description": "Studio Ember helps teams assess cloud dependency, reduce lock-in, and design infrastructure they control with practical, engineer-led exit paths.",
+  "description": "Private Kubernetes infrastructure on your hardware. GPU and AI workflows, legacy VM migration, documentation, training, and ongoing support. Book a consultation.",
   "author": "Nathan Grey",
-  "locale": "en_US"
+  "locale": "en_US",
+  "seoTitle": "Private Kubernetes Infrastructure & Consulting | Studio Ember",
+  "analyticsId": "G-NYVTLFQRSZ"
 }

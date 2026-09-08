@@ -1,0 +1,173 @@
+{
+  "bookingUrl": "https://cal.com/nathan-grey/studioember",
+  "services": [
+    {
+      "title": "A solid foundation.",
+      "label": "01 / DESIGN & BUILD",
+      "text": "Private Kubernetes infrastructure built around your workloads. Secure access, storage, networking, monitoring, and automated delivery\u2014working together on hardware you own."
+    },
+    {
+      "title": "Ready for real life.",
+      "label": "02 / VALIDATE & HAND OVER",
+      "text": "Recovery validation, architecture documentation, operating runbooks, and four practical training sessions. Your team gets the knowledge to operate what we build."
+    },
+    {
+      "title": "Good care, ongoing.",
+      "label": "03 / MAINTAIN & SUPPORT",
+      "text": "Paid platform care keeps maintenance on the calendar. Planned upgrades, backup verification, monitoring reviews, and business-hours infrastructure support."
+    }
+  ],
+  "packages": [
+    {
+      "name": "Private Foundation",
+      "price": "$20,000",
+      "tag": "THE ESSENTIALS",
+      "text": "A private home for a few important internal services.",
+      "features": [
+        "Three-node Kubernetes foundation",
+        "Secure remote access and ingress",
+        "Monitoring baseline and backup design",
+        "Documentation and four handoff sessions"
+      ]
+    },
+    {
+      "name": "Managed Private Foundation",
+      "price": "$28,000",
+      "tag": "THE COMPLETE PLATFORM",
+      "text": "An integrated platform, ready for your team to operate.",
+      "features": [
+        "Everything in Private Foundation",
+        "Source control and delivery automation",
+        "Storage integration and backup verification",
+        "Recovery test and operational runbooks"
+      ]
+    },
+    {
+      "name": "Resilient Small Platform",
+      "price": "$35,000",
+      "tag": "ROOM TO GROW",
+      "text": "Stronger recovery and capacity for more important workloads.",
+      "features": [
+        "Everything in Managed Private Foundation",
+        "Fourth node or dedicated worker capacity",
+        "Enhanced database, storage, and monitoring",
+        "Recovery exercise and 90-day stabilization review"
+      ]
+    }
+  ],
+  "care": [
+    {
+      "name": "Foundation care",
+      "price": "$1,000",
+      "text": "Monthly platform health review, planned upgrades, backup verification, monitoring review, and routine maintenance."
+    },
+    {
+      "name": "Enhanced care",
+      "price": "$2,000",
+      "text": "Foundation care plus twice-monthly reviews, change coordination, recovery review, capacity planning, and maintenance records."
+    }
+  ],
+  "options": [
+    {
+      "name": "GPU platform enablement",
+      "price": "From $15,000",
+      "text": "Compatible hardware and GPU node planning, device scheduling, workload isolation, and monitoring. Put dedicated compute to work inside your private platform.",
+      "symbol": "GPU"
+    },
+    {
+      "name": "Private AI workflows",
+      "price": "From $10,000",
+      "text": "Private model and workflow deployment, access controls, storage integration, and operational runbooks. Custom AI application development is scoped separately.",
+      "symbol": "AI"
+    },
+    {
+      "name": "Legacy VMs, meet Kubernetes.",
+      "price": "Assessment from $5,000",
+      "text": "Run compatible virtual machines alongside containers using KubeVirt. Keep selected legacy workflows running while you modernize in stages. Migration implementation is quoted after assessment.",
+      "symbol": "VM"
+    }
+  ],
+  "examples": [
+    {
+      "name": "Private internal applications",
+      "description": "Describe the internal services, private access model, and infrastructure delivered. Add an architecture view and the operational outcome.",
+      "nodes": ["TEAM", "PRIVATE ACCESS", "APPS"]
+    },
+    {
+      "name": "From commit to deployment",
+      "description": "Describe the source control, build, and delivery workflow. Add a pipeline illustration and explain how releases and rollbacks work.",
+      "nodes": ["COMMIT", "BUILD", "DEPLOY"]
+    },
+    {
+      "name": "Data with a recovery plan",
+      "description": "Describe the database, backup destination, and recovery exercise. Add a diagram and a verified recovery outcome.",
+      "nodes": ["DATABASE", "BACKUP", "RESTORE"]
+    },
+    {
+      "name": "Private GPU & AI workflows",
+      "description": "Describe the GPU capacity, model or AI workflow, and data access controls. Add a workload diagram and the demonstrated result.",
+      "nodes": ["DATA", "GPU", "WORKFLOW"]
+    },
+    {
+      "name": "VMs + containers, together",
+      "description": "Describe the legacy workload, compatibility review, and phased KubeVirt migration. Add the target architecture and validated handoff outcome.",
+      "nodes": ["LEGACY VM", "KUBEVIRT", "CLUSTER"]
+    }
+  ],
+  "steps": [
+    {
+      "title": "First, a conversation.",
+      "text": "We discuss your workloads, current environment, and goals to see whether a private platform fits."
+    },
+    {
+      "title": "Assess. Then scope.",
+      "text": "A paid assessment turns hardware, network, and workload requirements into an architecture, risk review, and fixed-price proposal."
+    },
+    {
+      "title": "Build it. Prove it.",
+      "text": "We deliver the agreed platform, validate its operation, and test recovery within the scope of your package."
+    },
+    {
+      "title": "Make it yours.",
+      "text": "Architecture diagrams, operating and recovery runbooks, and four handoff sessions give your team a practical path to ownership."
+    },
+    {
+      "title": "Keep it in good shape.",
+      "text": "Required paid platform care provides scheduled maintenance and business-hours support, with clear responsibilities."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What do we have at the end?",
+      "a": "Private, managed Kubernetes infrastructure on your hardware, with the components agreed in your proposal. You receive architecture documentation, operating and recovery runbooks, four handoff and training sessions, and paid ongoing platform support."
+    },
+    {
+      "q": "Do you supply the hardware?",
+      "a": "You purchase and own the hardware, accounts, licenses, warranties, and replacement parts. We specify requirements and review compatibility. Hardware, internet, DNS, third-party services, shipping, travel, and applicable taxes are excluded unless the proposal includes them."
+    },
+    {
+      "q": "How does pricing become fixed?",
+      "a": "We begin with a consultation, followed by a paid assessment from $3,000. That produces the scope, assumptions, acceptance criteria, and fixed implementation proposal. A 50% deposit schedules the build, with a milestone payment before handoff. Changes are separately scoped."
+    },
+    {
+      "q": "What does \u201cmanaged\u201d include?",
+      "a": "Scheduled infrastructure maintenance and paid business-hours support\u2014not round-the-clock operations. Care is required for a minimum of 12 months, starting at $1,000 per month. Covered infrastructure issues receive a best-effort response within two business days; there is no guaranteed restoration time or 24/7 emergency coverage."
+    },
+    {
+      "q": "Can our legacy virtual machines move into the cluster?",
+      "a": "Potentially. A KubeVirt / legacy-VM assessment starts at $5,000 and reviews dependencies, hardware compatibility, networking, storage, licensing, and recovery. We pilot an agreed workload, then plan staged migration with rollback, validation, documentation, and training. Implementation is quoted separately. Compatibility and zero-downtime migration are not guaranteed."
+    },
+    {
+      "q": "Can we run GPUs and private AI workflows?",
+      "a": "Yes, as separately scoped options. GPU enablement starts at $15,000 and private AI workflow enablement at $10,000. We first check hardware, workloads, access, storage, and operational requirements. Hardware and model or service licenses are separate; custom AI application development requires its own scope."
+    },
+    {
+      "q": "Can you work with an existing platform or IT provider?",
+      "a": "We can assess an existing Kubernetes environment and scope improvements, integrations, or migration. We work alongside internal teams and IT providers. Application defects, developer workflow support, legacy application support, and unapproved changes are outside platform care unless explicitly contracted."
+    },
+    {
+      "q": "Can you work remotely or on site?",
+      "a": "Both can be scoped after reviewing your environment and access requirements. On-site installation, travel, and shipping are priced separately. Any equipment staging or provisioning before shipment is agreed in the proposal."
+    }
+  ]
+}

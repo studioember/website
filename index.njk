@@ -1,0 +1,291 @@
+---
+layout: layouts/base.njk
+title: Private infrastructure your team can run
+---
+
+{% macro booking(className='button') %}<a
+  class="{{ className }}"
+  href="{{ landing.bookingUrl }}"
+  data-booking
+  >Book a consultation <span aria-hidden="true">↗</span></a
+>{% endmacro %}
+<section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow">
+      <span class="status-dot"></span> PRIVATE INFRASTRUCTURE. PERSONAL
+      ATTENTION.
+    </p>
+    <h1 id="hero-title">
+      Private infrastructure<br />your team can <em>run.</em>
+    </h1>
+    <p class="hero-intro">Your hardware. Your platform. Your possibilities.</p>
+    <p class="hero-description">
+      We design, build, and care for private Kubernetes infrastructure—with the
+      docs, training, and paid support to make it truly yours.
+    </p>
+    {{ booking() }}
+    <p class="micro">Let’s talk workloads, goals, and what comes next.</p>
+  </div>
+  <div
+    class="hero-poster"
+    aria-label="Your platform: built, documented, and supported"
+  >
+    <div class="poster-top">
+      <span>STUDIO EMBER</span><span>EST. FOR YOUR NEXT CHAPTER</span>
+    </div>
+    <div class="poster-title">
+      Big possibilities.<br /><i>Your own</i> platform.
+    </div>
+    <div class="platform-art" aria-hidden="true">
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+      <img
+        src="/assets/img/logo-clear.png"
+        alt=""
+        width="2000"
+        height="2000"
+      /><span class="art-label label-one">BUILT FOR YOU</span
+      ><span class="art-label label-two">OWN YOUR STACK</span>
+    </div>
+    <div class="poster-bottom">
+      <span>BUILT.<br />DOCUMENTED.<br />SUPPORTED.</span
+      ><span class="seal">YOURS<br />TO RUN<br /><b>✳</b></span>
+    </div>
+  </div>
+</section>
+<div class="ticker" aria-hidden="true">
+  <span>YOUR HARDWARE</span> ✳ <span>OUR KNOW-HOW</span> ✳
+  <span>YOUR PLATFORM</span> ✳ <span>ROOM TO GROW</span> ✳
+</div>
+<section class="section wrap audience" aria-labelledby="audience-title">
+  <p class="eyebrow">A LITTLE MORE OWNERSHIP. A LOT MORE POSSIBILITY.</p>
+  <div class="section-split">
+    <h2 id="audience-title">
+      Keep your infrastructure<br /><em>close to home.</em>
+    </h2>
+    <p>
+      For organizations with sensitive workloads, development teams running
+      internal software, and IT providers looking for a specialist. A platform
+      you control, with a team that knows how to run it.
+    </p>
+  </div>
+  <div class="outcomes">
+    <span>01 / Control your environment</span
+    ><span>02 / Deliver with confidence</span
+    ><span>03 / Build your team’s know-how</span>
+  </div>
+</section>
+<section class="section services-section" id="services">
+  <div class="wrap">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">FROM FIRST SKETCH TO EVERYDAY OPERATIONS</p>
+        <h2>All the pieces.<br /><em>One working platform.</em></h2>
+      </div>
+      <span class="small-stamp" aria-hidden="true">BUILT WITH<br />CARE ✳</span>
+    </div>
+    <div class="service-grid">
+      {% for service in landing.services %}
+      <article class="service-card">
+        <p class="eyebrow">{{ service.label }}</p>
+        <span class="service-number" aria-hidden="true">0{{ loop.index }}</span>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section wrap" id="pricing">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">CLEAR STARTING POINTS. THOUGHTFULLY SCOPED.</p>
+      <h2>A good foundation.<br /><em>No guessing games.</em></h2>
+    </div>
+    <p class="heading-aside">
+      Private infrastructure, documentation, training, and a plan for what comes
+      next.
+    </p>
+  </div>
+  <div class="assessment">
+    <div>
+      <p class="eyebrow">EVERY BUILD STARTS HERE</p>
+      <h3>Private Foundation assessment</h3>
+      <p>
+        Requirements, hardware and network review, workload fit, risks,
+        architecture, and implementation scope.
+      </p>
+    </div>
+    <div class="assessment-price">
+      <span>FROM</span><strong>$3,000</strong>{{ booking('button button-dark')
+      }}
+    </div>
+  </div>
+  <div class="pricing-grid">
+    {% for package in landing.packages %}
+    <article class="price-card {% if loop.index == 2 %}featured{% endif %}">
+      <p class="eyebrow">{{ package.tag }}</p>
+      <h3>{{ package.name }}</h3>
+      <p>{{ package.text }}</p>
+      <p class="price"><span>From</span>{{ package.price }}</p>
+      <ul>
+        {% for feature in package.features %}
+        <li>{{ feature }}</li>
+        {% endfor %}
+      </ul>
+      {{ booking('button button-outline') }}
+      <p class="micro">Plus required paid platform care</p>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="care-heading">
+    <h3>A little ongoing care goes a long way.</h3>
+    <p>Required with every build · 12-month minimum</p>
+  </div>
+  <div class="care-grid">
+    {% for care in landing.care %}
+    <article>
+      <div>
+        <h4>{{ care.name }}</h4>
+        <p>{{ care.text }}</p>
+      </div>
+      <p class="care-price">{{ care.price }}<span>/ month</span></p>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="support-note">
+    Scheduled maintenance and business-hours support. Best-effort response
+    within two business days for covered infrastructure issues. No 24/7
+    emergency coverage or guaranteed restoration time.
+  </p>
+  <details class="terms">
+    <summary>The practical details: scope, payments & exclusions</summary>
+    <p>
+      A paid assessment comes before a fixed-price implementation proposal. A
+      50% deposit schedules implementation, with a milestone payment before
+      handoff. Your proposal defines acceptance criteria, responsibilities, and
+      change orders. Hardware, internet, DNS, licenses, third-party services,
+      replacement parts, travel, shipping, and taxes are separate unless
+      explicitly included. Application development, application defects, legacy
+      application support, and unapproved changes require separate scope.
+    </p>
+  </details>
+</section>
+<section class="section options-section" id="options">
+  <div class="wrap">
+    <p class="eyebrow">MAKE ROOM FOR WHAT’S NEXT</p>
+    <h2>New possibilities.<br /><em>Familiar workflows, too.</em></h2>
+    <div class="options-grid">
+      {% for option in landing.options %}
+      <article>
+        <span class="option-symbol" aria-hidden="true"
+          >{{ option.symbol }}</span
+        >
+        <h3>{{ option.name }}</h3>
+        <p class="option-price">{{ option.price }}</p>
+        <p>{{ option.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="migration">
+      <h3>Modernize at your pace.</h3>
+      <p>A considered path from legacy VMs to a shared Kubernetes home.</p>
+      <ol>
+        <li>Assess VMs & dependencies</li>
+        <li>Check compatibility, network, storage, licensing & recovery</li>
+        <li>Pilot an agreed workload</li>
+        <li>Migrate in stages with rollback plans</li>
+        <li>Validate, document & train</li>
+      </ol>
+      <p class="micro">
+        VM compatibility and zero-downtime migration are not guaranteed. GPU,
+        AI, and VM work is separately scoped; hardware and model/service
+        licenses are additional.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="section wrap" id="deployments">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">A PLACE FOR YOUR PLATFORM STORIES</p>
+      <h2>What could <em>yours</em><br />look like?</h2>
+    </div>
+    <p class="heading-aside">
+      Deployment examples are being prepared. These are editable placeholders,
+      not completed client projects.
+    </p>
+  </div>
+  <div class="example-grid">
+    {% for example in landing.examples %}
+    <article class="example-card">
+      <div class="example-visual" aria-hidden="true">
+        <span class="example-index">0{{ loop.index }}</span>
+        <div class="diagram">
+          {% for node in example.nodes %}<span>{{ node }}</span>{% if not
+          loop.last %}<b>↓</b>{% endif %}{% endfor %}
+        </div>
+      </div>
+      <div class="example-copy">
+        <p class="eyebrow">EXAMPLE PLACEHOLDER</p>
+        <h3>{{ example.name }}</h3>
+        <p>{{ example.description }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<section class="section delivery-section" id="approach">
+  <div class="wrap delivery-grid">
+    <div class="delivery-intro">
+      <p class="eyebrow">BUILT. PROVEN. HANDED OVER.</p>
+      <h2>
+        Great infrastructure<br />comes with<br /><em>the instructions.</em>
+      </h2>
+      <p>
+        You get more than an installation. You get a platform, the knowledge to
+        run it, and paid support to keep it in good shape.
+      </p>
+      <div class="handoff-note">
+        IN THE HANDOFF PACKAGE<br /><strong
+          >Architecture + runbooks<br />Recovery procedures<br />4 training
+          sessions</strong
+        >
+      </div>
+    </div>
+    <ol class="steps">
+      {% for step in landing.steps %}
+      <li>
+        <span>0{{ loop.index }}</span>
+        <div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+<section class="section wrap faq-section" id="faq">
+  <div>
+    <p class="eyebrow">A FEW THINGS YOU MIGHT BE WONDERING</p>
+    <h2>Good questions.<br /><em>Straight answers.</em></h2>
+  </div>
+  <div class="faq-list">
+    {% for faq in landing.faqs %}
+    <details>
+      <summary>{{ faq.q }}</summary>
+      <p>{{ faq.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+<section class="closing" id="consultation">
+  <div class="wrap">
+    <span class="closing-spark" aria-hidden="true">✳</span>
+    <p class="eyebrow">LET’S BUILD SOMETHING THAT’S YOURS.</p>
+    <h2>Your next chapter<br />starts with <em>a conversation.</em></h2>
+    <p>Tell us what you’re running. We’ll talk about where you want to go.</p>
+    {{ booking('button button-dark') }}
+  </div>
+</section>

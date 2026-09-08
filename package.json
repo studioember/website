@@ -30,6 +30,7 @@
     "build": "yarn build:css && yarn build:eleventy && yarn prettier --write \"output/site/**/*.html\"",
     "build:css": "yarn tailwindcss -i ./frameworks/tailwind/tailwind.css -o ./assets/css/generated/tailwind.css --minify --content \"./**/*.{njk,liquid,html,md}\"",
     "build:eleventy": "eleventy",
-    "format:html": "prettier --write 'output/site/**/*.html'"
+    "format:html": "prettier --write 'output/site/**/*.html'",
+    "test:seo": "node --test tests/seo.test.mjs"
   }
 }

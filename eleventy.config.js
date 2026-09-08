@@ -2,8 +2,15 @@ import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { RenderPlugin } from "@11ty/eleventy";
 import moment from "moment";
+import { rm } from "node:fs/promises";
 
 export default async function (eleventyConfig) {
+  // A single-page build must never retain retired routes from earlier builds.
+  eleventyConfig.on("eleventy.before", async () => {
+    await rm("output/site", { recursive: true, force: true });
+  });
+  eleventyConfig.addShortcode("year", () => new Date().getFullYear());
+
   // Configure Eleventy
   eleventyConfig.setOutputDirectory("output/site");
 
@@ -24,6 +31,11 @@ export default async function (eleventyConfig) {
       return aTitle.localeCompare(bTitle);
     });
   });
+
+  // Escape inline JSON so content cannot terminate the script element.
+  eleventyConfig.addFilter("jsonLd", (value) =>
+    JSON.stringify(value).replace(/</g, "\\u003c"),
+  );
 
   // Filters
   eleventyConfig.addFilter("dateSimple", function (date) {

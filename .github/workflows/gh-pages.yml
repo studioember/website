@@ -7,16 +7,15 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,28 +24,38 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: yarn
+
+      - name: Install Yarn Classic
+        run: npm install --global yarn@1.22.22 --force
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
       - name: Build
         run: yarn build
-        # Use to allow for github pages path prefix
-        # env:
-        #   ELEVENTY_PATH_PREFIX: /greywellness.com/
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Validate SEO and analytics
+        run: yarn test:seo
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: output/site
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
