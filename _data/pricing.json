@@ -1,0 +1,141 @@
+{
+  "stages": [
+    {
+      "name": "Small-workload fit assessment",
+      "short": "Assess",
+      "min": 1500,
+      "max": 2500,
+      "best": "One workload. A clearer direction.",
+      "text": "Understand readiness, simpler alternatives, risks and operator needs before choosing a platform.",
+      "features": [
+        "One workload reviewed",
+        "Readiness and platform-fit recommendation",
+        "Risks, operator needs and a scoped next step"
+      ],
+      "callout": "A standalone assessment, not a platform installation. No upgrade required."
+    },
+    {
+      "name": "Hands-on Kubernetes pilot",
+      "short": "Pilot",
+      "min": 6000,
+      "max": 9000,
+      "assessment": {
+        "min": 1500,
+        "max": 2500
+      },
+      "best": "A small team testing a real use case.",
+      "text": "Explore Kubernetes with one noncritical app in one environment, working alongside your engineer.",
+      "features": [
+        "Paired deployment and rollback",
+        "Secure access and basic observability",
+        "Applicable backup/restore demonstration and runbook"
+      ],
+      "callout": "For a container-ready or readily containerized app. No complex migration, regulated production data or high-availability guarantee."
+    },
+    {
+      "name": "Small Private Platform Launch",
+      "short": "Launch",
+      "min": 15000,
+      "max": 22000,
+      "assessment": {
+        "min": 3000,
+        "max": 4000
+      },
+      "best": "1\u20132 suitable applications. A named operator.",
+      "text": "A working private platform with the everyday essentials built in and a practical operating handoff.",
+      "features": [
+        "Repeatable delivery and secure access",
+        "Monitoring and tested applicable backup/recovery",
+        "Runbooks and four handoff sessions"
+      ],
+      "callout": "Includes defined stabilization and defect correction. A single-node deployment has a single point of failure."
+    },
+    {
+      "name": "Resilient Platform Launch",
+      "short": "Resilient",
+      "min": 30000,
+      "max": 45000,
+      "open": true,
+      "assessment": {
+        "min": 3000,
+        "max": 4000
+      },
+      "best": "Workloads with stronger continuity needs.",
+      "text": "Build around agreed failure tolerance, data needs and integration complexity.",
+      "features": [
+        "Production launch essentials",
+        "Scoped redundancy and stateful integration",
+        "Migration, recovery validation and operating handoff"
+      ],
+      "callout": "Resilience follows agreed recovery objectives and acceptance tests. Scope and complexity determine the price, not simply node count."
+    }
+  ],
+  "addons": [
+    {
+      "name": "GPU platform enablement",
+      "min": 15000,
+      "open": true,
+      "text": "Scheduling, isolation, integration and workload validation beyond driver installation."
+    },
+    {
+      "name": "Private AI workload enablement",
+      "min": 10000,
+      "open": true,
+      "text": "One defined use case with access controls, integration and acceptance tests."
+    },
+    {
+      "name": "Advanced database and recovery",
+      "min": 6000,
+      "max": 7500,
+      "text": "Replication, migration or tighter recovery targets beyond included basic recovery."
+    },
+    {
+      "name": "Advanced CI/CD",
+      "min": 6000,
+      "max": 7500,
+      "text": "Multi-environment or complex delivery integration beyond the included deployment path."
+    },
+    {
+      "name": "Advanced secure-access integration",
+      "min": 4000,
+      "open": true,
+      "text": "Specialist access integration beyond the launch security baseline."
+    },
+    {
+      "name": "KubeVirt / legacy-VM assessment",
+      "min": 5000,
+      "open": true,
+      "text": "Review compatibility, dependencies and recovery. Migration implementation is quoted separately."
+    },
+    {
+      "name": "Custom platform engineering",
+      "quote": true,
+      "text": "Additional apps or migrations from $5,000 per app; specialist scope assessed separately. Included apps are not billed twice."
+    },
+    {
+      "name": "On-site implementation",
+      "quote": true,
+      "text": "Local installation, validation and paired handoff. Time and travel quoted separately; remote work is an option."
+    }
+  ],
+  "support": [
+    {
+      "name": "Handoff only",
+      "min": 0,
+      "max": 0,
+      "text": "Your qualified operator or MSP takes over after included stabilization. Complete documentation and operating handoff."
+    },
+    {
+      "name": "Advisory",
+      "min": 500,
+      "max": 750,
+      "text": "Scheduled review and 1\u20132 hours of advice for a capable operator. No hands-on maintenance or operational ownership."
+    },
+    {
+      "name": "Scheduled Platform Care",
+      "min": 1500,
+      "open": true,
+      "text": "Agreed updates, health and backup reviews, maintenance and reporting for one named environment within written capacity limits."
+    }
+  ]
+}

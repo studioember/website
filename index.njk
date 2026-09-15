@@ -21,7 +21,7 @@ title: Private infrastructure your team can run
     <p class="hero-intro">Your hardware. Your platform. Your possibilities.</p>
     <p class="hero-description">
       We design, build, and care for private Kubernetes infrastructure—with the
-      docs, training, and paid support to make it truly yours.
+      docs, training, and optional support to make it truly yours.
     </p>
     {{ booking() }}
     <p class="micro">Let’s talk workloads, goals, and what comes next.</p>
@@ -107,72 +107,7 @@ title: Private infrastructure your team can run
       next.
     </p>
   </div>
-  <div class="assessment">
-    <div>
-      <p class="eyebrow">EVERY BUILD STARTS HERE</p>
-      <h3>Infrastructure Assessment</h3>
-      <p>
-        Requirements, hardware and network review, workload fit, risks,
-        architecture, and implementation scope.
-      </p>
-    </div>
-    <div class="assessment-price">
-      <span>FROM</span><strong>$3,000</strong>{{ booking('button button-dark')
-      }}
-    </div>
-  </div>
-  <div class="pricing-grid">
-    {% for package in landing.packages %}
-    <article class="price-card {% if loop.index == 2 %}featured{% endif %}">
-      <p class="eyebrow">{{ package.tag }}</p>
-      <h3>{{ package.name }}</h3>
-      <p>{{ package.text }}</p>
-      <p class="price"><span>From</span>{{ package.price }}</p>
-      <ul>
-        {% for feature in package.features %}
-        <li>{{ feature }}</li>
-        {% endfor %}
-      </ul>
-      {{ booking('button button-outline') }}
-      <p class="micro">Plus required paid platform care</p>
-    </article>
-    {% endfor %}
-  </div>
-  <div class="care-heading">
-    <h3>A little ongoing care goes a long way.</h3>
-    <p>Required with every build · 12-month minimum</p>
-  </div>
-  <div class="care-layout">
-    <div class="care-copy">
-      <div class="care-grid">
-        {% for care in landing.care %}
-        <article>
-          <div>
-            <h4>{{ care.name }}</h4>
-            <p>{{ care.text }}</p>
-          </div>
-          <p class="care-price">{{ care.price }}<span>/ month</span></p>
-        </article>
-        {% endfor %}
-      </div>
-      <p class="support-note">
-        Scheduled maintenance and business-hours support. Best-effort response
-        within two business days for covered infrastructure issues. No 24/7
-        emergency coverage or guaranteed restoration time.
-      </p>
-    </div>
-    <div class="care-art" aria-hidden="true">
-      <span class="care-art-label">A LITTLE TLC FOR YOUR STACK</span>
-      <div class="care-art-stack">
-        <div class="care-art-server"><i></i><span></span><b>01</b></div>
-        <div class="care-art-server"><i></i><span></span><b>02</b></div>
-        <div class="care-art-server"><i></i><span></span><b>03</b></div>
-      </div>
-      <span class="care-art-spark">✳</span>
-      <span class="care-art-ticket">REVIEW<br />MAINTAIN<br />REPEAT ↻</span>
-      <span class="care-art-caption">GOOD CARE. SOLID FOUNDATIONS.</span>
-    </div>
-  </div>
+  {% include 'components/pricing.njk' %}
   <details class="terms">
     <summary>The practical details: scope, payments & exclusions</summary>
     <p>
@@ -198,40 +133,6 @@ title: Private infrastructure your team can run
     <br />
     {{ booking('button button-outline') }}
   </aside>
-</section>
-<section class="section options-section" id="options">
-  <div class="wrap">
-    <p class="eyebrow">MAKE ROOM FOR WHAT’S NEXT</p>
-    <h2>New possibilities.<br /><em>Familiar workflows, too.</em></h2>
-    <div class="options-grid">
-      {% for option in landing.options %}
-      <article>
-        <span class="option-symbol" aria-hidden="true"
-          >{{ option.symbol }}</span
-        >
-        <h3>{{ option.name }}</h3>
-        <p class="option-price">{{ option.price }}</p>
-        <p>{{ option.text }}</p>
-      </article>
-      {% endfor %}
-    </div>
-    <div class="migration">
-      <h3>Modernize at your pace.</h3>
-      <p>A considered path from legacy VMs to a shared Kubernetes home.</p>
-      <ol>
-        <li>Assess VMs & dependencies</li>
-        <li>Check compatibility, network, storage, licensing & recovery</li>
-        <li>Pilot an agreed workload</li>
-        <li>Migrate in stages with rollback plans</li>
-        <li>Validate, document & train</li>
-      </ol>
-      <p class="micro">
-        VM compatibility and zero-downtime migration are not guaranteed. GPU,
-        AI, and VM work is separately scoped; hardware and model/service
-        licenses are additional.
-      </p>
-    </div>
-  </div>
 </section>
 <section class="section wrap" id="deployments">
   <div class="section-heading">
@@ -272,11 +173,11 @@ title: Private infrastructure your team can run
       </h2>
       <p>
         You get more than an installation. You get a platform, the knowledge to
-        run it, and paid support to keep it in good shape.
+        run it, and optional support to keep it in good shape.
       </p>
       <div class="handoff-note">
         IN THE HANDOFF PACKAGE<br /><strong
-          >Architecture + runbooks<br />Recovery procedures<br />4 training
+          >Architecture + runbooks<br />Recovery procedures<br />Scoped training
           sessions</strong
         >
       </div>
