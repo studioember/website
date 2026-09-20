@@ -235,7 +235,7 @@ nav a:hover {
 }
 .hero-poster {
   overflow: hidden;
-  background: var(--ember);
+  background: var(--midnight);
   color: var(--cream);
   padding: 21px 26px 23px;
   position: relative;
@@ -280,7 +280,6 @@ nav a:hover {
   width: 225px;
   z-index: 1;
   transform: rotate(-9deg);
-  filter: drop-shadow(9px 13px 0 #792c2a);
 }
 .orbit {
   position: absolute;
@@ -887,9 +886,6 @@ details[open] > summary:after {
 }
 .site-footer {
   padding-bottom: 64px;
-}
-cal-floating-button {
-  z-index: 40 !important;
 }
 @media (min-width: 1500px) {
   .hero {

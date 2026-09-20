@@ -6,7 +6,7 @@
   let activeModal;
   const background = () =>
     document.querySelectorAll(
-      ".site-header, main, .site-footer, .skip-link, cal-floating-button",
+      ".site-header, main, .site-footer, .skip-link",
     );
   const prepareModal = (modal) => {
     if (modal.dataset.focusManaged) return;
@@ -108,13 +108,6 @@
   Cal("init", "studioember", { origin: "https://app.cal.com" });
   Cal.config = Cal.config || {};
   Cal.config.forwardQueryParams = true;
-  Cal.ns.studioember("floatingButton", {
-    calLink,
-    config,
-    buttonText: "Book a consultation",
-    buttonColor: "#172653",
-    buttonTextColor: "#fff7f0",
-  });
   // Count only successful new embedded bookings as leads, never button clicks.
   // Booking identifiers are used locally for deduplication, not sent to GA.
   const recordedBookings = new Set();

@@ -23,14 +23,14 @@
         "min": 1500,
         "max": 2500
       },
-      "best": "A small team testing a real use case.",
-      "text": "Explore Kubernetes with one noncritical app in one environment, working alongside your engineer.",
+      "best": "Start with one node. Expand as your needs grow.",
+      "text": "Start with a single-node Kubernetes deployment and local storage for non-critical workflows that can accommodate scheduled downtime, such as build servers, self-hosted analytics, or internal automation. Work alongside your engineer, with a path to expand to high availability later.",
       "features": [
         "Paired deployment and rollback",
         "Secure access and basic observability",
-        "Applicable backup/restore demonstration and runbook"
+        "Basic backups, restore validation and an operating runbook"
       ],
-      "callout": "For a container-ready or readily containerized app. No complex migration, regulated production data or high-availability guarantee."
+      "callout": "For container-ready or readily containerized workloads within an agreed scope. A single node has no failover, so workflows must also tolerate unplanned outages. Expansion to high availability is scoped separately. No complex migration or regulated production data."
     },
     {
       "name": "Small Private Platform Launch",
@@ -41,14 +41,15 @@
         "min": 3000,
         "max": 4000
       },
-      "best": "1\u20132 suitable applications. A named operator.",
-      "text": "A working private platform with the everyday essentials built in and a practical operating handoff.",
+      "best": "Network storage. Tested recovery. Ready to grow.",
+      "text": "Build the foundation for a resilient platform. Networked storage, automated off-node backups, tested recovery, and multi-node-ready networking prepare your workloads for future high availability.",
       "features": [
-        "Repeatable delivery and secure access",
-        "Monitoring and tested applicable backup/recovery",
+        "Networked or shared storage and multi-node-ready networking",
+        "Automated off-node backups and tested restores",
+        "Repeatable delivery, secure access and monitoring",
         "Runbooks and four handoff sessions"
       ],
-      "callout": "Includes defined stabilization and defect correction. A single-node deployment has a single point of failure."
+      "callout": "Scoped for 1–2 suitable applications with a named client operator. Includes defined stabilization and defect correction. This is the foundation for high availability; network storage alone does not provide failover. Redundant infrastructure and validated failover are scoped under Resilient."
     },
     {
       "name": "Resilient Platform Launch",
@@ -61,33 +62,28 @@
         "max": 4000
       },
       "best": "Workloads with stronger continuity needs.",
-      "text": "Build around agreed failure tolerance, data needs and integration complexity.",
+      "text": "Put high availability into operation with redundancy across the control plane, application placement and storage, tested against agreed failure scenarios and recovery objectives.",
       "features": [
-        "Production launch essentials",
-        "Scoped redundancy and stateful integration",
-        "Migration, recovery validation and operating handoff"
+        "Launch storage, networking, backup and operating foundations",
+        "Redundant control plane, application placement and storage",
+        "Failover and recovery testing against agreed acceptance criteria",
+        "Scoped migration and operating handoff"
       ],
       "callout": "Resilience follows agreed recovery objectives and acceptance tests. Scope and complexity determine the price, not simply node count."
     }
   ],
   "addons": [
     {
-      "name": "GPU platform enablement",
-      "min": 15000,
+      "name": "GPU enablement for AI workflows",
+      "min": 5000,
       "open": true,
-      "text": "Scheduling, isolation, integration and workload validation beyond driver installation."
-    },
-    {
-      "name": "Private AI workload enablement",
-      "min": 10000,
-      "open": true,
-      "text": "One defined use case with access controls, integration and acceptance tests."
+      "text": "Enable GPUs for a defined workflow, including scheduling, access controls, integration and validation—for example, deploying a private AI inference service on your own hardware."
     },
     {
       "name": "Advanced database and recovery",
       "min": 6000,
       "max": 7500,
-      "text": "Replication, migration or tighter recovery targets beyond included basic recovery."
+      "text": "Database-specific replication, migrations or tighter recovery targets beyond your package’s included backups and recovery validation. Launch already includes automated off-node backups and tested restores."
     },
     {
       "name": "Advanced CI/CD",
@@ -99,7 +95,7 @@
       "name": "Advanced secure-access integration",
       "min": 4000,
       "open": true,
-      "text": "Specialist access integration beyond the launch security baseline."
+      "text": "Specialist access integration beyond the launch security baseline, such as VPN access, zero trust integration, or SSO-based access controls."
     },
     {
       "name": "KubeVirt / legacy-VM assessment",
