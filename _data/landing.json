@@ -4,62 +4,17 @@
     {
       "title": "A solid foundation.",
       "label": "01 / DESIGN & BUILD",
-      "text": "Private Kubernetes infrastructure built around your workloads. Secure access, storage, networking, monitoring, and automated delivery—working together on hardware you own."
+      "text": "Private Kubernetes infrastructure built around your workloads. Secure access, storage, networking, monitoring, and automated delivery\u2014working together on hardware you own."
     },
     {
       "title": "Ready for real life.",
       "label": "02 / VALIDATE & HAND OVER",
-      "text": "Recovery validation, architecture documentation, operating runbooks, and four practical training sessions. Your team gets the knowledge to operate what we build."
+      "text": "Recovery validation, architecture documentation, operating runbooks and practical handoff sessions scoped to your engagement. Your team gets the knowledge to operate what we build."
     },
     {
       "title": "Good care, ongoing.",
       "label": "03 / MAINTAIN & SUPPORT",
-      "text": "Paid platform care keeps maintenance on the calendar. Planned upgrades, backup verification, monitoring reviews, and business-hours infrastructure support."
-    }
-  ],
-  "packages": [
-    {
-      "name": "Core Platform",
-      "price": "$20,000",
-      "tag": "KUBERNETES, ACCESS & MONITORING",
-      "text": "A private Kubernetes platform with secure access and monitoring.",
-      "features": [
-        "Three-node Kubernetes foundation",
-        "Secure remote access and ingress",
-        "Monitoring baseline and backup design",
-        "Documentation and four handoff sessions"
-      ]
-    },
-    {
-      "name": "Automated Platform",
-      "price": "$28,000",
-      "tag": "AUTOMATED DELIVERY & BACKUPS",
-      "text": "Your platform, plus automated software delivery and tested backups.",
-      "features": [
-        "Everything in Core Platform",
-        "Source control and delivery automation",
-        "Storage integration and backup verification",
-        "Recovery test and operational runbooks"
-      ]
-    },
-    {
-      "name": "Resilient Platform",
-      "price": "$35,000",
-      "tag": "CAPACITY, RECOVERY & STABILIZATION",
-      "text": "More capacity, stronger data recovery, and a supported stabilization period.",
-      "features": [
-        "Everything in Automated Platform",
-        "Fourth node or dedicated worker capacity",
-        "Enhanced database, storage, and monitoring",
-        "Recovery exercise and 90-day stabilization review"
-      ]
-    }
-  ],
-  "care": [
-    {
-      "name": "Monthly Care",
-      "price": "From $1,000",
-      "text": "Monthly platform health review, planned upgrades, backup verification, monitoring review, and routine maintenance. Pricing may be higher depending on your desired maintenance scope and frequency."
+      "text": "Optional platform care keeps maintenance on the calendar. Planned upgrades, backup verification, monitoring reviews and business-hours infrastructure support."
     }
   ],
   "options": [
@@ -77,7 +32,7 @@
     },
     {
       "name": "Legacy VMs, meet Kubernetes.",
-      "price": "Assessment from $10,000",
+      "price": "Assessment from $5,000",
       "text": "Run compatible virtual machines alongside containers using KubeVirt. Keep selected legacy workflows running while you modernize in stages. Migration implementation is quoted after assessment.",
       "symbol": "VM"
     }
@@ -124,17 +79,17 @@
     },
     {
       "title": "Make it yours.",
-      "text": "Architecture diagrams, operating and recovery runbooks, and four handoff sessions give your team a practical path to ownership."
+      "text": "Architecture diagrams, operating and recovery runbooks, and scoped handoff sessions give your team a practical path to ownership."
     },
     {
       "title": "Keep it in good shape.",
-      "text": "Required paid platform care provides scheduled maintenance and business-hours support, with clear responsibilities."
+      "text": "Choose handoff only, advisory or scheduled platform care. A qualified client operator or MSP owns operations and incident response."
     }
   ],
   "faqs": [
     {
       "q": "What do we have at the end?",
-      "a": "Private, managed Kubernetes infrastructure on your hardware, with the components agreed in your proposal. You receive architecture documentation, operating and recovery runbooks, four handoff and training sessions, and paid ongoing platform support."
+      "a": "The deliverables agreed in your proposal, with documentation and a practical handoff. Production launches include delivery, secure access, monitoring, applicable tested recovery and a defined stabilization period. Ongoing support is optional with a qualified operator."
     },
     {
       "q": "Do you supply the hardware?",
@@ -142,11 +97,11 @@
     },
     {
       "q": "How does pricing become fixed?",
-      "a": "We begin with a consultation, followed by a paid assessment from $3,000. That produces the scope, assumptions, acceptance criteria, and fixed implementation proposal. A 50% deposit schedules the build, with a milestone payment before handoff. Changes are separately scoped."
+      "a": "A free discovery call establishes fit. A small-workload assessment is $1,500\u2013$2,500; broader production assessment is $3,000\u2013$4,000. Pilot and launch fees exclude assessment unless expressly bundled. Written scope defines acceptance criteria and implementation fees. A 50% scheduling deposit and remaining milestone payments are agreed in the proposal."
     },
     {
       "q": "What does ongoing platform care include?",
-      "a": "Scheduled infrastructure maintenance and paid business-hours support—not round-the-clock operations. Care is required for a minimum of 12 months, starting at $1,000 per month. Pricing may be higher depending on your desired maintenance scope and frequency. Covered infrastructure issues receive a best-effort response within two business days; there is no guaranteed restoration time or 24/7 emergency coverage."
+      "a": "Support is optional with a qualified operator, with no default annual commitment. Advisory is $500\u2013$750 per month for scheduled review and 1\u20132 hours of advice. Scheduled Platform Care starts at $1,500 per month for agreed maintenance of one named environment within written capacity limits. Best-effort response within two business days for routine covered requests; no 24/7 coverage or guaranteed restoration. Your operator or MSP owns incident response."
     },
     {
       "q": "Can our legacy virtual machines move into the cluster?",

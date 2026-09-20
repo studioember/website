@@ -1,0 +1,137 @@
+{
+  "stages": [
+    {
+      "name": "Small-workload fit assessment",
+      "short": "Assess",
+      "min": 1500,
+      "max": 2500,
+      "best": "One workload. A clearer direction.",
+      "text": "Understand readiness, simpler alternatives, risks and operator needs before choosing a platform.",
+      "features": [
+        "One workload reviewed",
+        "Readiness and platform-fit recommendation",
+        "Risks, operator needs and a scoped next step"
+      ],
+      "callout": "A standalone assessment, not a platform installation. No upgrade required."
+    },
+    {
+      "name": "Hands-on Kubernetes pilot",
+      "short": "Pilot",
+      "min": 6000,
+      "max": 9000,
+      "assessment": {
+        "min": 1500,
+        "max": 2500
+      },
+      "best": "Start with one node. Expand as your needs grow.",
+      "text": "Start with a single-node Kubernetes deployment and local storage for non-critical workflows that can accommodate scheduled downtime, such as build servers, self-hosted analytics, or internal automation. Work alongside your engineer, with a path to expand to high availability later.",
+      "features": [
+        "Paired deployment and rollback",
+        "Secure access and basic observability",
+        "Basic backups, restore validation and an operating runbook"
+      ],
+      "callout": "For container-ready or readily containerized workloads within an agreed scope. A single node has no failover, so workflows must also tolerate unplanned outages. Expansion to high availability is scoped separately. No complex migration or regulated production data."
+    },
+    {
+      "name": "Small Private Platform Launch",
+      "short": "Launch",
+      "min": 15000,
+      "max": 22000,
+      "assessment": {
+        "min": 3000,
+        "max": 4000
+      },
+      "best": "Network storage. Tested recovery. Ready to grow.",
+      "text": "Build the foundation for a resilient platform. Networked storage, automated off-node backups, tested recovery, and multi-node-ready networking prepare your workloads for future high availability.",
+      "features": [
+        "Networked or shared storage and multi-node-ready networking",
+        "Automated off-node backups and tested restores",
+        "Repeatable delivery, secure access and monitoring",
+        "Runbooks and four handoff sessions"
+      ],
+      "callout": "Scoped for 1–2 suitable applications with a named client operator. Includes defined stabilization and defect correction. This is the foundation for high availability; network storage alone does not provide failover. Redundant infrastructure and validated failover are scoped under Resilient."
+    },
+    {
+      "name": "Resilient Platform Launch",
+      "short": "Resilient",
+      "min": 30000,
+      "max": 45000,
+      "open": true,
+      "assessment": {
+        "min": 3000,
+        "max": 4000
+      },
+      "best": "Workloads with stronger continuity needs.",
+      "text": "Put high availability into operation with redundancy across the control plane, application placement and storage, tested against agreed failure scenarios and recovery objectives.",
+      "features": [
+        "Launch storage, networking, backup and operating foundations",
+        "Redundant control plane, application placement and storage",
+        "Failover and recovery testing against agreed acceptance criteria",
+        "Scoped migration and operating handoff"
+      ],
+      "callout": "Resilience follows agreed recovery objectives and acceptance tests. Scope and complexity determine the price, not simply node count."
+    }
+  ],
+  "addons": [
+    {
+      "name": "GPU enablement for AI workflows",
+      "min": 5000,
+      "open": true,
+      "text": "Enable GPUs for a defined workflow, including scheduling, access controls, integration and validation—for example, deploying a private AI inference service on your own hardware."
+    },
+    {
+      "name": "Advanced database and recovery",
+      "min": 6000,
+      "max": 7500,
+      "text": "Database-specific replication, migrations or tighter recovery targets beyond your package’s included backups and recovery validation. Launch already includes automated off-node backups and tested restores."
+    },
+    {
+      "name": "Advanced CI/CD",
+      "min": 6000,
+      "max": 7500,
+      "text": "Multi-environment or complex delivery integration beyond the included deployment path."
+    },
+    {
+      "name": "Advanced secure-access integration",
+      "min": 4000,
+      "open": true,
+      "text": "Specialist access integration beyond the launch security baseline, such as VPN access, zero trust integration, or SSO-based access controls."
+    },
+    {
+      "name": "KubeVirt / legacy-VM assessment",
+      "min": 5000,
+      "open": true,
+      "text": "Review compatibility, dependencies and recovery. Migration implementation is quoted separately."
+    },
+    {
+      "name": "Custom platform engineering",
+      "quote": true,
+      "text": "Additional apps or migrations from $5,000 per app; specialist scope assessed separately. Included apps are not billed twice."
+    },
+    {
+      "name": "On-site implementation",
+      "quote": true,
+      "text": "Local installation, validation and paired handoff. Time and travel quoted separately; remote work is an option."
+    }
+  ],
+  "support": [
+    {
+      "name": "Handoff only",
+      "min": 0,
+      "max": 0,
+      "text": "Your qualified operator or MSP takes over after included stabilization. Complete documentation and operating handoff."
+    },
+    {
+      "name": "Advisory",
+      "min": 500,
+      "max": 750,
+      "text": "Scheduled review and 1\u20132 hours of advice for a capable operator. No hands-on maintenance or operational ownership."
+    },
+    {
+      "name": "Scheduled Platform Care",
+      "min": 1500,
+      "open": true,
+      "text": "Agreed updates, health and backup reviews, maintenance and reporting for one named environment within written capacity limits."
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { RenderPlugin } from "@11ty/eleventy";
+import { formatPrice } from "./assets/js/pricing.js";
 import moment from "moment";
 import { rm } from "node:fs/promises";
 
@@ -36,6 +37,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter("jsonLd", (value) =>
     JSON.stringify(value).replace(/</g, "\\u003c"),
   );
+
+  eleventyConfig.addFilter("priceRange", formatPrice);
 
   // Filters
   eleventyConfig.addFilter("dateSimple", function (date) {

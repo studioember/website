@@ -13,7 +13,7 @@ The generated site is in `output/site/`. Eleventy clears this directory before e
 ## Editing content
 
 - `index.njk` — landing-page structure and introductory copy
-- `_data/landing.json` — packages, care plans, specialist options, services, FAQ, delivery steps, deployment placeholders, and booking URL
+- `_data/landing.json` — services, FAQ, delivery steps, deployment placeholders, and booking URL
 - `_data/site.json` — site identity and metadata
 - `assets/css/theme/theme.css` — fixed palette and responsive visual design
 - `assets/js/booking.js` — Cal.com integration
@@ -22,7 +22,9 @@ Deployment examples are explicitly labeled unfinished placeholders. Replace each
 
 All conversion actions book the same Cal.com consultation. Links work directly when JavaScript is disabled or the embed script cannot load. If changing the event, update both the booking URL in the data and the event path in `booking.js`.
 
-The care commitment is required for 12 months. Monthly Care starts at $1,000/month, with higher pricing depending on the desired maintenance scope and frequency. VM assessment pricing is separate from migration implementation.
+Pricing lives in `_data/pricing.json`, with rendering in `_includes/components/pricing.njk` and estimation in `assets/js/pricing.js`. The four-stop configurator adds the applicable assessment once, excludes custom-quote items explicitly, and displays monthly support separately. Starting prices have no implied ceiling. Support is optional with a qualified operator, with no default annual commitment. Assessment-only selection excludes installation add-ons and care; selections are retained when returning to delivery stages. Without JavaScript, all prices remain readable.
+
+Run `node --test tests/pricing.test.mjs` for pricing calculations.
 
 ## Verification
 
