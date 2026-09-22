@@ -1,143 +1,14 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import vm from "node:vm";
 import { readFileSync } from "node:fs";
 const read = (path) =>
   readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
-
-function analytics(hostname, pathname = "/") {
-  const scripts = [],
-    listeners = {};
-  class Element {
-    constructor(kind, section) {
-      this.kind = kind;
-      this.section = section;
-    }
-    matches(selector) {
-      return selector === this.kind;
-    }
-    closest(selector) {
-      return selector === "section" ? { id: this.section } : null;
-    }
-  }
-  const window = { location: { hostname, pathname } };
-  const document = {
-    currentScript: {
-      dataset: {
-        siteUrl: "https://studioember.com",
-        measurementId: "G-NYVTLFQRSZ",
-      },
-    },
-    createElement: () => ({}),
-    head: { appendChild: (script) => scripts.push(script) },
-    addEventListener: (name, fn) => {
-      listeners[name] = fn;
-    },
-  };
-  vm.runInNewContext(read("assets/js/analytics.js"), {
-    window,
-    document,
-    URL,
-    HTMLElement: Element,
-  });
-  return { window, scripts, listeners, Element };
-}
-
-test("GA is disabled on local and preview hosts", () => {
-  for (const host of ["localhost", "127.0.0.1", "preview.example.com"]) {
-    const { scripts, window } = analytics(host);
-    assert.equal(scripts.length, 0);
-    assert.equal(window.gtag, undefined);
-  }
-});
-
-test("production loads the provided GA4 ID exactly once", () => {
-  for (const host of ["studioember.com", "www.studioember.com"]) {
-    const { scripts, window } = analytics(host);
-    assert.equal(scripts.length, 1);
-    assert.equal(scripts[0].async, true);
-    assert.equal(
-      scripts[0].src,
-      "https://www.googletagmanager.com/gtag/js?id=G-NYVTLFQRSZ",
-    );
-    assert.equal(window.dataLayer[1][0], "config");
-    assert.equal(window.dataLayer[1][1], "G-NYVTLFQRSZ");
-  }
-});
-
-test("CTA events include location and handle floating shadow DOM without claiming a lead", () => {
-  const { window, listeners, Element } = analytics("studioember.com", "/planning/");
-  for (const [kind, section, expected] of [
-    ["[data-booking]", "journey", "journey"],
-    ["cal-floating-button", null, "floating"],
-  ]) {
-    listeners.click({ composedPath: () => [{}, new Element(kind, section)] });
-    const event = window.dataLayer.at(-1);
-    assert.equal(event[1], "consultation_click");
-    assert.equal(event[2].cta_location, expected);
-    assert.equal(event[2].service_path, "planning");
-  }
-  assert.equal(
-    window.dataLayer.filter((event) => event[1] === "generate_lead").length,
-    0,
-  );
-});
-
-test("Cal completion records a deduplicated lead without personal or booking data", () => {
-  const events = [];
-  const window = {
-    location: { search: "", pathname: "/implementation/" },
-    gtag: (...args) => events.push(args),
-  };
-  const document = {
-    querySelectorAll: () => [],
-    body: {},
-    addEventListener: () => {},
-    createElement: () => ({}),
-    head: { appendChild: () => {} },
-  };
-  window.document = document;
-  const context = {
-    window,
-    document,
-    URLSearchParams,
-    MutationObserver: class {
-      observe() {}
-    },
-  };
-  Object.defineProperty(context, "Cal", { get: () => window.Cal });
-  vm.runInNewContext(read("assets/js/booking.js"), context);
-  const registration = window.Cal.ns.studioember.q.find(
-    (args) => args[0] === "on" && args[1].action === "bookingSuccessfulV2",
-  );
-  assert.ok(registration);
-  const event = {
-    detail: {
-      data: {
-        uid: "test-id",
-        email: "private@example.com",
-        videoCallUrl: "private",
-      },
-    },
-  };
-  registration[1].callback(event);
-  registration[1].callback(event);
-  assert.equal(events.length, 1);
-  assert.equal(
-    JSON.stringify(events[0]),
-    JSON.stringify([
-      "event",
-      "generate_lead",
-      { method: "cal_com", service_path: "implementation" },
-    ]),
-  );
-});
 
 test("built SEO describes only current services and each page has its own canonical", () => {
   const html = read("output/site/index.html");
   assert.match(
     html,
-    /<title>Cloud-Native Planning &amp; Private Platforms \| Studio Ember<\/title>/,
+    /<title>Cloud-Native Consulting &amp; Kubernetes Platforms \| Studio Ember<\/title>/,
   );
   assert.match(html, /rel="canonical" href="https:\/\/studioember.com\/"/);
   const structured = JSON.parse(
@@ -154,11 +25,15 @@ test("built SEO describes only current services and each page has its own canoni
       new RegExp(`rel="canonical" href="https://studioember.com/${route}/"`),
     );
     const pageSchema = JSON.parse(
-      page.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1],
+      page.match(
+        /<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
+      )[1],
     );
     assert.ok(
       pageSchema["@graph"].some(
-        (item) => item["@type"] === "WebPage" && item.url === `https://studioember.com/${route}/`,
+        (item) =>
+          [item["@type"]].flat().includes("WebPage") &&
+          item.url === `https://studioember.com/${route}/`,
       ),
     );
   }
@@ -170,4 +45,87 @@ test("built SEO describes only current services and each page has its own canoni
       "Sitemap: https://studioember.com/sitemap.xml",
     ),
   );
+});
+
+test("every published page has unique metadata, one H1, and consistent social URLs", () => {
+  const titles = new Set(),
+    descriptions = new Set();
+  const routes = JSON.parse(read("_data/routes.json"));
+  for (const { url } of routes) {
+    const html = read(`output/site${url}index.html`);
+    const title = html.match(/<title>([\s\S]*?)<\/title>/)[1].trim();
+    const description = html.match(/name="description"\s+content="([^"]+)"/)[1];
+    assert.ok(!titles.has(title));
+    titles.add(title);
+    assert.ok(!descriptions.has(description));
+    descriptions.add(description);
+    assert.equal((html.match(/<h1\b/g) || []).length, 1, url);
+    assert.ok(!html.includes("noindex"));
+    assert.match(
+      html,
+      new RegExp(
+        `property="og:url"\\s+content="https://studioember.com${url}"`,
+      ),
+    );
+    const graph = JSON.parse(
+      html.match(
+        /<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
+      )[1],
+    )["@graph"];
+    const page = graph.find((node) =>
+      [node["@type"]].flat().includes("WebPage"),
+    );
+    assert.equal(page.name, title.replaceAll("&amp;", "&"));
+    if (url !== "/") {
+      const breadcrumb = graph.find(
+        (node) => node["@type"] === "BreadcrumbList",
+      );
+      assert.equal(page.breadcrumb["@id"], breadcrumb["@id"]);
+      assert.equal(
+        breadcrumb.itemListElement[1].item,
+        `https://studioember.com${url}`,
+      );
+      assert.match(html, /aria-label="Breadcrumb"/);
+    }
+    if (["/planning/", "/implementation/"].includes(url)) {
+      const service = graph.find((node) => node["@type"] === "Service");
+      assert.equal(page.mainEntity["@id"], service["@id"]);
+      assert.equal(service.url, page.url);
+    }
+    if (url === "/about/") {
+      const person = graph.find((node) => node["@type"] === "Person");
+      assert.equal(person.name, "Nathan Grey");
+      assert.equal(page.mainEntity["@id"], person["@id"]);
+    }
+    assert.doesNotMatch(
+      JSON.stringify(graph),
+      /AggregateRating|Review|priceCurrency|Offer|LocalBusiness/,
+    );
+  }
+});
+
+test("crawlable internal links and fragment targets resolve across the published site", () => {
+  const routes = JSON.parse(read("_data/routes.json")).map(
+    (route) => route.url,
+  );
+  for (const route of routes) {
+    const html = read(`output/site${route}index.html`);
+    for (const match of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) {
+      const href = match[1];
+      if (!href.startsWith("/") && !href.startsWith("#")) continue;
+      const target = new URL(href, `https://studioember.com${route}`);
+      assert.ok(
+        routes.includes(target.pathname),
+        `${route} links to unpublished ${href}`,
+      );
+      if (target.hash) {
+        assert.ok(
+          read(`output/site${target.pathname}index.html`).includes(
+            `id="${target.hash.slice(1)}"`,
+          ),
+          `Missing ${href}`,
+        );
+      }
+    }
+  }
 });

@@ -4,9 +4,10 @@ import { RenderPlugin } from "@11ty/eleventy";
 import moment from "moment";
 import { rm } from "node:fs/promises";
 import site from "./_data/site.json" with { type: "json" };
+import routes from "./_data/routes.json" with { type: "json" };
 
 export default async function (eleventyConfig) {
-  // A single-page build must never retain retired routes from earlier builds.
+  // Builds must never retain retired routes from earlier builds.
   eleventyConfig.on("eleventy.before", async () => {
     await rm("output/site", { recursive: true, force: true });
   });
@@ -49,6 +50,11 @@ export default async function (eleventyConfig) {
     const url = new URL(page.url, `${site.url}/`).href;
     const home = `${site.url}/`;
     const organization = `${home}#organization`;
+    const person = `${home}about/#nathan-grey`;
+    const route = routes.find((route) => route.url === page.url);
+    const serviceId = ["/planning/", "/implementation/"].includes(page.url)
+      ? page.url.split("/")[1]
+      : null;
     const services = [
       {
         id: "planning",
@@ -73,6 +79,16 @@ export default async function (eleventyConfig) {
           url: home,
           logo: `${site.url}/assets/img/logo.png`,
           description: site.description,
+          email: site.email,
+          founder: { "@id": person },
+        },
+        {
+          "@type": "Person",
+          "@id": person,
+          name: site.author,
+          url: `${home}about/`,
+          jobTitle: "Principal Engineer",
+          worksFor: { "@id": organization },
         },
         {
           "@type": "WebSite",
@@ -83,15 +99,45 @@ export default async function (eleventyConfig) {
           inLanguage: "en-US",
         },
         {
-          "@type": "WebPage",
+          "@type":
+            page.url === "/about/" ? ["WebPage", "AboutPage"] : "WebPage",
           "@id": `${url}#webpage`,
           name: title,
           url,
           description,
           isPartOf: { "@id": `${home}#website` },
-          about: { "@id": organization },
+          about: { "@id": page.url === "/about/" ? person : organization },
+          ...(serviceId
+            ? { mainEntity: { "@id": `${home}#service-${serviceId}` } }
+            : {}),
+          ...(page.url === "/about/" ? { mainEntity: { "@id": person } } : {}),
+          ...(page.url !== "/"
+            ? { breadcrumb: { "@id": `${url}#breadcrumb` } }
+            : {}),
           inLanguage: "en-US",
         },
+        ...(page.url !== "/" && route
+          ? [
+              {
+                "@type": "BreadcrumbList",
+                "@id": `${url}#breadcrumb`,
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: home,
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: route.label,
+                    item: url,
+                  },
+                ],
+              },
+            ]
+          : []),
         ...(page.url === "/"
           ? services
           : services.filter((service) => page.url === `/${service.id}/`)
@@ -100,6 +146,7 @@ export default async function (eleventyConfig) {
           "@id": `${home}#service-${service.id}`,
           name: service.name,
           description: service.description,
+          serviceType: service.name,
           provider: { "@id": organization },
           url: `${site.url}/${service.id}/`,
         })),

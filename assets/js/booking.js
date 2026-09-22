@@ -5,9 +5,7 @@
   let returnFocus;
   let activeModal;
   const background = () =>
-    document.querySelectorAll(
-      ".site-header, main, .site-footer, .skip-link",
-    );
+    document.querySelectorAll(".site-header, main, .site-footer, .skip-link");
   const prepareModal = (modal) => {
     if (modal.dataset.focusManaged) return;
     modal.dataset.focusManaged = "true";
@@ -45,12 +43,17 @@
   });
   const links = [...document.querySelectorAll("[data-booking]")];
   const calLink = "nathan-grey/studioember";
-  const config = { layout: "month_view", useSlotsViewOnSmallScreen: "true" };
-  // Preserve query attribution for both the popup and the direct-link fallback.
+  const campaign = window.emberAnalytics?.campaign || {};
+  const config = {
+    layout: "month_view",
+    useSlotsViewOnSmallScreen: "true",
+    ...campaign,
+  };
+  // Forward only validated public campaign slugs, never arbitrary query data.
   links.forEach((link) => {
     const url = new URL(link.href);
-    new URLSearchParams(window.location.search).forEach((value, key) =>
-      url.searchParams.append(key, value),
+    Object.entries(campaign).forEach(([key, value]) =>
+      url.searchParams.set(key, value),
     );
     link.href = url.href;
   });
@@ -107,23 +110,17 @@
   })(window, "https://app.cal.com/embed/embed.js", "init");
   Cal("init", "studioember", { origin: "https://app.cal.com" });
   Cal.config = Cal.config || {};
-  Cal.config.forwardQueryParams = true;
+  Cal.config.forwardQueryParams = false;
   // Count only successful new embedded bookings as leads, never button clicks.
   // Booking identifiers are used locally for deduplication, not sent to GA.
   const recordedBookings = new Set();
-  const servicePath =
-    /^\/(planning|implementation)\/?$/.exec(window.location.pathname || "/")?.[1] ||
-    "general";
   Cal.ns.studioember("on", {
     action: "bookingSuccessfulV2",
     callback: (event) => {
-      const uid = event.detail.data.uid;
-      if (uid && recordedBookings.has(uid)) return;
-      if (uid) recordedBookings.add(uid);
-      window.gtag?.("event", "generate_lead", {
-        method: "cal_com",
-        service_path: servicePath,
-      });
+      const uid = event?.detail?.data?.uid;
+      if (typeof uid !== "string" || !uid || recordedBookings.has(uid)) return;
+      recordedBookings.add(uid);
+      window.emberAnalytics?.bookingComplete?.();
     },
   });
   Cal.ns.studioember("ui", {

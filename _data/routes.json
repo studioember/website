@@ -1,0 +1,7 @@
+[
+  { "url": "/", "label": "Home" },
+  { "url": "/planning/", "label": "Planning" },
+  { "url": "/implementation/", "label": "Implementation" },
+  { "url": "/deliverables/", "label": "Deliverables" },
+  { "url": "/about/", "label": "About Nathan Grey" }
+]

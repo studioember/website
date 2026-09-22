@@ -23,6 +23,7 @@
       src="/assets/js/analytics.js"
       data-measurement-id="{{ site.analyticsId }}"
       data-site-url="{{ site.url }}"
+      data-contact-email="{{ site.email }}"
       defer
     ></script>
     <meta name="theme-color" content="#fff7f0" />
@@ -54,7 +55,14 @@
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
     {% include 'components/navigation.njk' %}
-    <main id="content">{{ content | safe }}</main>
+    <main id="content">
+      {% if page.url != '/' %}
+      <nav class="breadcrumbs wrap" aria-label="Breadcrumb" data-analytics-location="breadcrumb">
+        <ol><li><a href="/">Home</a></li>{% for route in routes %}{% if route.url == page.url %}<li aria-current="page">{{ route.label }}</li>{% endif %}{% endfor %}</ol>
+      </nav>
+      {% endif %}
+      {{ content | safe }}
+    </main>
     {% include 'components/footer.njk' %}
   </body>
 </html>

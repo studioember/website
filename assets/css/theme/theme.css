@@ -1737,3 +1737,10 @@ details[open] > summary:after {
     align-items: center;
   }
 }
+
+/* Crawlable navigation that also gives visitors a clear place in the site. */
+.breadcrumbs { padding-top: 28px; font-size: 0.85rem; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; list-style: none; padding: 0; margin: 0; }
+.breadcrumbs li + li::before { content: "/"; margin-right: 10px; opacity: 0.5; }
+.breadcrumbs a { text-underline-offset: 4px; }
+.breadcrumbs + .subhero { padding-top: 40px; }

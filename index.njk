@@ -1,16 +1,16 @@
 ---
 layout: layouts/base.njk
 title: Plan the right platform. Build what your team can run.
-seoTitle: Cloud-Native Planning & Private Platforms | Studio Ember
-description: Plan your next cloud-native move with confidence. Studio Ember helps teams decide what fits, build private Kubernetes platforms when they are ready, and own the result.
+seoTitle: Cloud-Native Consulting & Kubernetes Platforms | Studio Ember
+description: Cloud-native consulting, team workshops, and private Kubernetes implementation. Plan the right platform with Studio Ember, then build what your team can run.
 ---
 
-<section class="hero wrap" aria-labelledby="hero-title">
+<section data-analytics-location="hero" class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
     <p class="eyebrow"><span class="status-dot"></span> PRACTICAL PLANNING. THOUGHTFUL DELIVERY.</p>
     <h1 id="hero-title">Plan the right platform.<br /><em>Build what your team can run.</em></h1>
     <p class="hero-intro">From the first question to a platform your team owns.</p>
-    <p class="hero-description">We help development teams make sound cloud-native decisions, grow their capabilities, and implement private infrastructure when the time is right.</p>
+    <p class="hero-description">Cloud-native consulting for development teams: make sound platform decisions, build skills through workshops and group instruction, and implement private Kubernetes infrastructure when the time is right.</p>
     <div class="action-row">
       <a class="button" href="{{ landing.bookingUrl }}" data-booking>Book a discovery call <span aria-hidden="true">↗</span></a>
       <a class="text-link" href="{{ 'General question' | contactHref(page.url) }}">Have a general question? Email us <span aria-hidden="true">↗</span></a>
@@ -31,7 +31,7 @@ description: Plan your next cloud-native move with confidence. Studio Ember help
 
 <div class="ticker" aria-hidden="true"><span>YOUR PROBLEM</span> ✳ <span>A CLEAR PLAN</span> ✳ <span>YOUR PLATFORM</span> ✳ <span>YOUR TEAM</span> ✳</div>
 
-<section class="section wrap audience" aria-labelledby="audience-title">
+<section data-analytics-location="fit" class="section wrap audience" aria-labelledby="audience-title">
   <p class="eyebrow">FOR TEAMS MOVING TOWARD CLOUD-NATIVE PRACTICES</p>
   <div class="section-split">
     <h2 id="audience-title">Solve the problem in front of you.<br /><em>Then choose the platform.</em></h2>
@@ -40,7 +40,7 @@ description: Plan your next cloud-native move with confidence. Studio Ember help
   <div class="outcomes"><span>01 / Understand the tradeoffs</span><span>02 / Grow your team's capability</span><span>03 / Build only what you need</span></div>
 </section>
 
-<section class="section journey-section" id="journey" aria-labelledby="journey-title">
+<section data-analytics-location="journey" class="section journey-section" id="journey" aria-labelledby="journey-title">
   <div class="wrap">
     <div class="section-heading">
       <div><p class="eyebrow">TWO WAYS TO MOVE FORWARD</p><h2 id="journey-title">From clear thinking<br /><em>to confident delivery.</em></h2></div>
@@ -49,14 +49,14 @@ description: Plan your next cloud-native move with confidence. Studio Ember help
     <ol class="journey-timeline">
       <li class="journey-card">
         <div class="journey-card-top"><span class="eyebrow">01 / PLAN</span><span class="journey-mark" aria-hidden="true">✳</span></div>
-        <h3>Find the right next move.</h3>
+        <h3 data-interest="planning">Cloud-native planning.</h3>
         <p>Assessment, architecture, practical roadmaps, workshops, and group instruction. Leave with decisions and knowledge your team can use, whether or not we build together.</p>
         <ul><li>Clarify the problem and options</li><li>Upskill the people who will own it</li><li>Leave with an actionable plan</li></ul>
         <a class="button button-outline" href="/planning/">Explore planning <span aria-hidden="true">↗</span></a>
       </li>
       <li class="journey-card journey-card-build">
         <div class="journey-card-top"><span class="eyebrow">02 / BUILD</span><span class="journey-mark" aria-hidden="true">↗</span></div>
-        <h3>Put the plan to work.</h3>
+        <h3 data-interest="implementation">Private Kubernetes implementation.</h3>
         <p>When private Kubernetes is the right fit, we design, implement, validate, document, and hand over a platform around your actual workloads.</p>
         <ul><li>Defined scope and acceptance</li><li>Operational and recovery validation</li><li>Documentation and practical handoff</li></ul>
         <a class="button button-dark" href="/implementation/">Explore implementation <span aria-hidden="true">↗</span></a>
@@ -66,7 +66,7 @@ description: Plan your next cloud-native move with confidence. Studio Ember help
   </div>
 </section>
 
-<section class="section wrap proof-section" aria-labelledby="proof-title">
+<section data-analytics-location="proof" class="section wrap proof-section" aria-labelledby="proof-title">
   <div class="section-heading">
     <div><p class="eyebrow">SEE WHAT OWNERSHIP LOOKS LIKE</p><h2 id="proof-title">The work should<br /><em>make sense after handoff.</em></h2></div>
     <p class="heading-aside">A platform is useful only when its people can operate and recover it.</p>
@@ -77,14 +77,14 @@ description: Plan your next cloud-native move with confidence. Studio Ember help
   </div>
 </section>
 
-<section class="section wrap faq-section" id="faq">
+<section data-analytics-location="faq" class="section wrap faq-section" id="faq">
   <div><p class="eyebrow">GOOD QUESTIONS. STRAIGHT ANSWERS.</p><h2>Start with fit.<br /><em>Keep the scope clear.</em></h2></div>
   <div class="faq-list">
-    <details><summary>Do we need to be ready for Kubernetes?</summary><p>No. Planning can compare cloud services, simpler architectures, and private infrastructure against your actual needs. A recommendation to wait or choose another approach is a useful outcome.</p></details>
-    <details><summary>Does planning require an implementation project?</summary><p>No. A scoped advisory engagement ends with usable decisions, documentation, and team knowledge. You can implement later with us or with your own team.</p></details>
-    <details><summary>How do you price the work?</summary><p>After a discovery call, we define the work, deliverables, assumptions, and acceptance criteria in a written proposal. Price depends on scope, complexity, and customer responsibilities.</p></details>
-    <details><summary>Who operates the platform after handoff?</summary><p>Your qualified operator or IT provider owns day-to-day operations and incident response. We can scope scheduled advisory or platform care, but do not offer 24/7 on-call support.</p></details>
+    <details data-faq-id="kubernetes_fit"><summary>Do we need to be ready for Kubernetes?</summary><p>No. Planning can compare cloud services, simpler architectures, and private infrastructure against your actual needs. A recommendation to wait or choose another approach is a useful outcome.</p></details>
+    <details data-faq-id="planning_independence"><summary>Does planning require an implementation project?</summary><p>No. A scoped advisory engagement ends with usable decisions, documentation, and team knowledge. You can implement later with us or with your own team.</p></details>
+    <details data-faq-id="pricing_scope"><summary>How do you price the work?</summary><p>After a discovery call, we define the work, deliverables, assumptions, and acceptance criteria in a written proposal. Price depends on scope, complexity, and customer responsibilities.</p></details>
+    <details data-faq-id="operator_ownership"><summary>Who operates the platform after handoff?</summary><p>Your qualified operator or IT provider owns day-to-day operations and incident response. We can scope scheduled advisory or platform care, but do not offer 24/7 on-call support.</p></details>
   </div>
 </section>
 
-<section class="closing" id="contact"><div class="wrap"><span class="closing-spark" aria-hidden="true">✳</span><p class="eyebrow">LET'S TALK ABOUT YOUR NEXT MOVE.</p><h2>Make room for<br /><em>what comes next.</em></h2><p>Bring us the problem you're working on. We'll help you find the right starting point.</p><div class="action-row action-row-center"><a class="button button-dark" href="{{ landing.bookingUrl }}" data-booking>Book a discovery call <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ 'General question' | contactHref(page.url) }}">Email a general question <span aria-hidden="true">↗</span></a></div></div></section>
+<section data-analytics-location="contact" class="closing" id="contact"><div class="wrap"><span class="closing-spark" aria-hidden="true">✳</span><p class="eyebrow">LET'S TALK ABOUT YOUR NEXT MOVE.</p><h2>Make room for<br /><em>what comes next.</em></h2><p>Bring us the problem you're working on. We'll help you find the right starting point.</p><div class="action-row action-row-center"><a class="button button-dark" href="{{ landing.bookingUrl }}" data-booking>Book a discovery call <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ 'General question' | contactHref(page.url) }}">Email a general question <span aria-hidden="true">↗</span></a></div></div></section>

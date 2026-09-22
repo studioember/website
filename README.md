@@ -29,7 +29,9 @@ Run `yarn build && yarn test` and `node --check assets/js/booking.js && node --c
 
 Each page has its own title, description, canonical URL, Open Graph metadata, and WebPage JSON-LD. Planning and implementation Service JSON-LD appears only where relevant. `sitemap.xml` lists the five published routes.
 
-GA4 loads only on `studioember.com` and `www.studioember.com`. `consultation_click` records the CTA location and a static `service_path` value (`planning`, `implementation`, or `general`). `generate_lead` fires only after Cal.com reports a successful new embedded booking and includes that static path. Neither event sends the booking payload or personal information. A booking completed after direct navigation to cal.com is outside the site's measurement.
+GA4 loads only on `studioember.com` and `www.studioember.com`. Service selections, topic exposure, FAQ opens, email intent, booking intent, and confirmed embedded bookings have separate events. Service context follows internal navigation for up to 30 minutes in the same tab. Only validated public campaign slugs are forwarded to Cal; custom events omit raw URLs, email contents, and booking payloads.
+
+See [the measurement guide](docs/measurement.md) for event definitions, KPI denominators, GA4 custom dimensions/key-event setup, Search Console steps, saved report recipes, and verification limits. Account-side setup is required to make the custom parameters usable in reports. `_data/routes.json` controls the sitemap and breadcrumb inventory; `docs/` is not published.
 
 ## Deployment
 
