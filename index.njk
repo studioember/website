@@ -1,220 +1,90 @@
 ---
 layout: layouts/base.njk
-title: Private infrastructure your team can run
+title: Plan the right platform. Build what your team can run.
+seoTitle: Cloud-Native Planning & Private Platforms | Studio Ember
+description: Plan your next cloud-native move with confidence. Studio Ember helps teams decide what fits, build private Kubernetes platforms when they are ready, and own the result.
 ---
 
-{% macro booking(className='button') %}<a
-  class="{{ className }}"
-  href="{{ landing.bookingUrl }}"
-  data-booking
-  >Book a consultation <span aria-hidden="true">↗</span></a
->{% endmacro %}
 <section class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">
-      <span class="status-dot"></span> PRIVATE INFRASTRUCTURE. PERSONAL
-      ATTENTION.
-    </p>
-    <h1 id="hero-title">
-      Private infrastructure<br />your team can <em>run.</em>
-    </h1>
-    <p class="hero-intro">Your hardware. Your platform. Your possibilities.</p>
-    <p class="hero-description">
-      We design, build, and care for private Kubernetes infrastructure—with the
-      docs, training, and optional support to make it truly yours.
-    </p>
-    {{ booking() }}
-    <p class="micro">Let’s talk workloads, goals, and what comes next.</p>
+    <p class="eyebrow"><span class="status-dot"></span> PRACTICAL PLANNING. THOUGHTFUL DELIVERY.</p>
+    <h1 id="hero-title">Plan the right platform.<br /><em>Build what your team can run.</em></h1>
+    <p class="hero-intro">From the first question to a platform your team owns.</p>
+    <p class="hero-description">We help development teams make sound cloud-native decisions, grow their capabilities, and implement private infrastructure when the time is right.</p>
+    <div class="action-row">
+      <a class="button" href="{{ landing.bookingUrl }}" data-booking>Book a discovery call <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="{{ 'General question' | contactHref(page.url) }}">Have a general question? Email us <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="micro">Start with planning, or come to us ready to build.</p>
   </div>
-  <div
-    class="hero-poster"
-    aria-label="Your platform: built, documented, and supported"
-  >
-    <div class="poster-top">
-      <span>STUDIO EMBER</span><span>EST. FOR YOUR NEXT CHAPTER</span>
-    </div>
-    <div class="poster-title">
-      Big possibilities.<br /><i>Your own</i> platform.
-    </div>
+  <div class="hero-poster" aria-label="Studio Ember helps teams plan, build, and take ownership">
+    <div class="poster-top"><span>STUDIO EMBER</span><span>A CLEARER WAY FORWARD</span></div>
+    <div class="poster-title">A better plan.<br /><i>A stronger</i> platform.</div>
     <div class="platform-art" aria-hidden="true">
-      <div class="orbit orbit-one"></div>
-      <div class="orbit orbit-two"></div>
-      <img
-        src="/assets/img/logo-clear.png"
-        alt=""
-        width="2000"
-        height="2000"
-      /><span class="art-label label-one">BUILT FOR YOU</span
-      ><span class="art-label label-two">OWN YOUR STACK</span>
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <img src="/assets/img/logo-clear.png" alt="" width="2000" height="2000" />
+      <span class="art-label label-one">PLAN WITH PURPOSE</span><span class="art-label label-two">BUILD TO OWN</span>
     </div>
-    <div class="poster-bottom">
-      <span>BUILT.<br />DOCUMENTED.<br />SUPPORTED.</span
-      ><span class="seal">YOURS<br />TO RUN<br /><b>✳</b></span>
-    </div>
+    <div class="poster-bottom"><span>THINK.<br />DESIGN.<br />DELIVER.</span><span class="seal">YOURS<br />TO RUN<br /><b>✳</b></span></div>
   </div>
 </section>
-<div class="ticker" aria-hidden="true">
-  <span>YOUR HARDWARE</span> ✳ <span>OUR KNOW-HOW</span> ✳
-  <span>YOUR PLATFORM</span> ✳ <span>ROOM TO GROW</span> ✳
-</div>
+
+<div class="ticker" aria-hidden="true"><span>YOUR PROBLEM</span> ✳ <span>A CLEAR PLAN</span> ✳ <span>YOUR PLATFORM</span> ✳ <span>YOUR TEAM</span> ✳</div>
+
 <section class="section wrap audience" aria-labelledby="audience-title">
-  <p class="eyebrow">A LITTLE MORE OWNERSHIP. A LOT MORE POSSIBILITY.</p>
+  <p class="eyebrow">FOR TEAMS MOVING TOWARD CLOUD-NATIVE PRACTICES</p>
   <div class="section-split">
-    <h2 id="audience-title">
-      Keep your infrastructure<br /><em>close to home.</em>
-    </h2>
-    <p>
-      For organizations with sensitive workloads, development teams running
-      internal software, and IT providers looking for a specialist. A platform
-      you control, with a team that knows how to run it.
-    </p>
+    <h2 id="audience-title">Solve the problem in front of you.<br /><em>Then choose the platform.</em></h2>
+    <p>For organizations facing a new workload, a growing delivery challenge, or a team ready to work differently. We begin with your constraints and goals. If a simpler solution is the better fit, we will say so.</p>
   </div>
-  <div class="outcomes">
-    <span>01 / Control your environment</span
-    ><span>02 / Deliver with confidence</span
-    ><span>03 / Build your team’s know-how</span>
-  </div>
+  <div class="outcomes"><span>01 / Understand the tradeoffs</span><span>02 / Grow your team's capability</span><span>03 / Build only what you need</span></div>
 </section>
-<section class="section services-section" id="services">
+
+<section class="section journey-section" id="journey" aria-labelledby="journey-title">
   <div class="wrap">
     <div class="section-heading">
-      <div>
-        <p class="eyebrow">FROM FIRST SKETCH TO EVERYDAY OPERATIONS</p>
-        <h2>All the pieces.<br /><em>One working platform.</em></h2>
-      </div>
-      <span class="small-stamp" aria-hidden="true">BUILT WITH<br />CARE ✳</span>
+      <div><p class="eyebrow">TWO WAYS TO MOVE FORWARD</p><h2 id="journey-title">From clear thinking<br /><em>to confident delivery.</em></h2></div>
+      <p class="heading-aside">These are connected stages, not a required package. Work with us for the plan, the build, or both.</p>
     </div>
-    <div class="service-grid">
-      {% for service in landing.services %}
-      <article class="service-card">
-        <p class="eyebrow">{{ service.label }}</p>
-        <span class="service-number" aria-hidden="true">0{{ loop.index }}</span>
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.text }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-<section class="section wrap" id="pricing">
-  <div class="section-heading">
-    <div>
-      <p class="eyebrow">CLEAR STARTING POINTS. THOUGHTFULLY SCOPED.</p>
-      <h2>A good foundation.<br /><em>No guessing games.</em></h2>
-    </div>
-    <p class="heading-aside">
-      Private infrastructure, documentation, training, and a plan for what comes
-      next.
-    </p>
-  </div>
-  {% include 'components/pricing.njk' %}
-  <details class="terms">
-    <summary>The practical details: scope, payments & exclusions</summary>
-    <p>
-      A paid assessment comes before a fixed-price implementation proposal. A
-      50% deposit schedules implementation, with a milestone payment before
-      handoff. Your proposal defines acceptance criteria, responsibilities, and
-      change orders. Hardware, internet, DNS, licenses, third-party services,
-      replacement parts, travel, shipping, and taxes are separate unless
-      explicitly included. Application development, application defects, legacy
-      application support, and unapproved changes require separate scope.
-    </p>
-  </details>
-  <br />
-  <aside class="custom-work" aria-labelledby="custom-work-title">
-    <div>
-      <h3 id="custom-work-title">Something else in mind?</h3>
-      <p>
-        Have a Kubernetes project that doesn’t fit a package? Let’s talk about
-        cluster improvements, migrations, integrations, or custom automation.
-        We’ll help define a focused scope around your Kubernetes platform.
-      </p>
-    </div>
-    <br />
-    {{ booking('button button-outline') }}
-  </aside>
-</section>
-<section class="section wrap" id="deployments">
-  <div class="section-heading">
-    <div>
-      <p class="eyebrow">A PLACE FOR YOUR PLATFORM STORIES</p>
-      <h2>What could <em>yours</em><br />look like?</h2>
-    </div>
-    <p class="heading-aside">
-      Deployment examples are being prepared. These are editable placeholders,
-      not completed client projects.
-    </p>
-  </div>
-  <div class="example-grid">
-    {% for example in landing.examples %}
-    <article class="example-card">
-      <div class="example-visual" aria-hidden="true">
-        <span class="example-index">0{{ loop.index }}</span>
-        <div class="diagram">
-          {% for node in example.nodes %}<span>{{ node }}</span>{% if not
-          loop.last %}<b>↓</b>{% endif %}{% endfor %}
-        </div>
-      </div>
-      <div class="example-copy">
-        <p class="eyebrow">EXAMPLE PLACEHOLDER</p>
-        <h3>{{ example.name }}</h3>
-        <p>{{ example.description }}</p>
-      </div>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-<section class="section delivery-section" id="approach">
-  <div class="wrap delivery-grid">
-    <div class="delivery-intro">
-      <p class="eyebrow">BUILT. PROVEN. HANDED OVER.</p>
-      <h2>
-        Great infrastructure<br />comes with<br /><em>the instructions.</em>
-      </h2>
-      <p>
-        You get more than an installation. You get a platform, the knowledge to
-        run it, and optional support to keep it in good shape.
-      </p>
-      <div class="handoff-note">
-        IN THE HANDOFF PACKAGE<br /><strong
-          >Architecture + runbooks<br />Recovery procedures<br />Scoped training
-          sessions</strong
-        >
-      </div>
-    </div>
-    <ol class="steps">
-      {% for step in landing.steps %}
-      <li>
-        <span>0{{ loop.index }}</span>
-        <div>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.text }}</p>
-        </div>
+    <ol class="journey-timeline">
+      <li class="journey-card">
+        <div class="journey-card-top"><span class="eyebrow">01 / PLAN</span><span class="journey-mark" aria-hidden="true">✳</span></div>
+        <h3>Find the right next move.</h3>
+        <p>Assessment, architecture, practical roadmaps, workshops, and group instruction. Leave with decisions and knowledge your team can use, whether or not we build together.</p>
+        <ul><li>Clarify the problem and options</li><li>Upskill the people who will own it</li><li>Leave with an actionable plan</li></ul>
+        <a class="button button-outline" href="/planning/">Explore planning <span aria-hidden="true">↗</span></a>
       </li>
-      {% endfor %}
+      <li class="journey-card journey-card-build">
+        <div class="journey-card-top"><span class="eyebrow">02 / BUILD</span><span class="journey-mark" aria-hidden="true">↗</span></div>
+        <h3>Put the plan to work.</h3>
+        <p>When private Kubernetes is the right fit, we design, implement, validate, document, and hand over a platform around your actual workloads.</p>
+        <ul><li>Defined scope and acceptance</li><li>Operational and recovery validation</li><li>Documentation and practical handoff</li></ul>
+        <a class="button button-dark" href="/implementation/">Explore implementation <span aria-hidden="true">↗</span></a>
+      </li>
     </ol>
+    <p class="journey-note">Already know you need a build? <a href="/implementation/">Start with implementation.</a> Still weighing options? <a href="/planning/">Start with planning.</a></p>
   </div>
 </section>
+
+<section class="section wrap proof-section" aria-labelledby="proof-title">
+  <div class="section-heading">
+    <div><p class="eyebrow">SEE WHAT OWNERSHIP LOOKS LIKE</p><h2 id="proof-title">The work should<br /><em>make sense after handoff.</em></h2></div>
+    <p class="heading-aside">A platform is useful only when its people can operate and recover it.</p>
+  </div>
+  <div class="feature-pair">
+    <article class="feature-panel"><span class="eyebrow">ILLUSTRATIVE HANDOFF</span><h3>See the deliverables.</h3><p>Preview the architecture, runbook, and validation evidence that shape an implementation handoff. The examples show the form of the work, not a completed client project.</p><a class="text-link" href="/deliverables/">View the sample package <span aria-hidden="true">↗</span></a></article>
+    <article class="feature-panel feature-panel-accent"><span class="eyebrow">FOUNDER-LED ENGINEERING</span><h3>Meet the person behind the work.</h3><p>Studio Ember is led by Nathan Grey. Learn how he approaches platform decisions, collaboration, and customer ownership.</p><a class="text-link" href="/about/">About Nathan <span aria-hidden="true">↗</span></a></article>
+  </div>
+</section>
+
 <section class="section wrap faq-section" id="faq">
-  <div>
-    <p class="eyebrow">A FEW THINGS YOU MIGHT BE WONDERING</p>
-    <h2>Good questions.<br /><em>Straight answers.</em></h2>
-  </div>
+  <div><p class="eyebrow">GOOD QUESTIONS. STRAIGHT ANSWERS.</p><h2>Start with fit.<br /><em>Keep the scope clear.</em></h2></div>
   <div class="faq-list">
-    {% for faq in landing.faqs %}
-    <details>
-      <summary>{{ faq.q }}</summary>
-      <p>{{ faq.a }}</p>
-    </details>
-    {% endfor %}
+    <details><summary>Do we need to be ready for Kubernetes?</summary><p>No. Planning can compare cloud services, simpler architectures, and private infrastructure against your actual needs. A recommendation to wait or choose another approach is a useful outcome.</p></details>
+    <details><summary>Does planning require an implementation project?</summary><p>No. A scoped advisory engagement ends with usable decisions, documentation, and team knowledge. You can implement later with us or with your own team.</p></details>
+    <details><summary>How do you price the work?</summary><p>After a discovery call, we define the work, deliverables, assumptions, and acceptance criteria in a written proposal. Price depends on scope, complexity, and customer responsibilities.</p></details>
+    <details><summary>Who operates the platform after handoff?</summary><p>Your qualified operator or IT provider owns day-to-day operations and incident response. We can scope scheduled advisory or platform care, but do not offer 24/7 on-call support.</p></details>
   </div>
 </section>
-<section class="closing" id="consultation">
-  <div class="wrap">
-    <span class="closing-spark" aria-hidden="true">✳</span>
-    <p class="eyebrow">LET’S BUILD SOMETHING THAT’S YOURS.</p>
-    <h2>Your next chapter<br />starts with <em>a conversation.</em></h2>
-    <p>Tell us what you’re running. We’ll talk about where you want to go.</p>
-    {{ booking('button button-dark') }}
-  </div>
-</section>
+
+<section class="closing" id="contact"><div class="wrap"><span class="closing-spark" aria-hidden="true">✳</span><p class="eyebrow">LET'S TALK ABOUT YOUR NEXT MOVE.</p><h2>Make room for<br /><em>what comes next.</em></h2><p>Bring us the problem you're working on. We'll help you find the right starting point.</p><div class="action-row action-row-center"><a class="button button-dark" href="{{ landing.bookingUrl }}" data-booking>Book a discovery call <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ 'General question' | contactHref(page.url) }}">Email a general question <span aria-hidden="true">↗</span></a></div></div></section>

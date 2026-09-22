@@ -5,7 +5,7 @@ import { readFileSync } from "node:fs";
 const read = (path) =>
   readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
-function analytics(hostname) {
+function analytics(hostname, pathname = "/") {
   const scripts = [],
     listeners = {};
   class Element {
@@ -20,7 +20,7 @@ function analytics(hostname) {
       return selector === "section" ? { id: this.section } : null;
     }
   }
-  const window = { location: { hostname } };
+  const window = { location: { hostname, pathname } };
   const document = {
     currentScript: {
       dataset: {
@@ -66,15 +66,16 @@ test("production loads the provided GA4 ID exactly once", () => {
 });
 
 test("CTA events include location and handle floating shadow DOM without claiming a lead", () => {
-  const { window, listeners, Element } = analytics("studioember.com");
+  const { window, listeners, Element } = analytics("studioember.com", "/planning/");
   for (const [kind, section, expected] of [
-    ["[data-booking]", "pricing", "pricing"],
+    ["[data-booking]", "journey", "journey"],
     ["cal-floating-button", null, "floating"],
   ]) {
     listeners.click({ composedPath: () => [{}, new Element(kind, section)] });
     const event = window.dataLayer.at(-1);
     assert.equal(event[1], "consultation_click");
     assert.equal(event[2].cta_location, expected);
+    assert.equal(event[2].service_path, "planning");
   }
   assert.equal(
     window.dataLayer.filter((event) => event[1] === "generate_lead").length,
@@ -85,7 +86,7 @@ test("CTA events include location and handle floating shadow DOM without claimin
 test("Cal completion records a deduplicated lead without personal or booking data", () => {
   const events = [];
   const window = {
-    location: { search: "" },
+    location: { search: "", pathname: "/implementation/" },
     gtag: (...args) => events.push(args),
   };
   const document = {
@@ -124,15 +125,19 @@ test("Cal completion records a deduplicated lead without personal or booking dat
   assert.equal(events.length, 1);
   assert.equal(
     JSON.stringify(events[0]),
-    JSON.stringify(["event", "generate_lead", { method: "cal_com" }]),
+    JSON.stringify([
+      "event",
+      "generate_lead",
+      { method: "cal_com", service_path: "implementation" },
+    ]),
   );
 });
 
-test("built SEO uses one canonical route and valid linked JSON-LD", () => {
+test("built SEO describes only current services and each page has its own canonical", () => {
   const html = read("output/site/index.html");
   assert.match(
     html,
-    /<title>Private Kubernetes Infrastructure &amp; Consulting \| Studio Ember<\/title>/,
+    /<title>Cloud-Native Planning &amp; Private Platforms \| Studio Ember<\/title>/,
   );
   assert.match(html, /rel="canonical" href="https:\/\/studioember.com\/"/);
   const structured = JSON.parse(
@@ -140,10 +145,25 @@ test("built SEO uses one canonical route and valid linked JSON-LD", () => {
   );
   assert.equal(
     structured["@graph"].filter((item) => item["@type"] === "Service").length,
-    4,
+    2,
   );
+  for (const route of ["planning", "implementation", "about", "deliverables"]) {
+    const page = read(`output/site/${route}/index.html`);
+    assert.match(
+      page,
+      new RegExp(`rel="canonical" href="https://studioember.com/${route}/"`),
+    );
+    const pageSchema = JSON.parse(
+      page.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1],
+    );
+    assert.ok(
+      pageSchema["@graph"].some(
+        (item) => item["@type"] === "WebPage" && item.url === `https://studioember.com/${route}/`,
+      ),
+    );
+  }
   const sitemap = read("output/site/sitemap.xml");
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 1);
+  assert.equal((sitemap.match(/<loc>/g) || []).length, 5);
   assert.ok(sitemap.includes("<loc>https://studioember.com/</loc>"));
   assert.ok(
     read("output/site/robots.txt").includes(

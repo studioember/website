@@ -34,8 +34,8 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Validate SEO and analytics
-        run: yarn test:seo
+      - name: Validate routes, contact, SEO, and analytics
+        run: yarn test
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v4

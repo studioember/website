@@ -1,9 +1,9 @@
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { RenderPlugin } from "@11ty/eleventy";
-import { formatPrice } from "./assets/js/pricing.js";
 import moment from "moment";
 import { rm } from "node:fs/promises";
+import site from "./_data/site.json" with { type: "json" };
 
 export default async function (eleventyConfig) {
   // A single-page build must never retain retired routes from earlier builds.
@@ -38,7 +38,74 @@ export default async function (eleventyConfig) {
     JSON.stringify(value).replace(/</g, "\\u003c"),
   );
 
-  eleventyConfig.addFilter("priceRange", formatPrice);
+  eleventyConfig.addFilter("contactHref", (inquiry, path = "/") => {
+    const source = new URL(path, `${site.url}/`).href;
+    const subject = `Studio Ember — ${inquiry}`;
+    const body = `Inquiry type: ${inquiry}\nSource page: ${source}\n\nMy question:\n`;
+    return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+
+  eleventyConfig.addFilter("pageSeo", (page, title, description) => {
+    const url = new URL(page.url, `${site.url}/`).href;
+    const home = `${site.url}/`;
+    const organization = `${home}#organization`;
+    const services = [
+      {
+        id: "planning",
+        name: "Cloud-native planning and team enablement",
+        description:
+          "Scoped advisory work covering assessment, architecture, roadmaps, workshops, and team instruction.",
+      },
+      {
+        id: "implementation",
+        name: "Private Kubernetes platform implementation",
+        description:
+          "Scoped client-owned platform builds with validation, documentation, and operating handoff.",
+      },
+    ];
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": organization,
+          name: site.name,
+          url: home,
+          logo: `${site.url}/assets/img/logo.png`,
+          description: site.description,
+        },
+        {
+          "@type": "WebSite",
+          "@id": `${home}#website`,
+          name: site.name,
+          url: home,
+          publisher: { "@id": organization },
+          inLanguage: "en-US",
+        },
+        {
+          "@type": "WebPage",
+          "@id": `${url}#webpage`,
+          name: title,
+          url,
+          description,
+          isPartOf: { "@id": `${home}#website` },
+          about: { "@id": organization },
+          inLanguage: "en-US",
+        },
+        ...(page.url === "/"
+          ? services
+          : services.filter((service) => page.url === `/${service.id}/`)
+        ).map((service) => ({
+          "@type": "Service",
+          "@id": `${home}#service-${service.id}`,
+          name: service.name,
+          description: service.description,
+          provider: { "@id": organization },
+          url: `${site.url}/${service.id}/`,
+        })),
+      ],
+    };
+  });
 
   // Filters
   eleventyConfig.addFilter("dateSimple", function (date) {

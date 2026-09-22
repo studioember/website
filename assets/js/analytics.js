@@ -6,6 +6,9 @@
     ![canonicalHost, `www.${canonicalHost}`].includes(window.location.hostname)
   )
     return;
+  const servicePath =
+    /^\/(planning|implementation)\/?$/.exec(window.location.pathname || "/")?.[1] ||
+    "general";
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () {
@@ -38,6 +41,7 @@
           : trigger.closest("section")?.id || "hero";
       window.gtag("event", "consultation_click", {
         cta_location: location,
+        service_path: servicePath,
         transport_type: "beacon",
       });
     },

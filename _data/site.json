@@ -1,9 +1,10 @@
 {
   "name": "Studio Ember",
   "url": "https://studioember.com",
-  "description": "Private Kubernetes infrastructure on your hardware. GPU and AI workflows, legacy VM migration, documentation, training, and ongoing support. Book a consultation.",
+  "description": "Cloud-native planning, team enablement, and private Kubernetes platforms built for teams to own and run.",
+  "email": "contact@studioember.com",
   "author": "Nathan Grey",
   "locale": "en_US",
-  "seoTitle": "Private Kubernetes Infrastructure & Consulting | Studio Ember",
+  "seoTitle": "Cloud-Native Planning & Private Platforms | Studio Ember",
   "analyticsId": "G-NYVTLFQRSZ"
 }

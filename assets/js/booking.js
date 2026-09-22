@@ -111,13 +111,19 @@
   // Count only successful new embedded bookings as leads, never button clicks.
   // Booking identifiers are used locally for deduplication, not sent to GA.
   const recordedBookings = new Set();
+  const servicePath =
+    /^\/(planning|implementation)\/?$/.exec(window.location.pathname || "/")?.[1] ||
+    "general";
   Cal.ns.studioember("on", {
     action: "bookingSuccessfulV2",
     callback: (event) => {
       const uid = event.detail.data.uid;
       if (uid && recordedBookings.has(uid)) return;
       if (uid) recordedBookings.add(uid);
-      window.gtag?.("event", "generate_lead", { method: "cal_com" });
+      window.gtag?.("event", "generate_lead", {
+        method: "cal_com",
+        service_path: servicePath,
+      });
     },
   });
   Cal.ns.studioember("ui", {
