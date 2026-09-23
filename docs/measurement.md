@@ -35,6 +35,7 @@ Content IDs:
 - Implementation topics: `platform_foundation`, `recovery`, `handoff`, `gpu_ai`, `vm_migration`, `automation`.
 - Illustrative deliverables: `architecture`, `runbook`, `validation`.
 - FAQs: `kubernetes_fit`, `planning_independence`, `pricing_scope`, `operator_ownership`.
+- About story exposure: `about_delivery`, `about_tooling`, `about_studio`. These retain the current service context (or `general`); reading the biography does not select a service.
 - Other selected pages: `about`, `deliverables`.
 
 `cta_location` identifies header, footer, hero, journey, proof, FAQ, closing contact section, or another explicitly labeled section. `unknown` is used if a booking completion arrives without a captured trigger. Values come from code/markup, not visitor text or raw link URLs.

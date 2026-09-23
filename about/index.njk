@@ -2,13 +2,59 @@
 layout: layouts/base.njk
 title: About Studio Ember
 seoTitle: Nathan Grey, Principal Engineer | Studio Ember
-description: Meet Nathan Grey, principal engineer at Studio Ember, and learn how the practice approaches cloud-native decisions and client-owned platforms.
+description: Meet Nathan Grey, founder of Studio Ember. More than a decade of Kubernetes and developer workflow experience, helping engineering and business teams ship together.
 ---
 
-<section data-analytics-location="hero" class="subhero wrap" aria-labelledby="page-title"><div><p class="eyebrow">NATHAN GREY / PRINCIPAL ENGINEER</p><h1 id="page-title">Founder-led work.<br /><em>Shared understanding.</em></h1><p class="subhero-lede">I'm Nathan Grey, principal engineer at Studio Ember. I work with teams to clarify difficult platform decisions, build what is justified, and leave the knowledge with the people who own the result.</p><div class="action-row"><a class="button" href="{{ landing.bookingUrl }}" data-booking>Book a discovery call <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ 'General question' | contactHref(page.url) }}">Email a general question <span aria-hidden="true">↗</span></a></div></div><aside class="principal-card" aria-label="Nathan Grey, Principal Engineer"><span class="principal-monogram" aria-hidden="true">NG<span>✳</span></span><span class="eyebrow">NATHAN GREY / PRINCIPAL ENGINEER</span></aside></section>
+<section data-analytics-location="hero" class="subhero wrap about-hero" aria-labelledby="page-title">
+  <div>
+    <p class="eyebrow">NATHAN GREY / PRINCIPAL ENGINEER</p>
+    <h1 id="page-title">Better platforms.<br /><em>More capable teams.</em></h1>
+    <p class="subhero-lede">I'm Nathan Grey, founder and principal engineer at Studio Ember. I help development teams turn architectural ideas into working systems—and make it easier for engineering and the business to ship together.</p>
+    <p class="about-intro">My background is in app and web development, and I was thrown into DevOps early in my career. For more than a decade, I've worked with Kubernetes and the workflows around it, looking for ways to help developers move faster while keeping software reliable and testable.</p>
+    <div class="action-row">
+      <a class="button" href="{{ landing.bookingUrl }}" data-booking>Book a discovery call <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="{{ 'General question' | contactHref(page.url) }}">Email a general question <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <figure class="about-portrait">
+    <img src="/assets/img/nathan-grey.jpeg" alt="Nathan Grey, founder and principal engineer at Studio Ember" width="3024" height="4032" decoding="async" />
+    <figcaption><span class="eyebrow">NATHAN GREY</span><span>Founder &amp; Principal Engineer</span></figcaption>
+  </figure>
+</section>
 
-<section data-analytics-location="approach" class="section journey-section" aria-labelledby="about-approach-title"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">HOW I APPROACH THE WORK</p><h2 id="about-approach-title">Start with the people.<br /><em>Stay close to the problem.</em></h2></div></div><div class="offer-grid"><article><span class="eyebrow">01 / ASK</span><h3>Understand first.</h3><p>Learn what has changed, what the team needs to accomplish, and who will be responsible when the project ends.</p></article><article><span class="eyebrow">02 / CHOOSE</span><h3>Be deliberate.</h3><p>Use cloud-native practices where they help. Prefer a simpler architecture when it meets the need with less burden.</p></article><article><span class="eyebrow">03 / SHARE</span><h3>Make ownership practical.</h3><p>Work with the receiving team through documentation, validation, and instruction rather than leaving a system only its builder understands.</p></article></div></div></section>
+<section data-analytics-location="approach" class="section journey-section" aria-labelledby="about-delivery-title">
+  <div class="wrap about-story">
+    <div><p class="eyebrow">FROM THE IDEA TO THE DELIVERY</p><h2 id="about-delivery-title" data-interest="about_delivery">Connecting architecture<br /><em>to delivery.</em></h2></div>
+    <div class="about-prose">
+      <p>I enjoy working where business goals and engineering decisions meet. I start by understanding what needs to be delivered and when, then look at the team's current tools, frustrations, and slowdowns.</p>
+      <p>That's where ideas take shape: a clearer deployment process, a better feedback loop, or a platform capability that removes a recurring obstacle. I like taking those ideas through to a working solution people can use.</p>
+      <div class="about-example">
+        <p class="eyebrow">IN PRACTICE / EARLIER FEEDBACK</p>
+        <p>In one recent project, I worked with a frontend team to create <strong>preview environments for individual pull requests</strong>. Developers could share a live version of a feature before merging it, and the preview stayed up to date as their work changed. The frontend team added a simple way for reviewers to choose which version to explore.</p>
+        <p>Business stakeholders gained earlier access, developers received quicker feedback, and QA could focus on features that had already met the business's expectations. It's a good example of what I want infrastructure to accomplish: give people more autonomy and help them work together.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section data-analytics-location="journey" class="section wrap" aria-labelledby="about-next-title"><div class="section-heading"><div><p class="eyebrow">WHERE TO START</p><h2 id="about-next-title">A conversation<br /><em>with a purpose.</em></h2></div></div><div class="feature-pair"><article class="feature-panel"><h3>Still figuring it out?</h3><p>Planning and team enablement can stand alone. We can work through options, architecture, and an actionable next step.</p><a class="text-link" href="/planning/">Explore planning <span aria-hidden="true">↗</span></a></article><article class="feature-panel feature-panel-accent"><h3>Ready to implement?</h3><p>We can scope a private Kubernetes platform around a real workload and a team prepared to own it.</p><a class="text-link" href="/implementation/">Explore implementation <span aria-hidden="true">↗</span></a></article></div></section>
+<section data-analytics-location="approach" class="section wrap about-story" aria-labelledby="about-tooling-title">
+  <div><p class="eyebrow">DESIGNED FOR THE PEOPLE USING IT</p><h2 id="about-tooling-title" data-interest="about_tooling">Developer tooling<br /><em>is a product.</em></h2></div>
+  <div class="about-prose">
+    <p>I build systems for developers with the same mindset I bring to building an application. The workflow should be understandable, useful, and shaped around the people using it.</p>
+    <p>I usually start with a demo, put the system in the hands of a few experienced users, and refine it with their feedback before introducing it to the wider team. Making a tool work well for its users is part of the engineering.</p>
+    <p>My experience spans GPU infrastructure, distributed platforms, and Kubernetes deployments in environments without internet access. Those projects have given me different ways to approach a problem—and an appreciation for choosing an approach the team can realistically operate.</p>
+  </div>
+</section>
 
-<section data-analytics-location="contact" class="closing"><div class="wrap"><span class="closing-spark" aria-hidden="true">✳</span><p class="eyebrow">GET IN TOUCH</p><h2>Tell me what<br /><em>you're working on.</em></h2><p>For a potential engagement, book a discovery call. For a general question, send an email.</p><div class="action-row action-row-center"><a class="button button-dark" href="{{ landing.bookingUrl }}" data-booking>Book a discovery call <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ 'General question' | contactHref(page.url) }}">Email a general question <span aria-hidden="true">↗</span></a></div></div></section>
+<section data-analytics-location="approach" class="section journey-section" aria-labelledby="about-studio-title">
+  <div class="wrap about-story">
+    <div><p class="eyebrow">WHY I STARTED</p><h2 id="about-studio-title" data-interest="about_studio">Why<br /><em>Studio Ember.</em></h2></div>
+    <div class="about-prose">
+      <p>After exploring several app-based business ideas, I realized that my experience helping teams build and deliver software could be a business of its own.</p>
+      <p>Studio Ember brings together the work I enjoy most: architectural thinking, hands-on implementation, and collaboration between developers and the business. I think of my role as a multiplier—helping a team gain capabilities that continue to serve it after the project ends.</p>
+      <div class="action-row"><a class="text-link" href="/planning/">Explore planning <span aria-hidden="true">↗</span></a><a class="text-link" href="/implementation/">Explore implementation <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section data-analytics-location="contact" class="closing"><div class="wrap"><span class="closing-spark" aria-hidden="true">✳</span><p class="eyebrow">LET'S TALK ABOUT YOUR NEXT MOVE</p><h2>What are you trying<br /><em>to accomplish?</em></h2><p>Whether you're working through a platform decision, improving a development workflow, or ready to build, I'd like to hear what you're trying to accomplish.</p><div class="action-row action-row-center"><a class="button button-dark" href="{{ landing.bookingUrl }}" data-booking>Book a discovery call <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ 'General question' | contactHref(page.url) }}">Email a general question <span aria-hidden="true">↗</span></a></div></div></section>

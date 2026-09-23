@@ -88,6 +88,7 @@ export default async function (eleventyConfig) {
           name: site.author,
           url: `${home}about/`,
           jobTitle: "Principal Engineer",
+          image: `${home}assets/img/nathan-grey.jpeg`,
           worksFor: { "@id": organization },
         },
         {

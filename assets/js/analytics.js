@@ -234,6 +234,9 @@
   // Exposure, not proof of reading/demand: half a marked card/heading in view
   // for two uninterrupted foreground seconds, once per topic per page load.
   const topics = new Set([
+    "about_delivery",
+    "about_tooling",
+    "about_studio",
     "planning",
     "implementation",
     "assessment",
@@ -278,14 +281,16 @@
         viewed.add(id);
         send("topic_view", {
           content_id: id,
-          service_path: [
-            "planning",
-            "assessment",
-            "architecture_roadmap",
-            "team_enablement",
-          ].includes(id)
-            ? "planning"
-            : "implementation",
+          service_path: id.startsWith("about_")
+            ? servicePath
+            : [
+                  "planning",
+                  "assessment",
+                  "architecture_roadmap",
+                  "team_enablement",
+                ].includes(id)
+              ? "planning"
+              : "implementation",
         });
       }, 2000),
     );

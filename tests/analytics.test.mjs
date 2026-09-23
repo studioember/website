@@ -12,6 +12,7 @@ function analytics({
   saved,
   storageBlocked = false,
   observer = true,
+  interest = "assessment",
 } = {}) {
   const scripts = [],
     listeners = {},
@@ -43,8 +44,9 @@ function analytics({
       return this.href;
     }
   }
-  const topic = new Element({ interest: "assessment" });
+  const topic = new Element({ interest });
   let notifyObserver;
+  const observed = new Set();
   const window = {
     location: { hostname, pathname, search },
     sessionStorage: {
@@ -63,7 +65,7 @@ function analytics({
       constructor(fn) {
         notifyObserver = fn;
       }
-      observe() {}
+      observe(element) { observed.add(element); }
     };
   const document = {
     currentScript: {
@@ -105,10 +107,12 @@ function analytics({
     topic,
     click: (options) =>
       listeners.click({ composedPath: () => [{}, new Element(options)] }),
-    intersect: (ratio) =>
-      notifyObserver([
+    intersect: (ratio) => {
+      assert.ok(observed.has(topic), "topic must be registered for observation");
+      return notifyObserver([
         { target: topic, isIntersecting: ratio > 0, intersectionRatio: ratio },
-      ]),
+      ]);
+    },
     tick: () => {
       for (const [id, fn] of [...timers]) {
         timers.delete(id);
@@ -350,4 +354,25 @@ test("only a valid, unique Cal completion is counted; booking payload never ente
       detail: { data: { uid: "booking-id", email: "private@example.com" } },
     });
   assert.deepEqual(b.events, ["lead"]);
+});
+
+test("About story exposure preserves service context without inferring implementation demand", () => {
+  for (const interest of ["about_delivery", "about_tooling", "about_studio"]) {
+    for (const service of ["general", "planning", "implementation"]) {
+      const a = analytics({
+        pathname: "/about/",
+        interest,
+        saved: { at: Date.now(), service },
+      });
+      a.intersect(0.6);
+      a.tick();
+      const event = a.events("topic_view")[0];
+      assert.ok(event);
+      assert.equal(event[2].content_id, interest);
+      assert.equal(event[2].page_type, "about");
+      assert.equal(event[2].service_path, service);
+      a.click({ booking: true, location: "contact" });
+      assert.equal(a.events("consultation_click")[0][2].service_path, service);
+    }
+  }
 });

@@ -1744,3 +1744,19 @@ details[open] > summary:after {
 .breadcrumbs li + li::before { content: "/"; margin-right: 10px; opacity: 0.5; }
 .breadcrumbs a { text-underline-offset: 4px; }
 .breadcrumbs + .subhero { padding-top: 40px; }
+
+/* The principal's story follows the same editorial grid as the service pages. */
+.about-intro { max-width: 680px; margin-top: 20px; }
+.about-portrait { margin: 0 8px 0 0; border: 1px solid var(--ink); background: var(--gold); box-shadow: 8px 8px 0 var(--ink); transform: rotate(2deg); }
+.about-portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 38%; }
+.about-portrait figcaption { display: grid; gap: 6px; padding: 20px; }
+.about-portrait figcaption > span:last-child { font-size: 14px; }
+.about-story { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; }
+.about-prose { max-width: 660px; font-size: 18px; line-height: 1.75; }
+.about-prose p + p { margin-top: 22px; }
+.about-example { margin-top: 32px; padding-left: 25px; border-left: 3px solid var(--ember); }
+@media (max-width: 760px) {
+  .about-portrait { width: min(390px, calc(100% - 16px)); justify-self: center; }
+  .about-story { grid-template-columns: 1fr; gap: 30px; }
+  .about-prose { font-size: 17px; }
+}
