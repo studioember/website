@@ -16,7 +16,7 @@ A session can explore both services and belong to both service cohorts. Cohort t
 
 ## Event contract
 
-All custom events contain `page_type` (home/planning/implementation/deliverables/about), `service_path` (planning/implementation/general), and beacon transport. Existing `consultation_click` and `generate_lead` names are preserved for continuity; attribution improves from the deployment date onward.
+All custom events contain `page_type` (home/planning/implementation/deliverables/about/kubernetes_consulting), `service_path` (planning/implementation/general), and beacon transport. Existing `consultation_click` and `generate_lead` names are preserved for continuity; attribution improves from the deployment date onward.
 
 | Event | Trigger | Additional fields | Meaning / limit |
 | --- | --- | --- | --- |
@@ -85,6 +85,12 @@ No JavaScript or blocked analytics means no measurement; links continue to work.
 - `_data/routes.json` is the published-route inventory used by the sitemap and breadcrumbs. Each page owns its title/description; the base layout provides canonical, Open Graph, and Twitter metadata.
 - Structured data describes the organization, principal engineer, breadcrumbs, and relevant services using published facts. It does not promise a rich result or ranking. No fabricated reviews, prices, location, client results, or FAQ rich-result claims.
 - Keep useful service language in visible text and descriptive internal links. Keep illustrative labels until actual evidence and publication permission exist. [Google: title links](https://developers.google.com/search/docs/appearance/title-link), [breadcrumbs](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb)
-- After deployment, verify the production `/robots.txt`, `/sitemap.xml`, canonical host/HTTPS redirects, and all five routes. Submit `https://studioember.com/sitemap.xml` in the verified Search Console property, inspect the important routes, and request indexing after the new content is live. Sitemap submission is not a guarantee of indexing.
+- After deployment, verify the production `/robots.txt`, `/sitemap.xml`, canonical host/HTTPS redirects, and all six routes. Submit `https://studioember.com/sitemap.xml` in the verified Search Console property, inspect the important routes, and request indexing after the new content is live. Sitemap submission is not a guarantee of indexing.
 - Run `yarn build` then `yarn test`; tests exercise event semantics, foreground dwell, deduplication, attribution expiry, blocked storage, mailto metadata, booking fallback, schema references, metadata uniqueness, and crawlable internal links.
 - Keep this guide excluded from the public build (`docs/` in `.eleventyignore`).
+
+## Kubernetes consulting campaign
+
+`/kubernetes-consulting/` uses `page_type=kubernetes_consulting` and establishes `service_path=planning`, including when selected from another service page. This makes campaign landing visits distinguishable from the general planning page. Include this landing page in planning-service funnel cohorts, retaining landing-page breakdowns. Existing contact intent and confirmed embedded booking semantics apply. The video placeholder emits no play or lead events.
+
+Example ad destination: `https://studioember.com/kubernetes-consulting/?utm_source=google&utm_medium=cpc&utm_campaign=kubernetes_consulting&utm_content=intro`.

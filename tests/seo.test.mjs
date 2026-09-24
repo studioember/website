@@ -18,7 +18,13 @@ test("built SEO describes only current services and each page has its own canoni
     structured["@graph"].filter((item) => item["@type"] === "Service").length,
     2,
   );
-  for (const route of ["planning", "implementation", "about", "deliverables"]) {
+  for (const route of [
+    "planning",
+    "implementation",
+    "about",
+    "deliverables",
+    "kubernetes-consulting",
+  ]) {
     const page = read(`output/site/${route}/index.html`);
     assert.match(
       page,
@@ -38,7 +44,7 @@ test("built SEO describes only current services and each page has its own canoni
     );
   }
   const sitemap = read("output/site/sitemap.xml");
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 5);
+  assert.equal((sitemap.match(/<loc>/g) || []).length, 6);
   assert.ok(sitemap.includes("<loc>https://studioember.com/</loc>"));
   assert.ok(
     read("output/site/robots.txt").includes(
