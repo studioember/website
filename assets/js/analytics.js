@@ -9,6 +9,7 @@
     "/implementation/": "implementation",
     "/deliverables/": "deliverables",
     "/about/": "about",
+    "/kubernetes-consulting/": "kubernetes_consulting",
   };
   const path = window.location.pathname.replace(/\/?$/, "/");
   const pageType = routes[path];
@@ -48,13 +49,16 @@
     /* Storage is optional. */
   }
   const services = ["planning", "implementation"];
-  let servicePath = services.includes(pageType)
-    ? pageType
-    : pageType === "deliverables"
-      ? "implementation"
-      : services.includes(previous.service)
-        ? previous.service
-        : "general";
+  let servicePath =
+    pageType === "kubernetes_consulting"
+      ? "planning"
+      : services.includes(pageType)
+        ? pageType
+        : pageType === "deliverables"
+          ? "implementation"
+          : services.includes(previous.service)
+            ? previous.service
+            : "general";
   // Keep attribution for a later Cal click, without restarting GA campaigns on
   // internal page views. Revalidate storage before reuse.
   const bookingCampaign = Object.keys(campaign).length
@@ -195,9 +199,17 @@
         (!destination || destination === "home" || target.pathname === path)
       )
         return;
-      if (services.includes(destination) || destination === "deliverables") {
+      if (
+        services.includes(destination) ||
+        destination === "deliverables" ||
+        destination === "kubernetes_consulting"
+      ) {
         servicePath =
-          destination === "deliverables" ? "implementation" : destination;
+          destination === "deliverables"
+            ? "implementation"
+            : destination === "kubernetes_consulting"
+              ? "planning"
+              : destination;
         saveContext();
       }
       send("select_content", {

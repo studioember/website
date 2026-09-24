@@ -65,7 +65,9 @@ function analytics({
       constructor(fn) {
         notifyObserver = fn;
       }
-      observe(element) { observed.add(element); }
+      observe(element) {
+        observed.add(element);
+      }
     };
   const document = {
     currentScript: {
@@ -108,7 +110,10 @@ function analytics({
     click: (options) =>
       listeners.click({ composedPath: () => [{}, new Element(options)] }),
     intersect: (ratio) => {
-      assert.ok(observed.has(topic), "topic must be registered for observation");
+      assert.ok(
+        observed.has(topic),
+        "topic must be registered for observation",
+      );
       return notifyObserver([
         { target: topic, isIntersecting: ratio > 0, intersectionRatio: ratio },
       ]);
@@ -375,4 +380,42 @@ test("About story exposure preserves service context without inferring implement
       assert.equal(a.events("consultation_click")[0][2].service_path, service);
     }
   }
+});
+
+test("campaign landing visits attribute discovery leads to planning and retain campaign context", () => {
+  const a = analytics({
+    pathname: "/kubernetes-consulting/",
+    search:
+      "?utm_source=google&utm_medium=cpc&utm_campaign=kubernetes_consulting",
+    saved: { at: Date.now(), service: "implementation" },
+  });
+  assert.equal(a.scripts.length, 1);
+  a.click({ booking: true, location: "hero" });
+  assert.equal(
+    a.events("consultation_click")[0][2].page_type,
+    "kubernetes_consulting",
+  );
+  assert.equal(a.events("consultation_click")[0][2].service_path, "planning");
+  assert.equal(a.events("generate_lead").length, 0);
+  a.window.emberAnalytics.bookingComplete();
+  assert.equal(a.events("generate_lead")[0][2].service_path, "planning");
+  assert.equal(
+    a.window.emberAnalytics.campaign.utm_campaign,
+    "kubernetes_consulting",
+  );
+  const next = analytics({
+    pathname: "/about/",
+    saved: JSON.parse(a.storage.get("ember-interest-v1")),
+  });
+  next.click({ booking: true });
+  assert.equal(
+    next.events("consultation_click")[0][2].service_path,
+    "planning",
+  );
+});
+
+test("selecting the consulting landing page replaces previous implementation interest", () => {
+  const a = analytics({ pathname: "/implementation/" });
+  a.click({ href: "/kubernetes-consulting/" });
+  assert.equal(a.events("select_content")[0][2].service_path, "planning");
 });

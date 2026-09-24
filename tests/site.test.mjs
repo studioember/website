@@ -5,9 +5,16 @@ import { readFileSync } from "node:fs";
 const built = (path) =>
   readFileSync(new URL(`../output/site/${path}`, import.meta.url), "utf8");
 
-const routes = ["", "planning/", "implementation/", "about/", "deliverables/"];
+const routes = [
+  "",
+  "planning/",
+  "implementation/",
+  "about/",
+  "deliverables/",
+  "kubernetes-consulting/",
+];
 
-test("publishes the five intended routes with individual canonical URLs", () => {
+test("publishes the intended routes with individual canonical URLs", () => {
   const sitemap = built("sitemap.xml");
   for (const route of routes) {
     const html = built(`${route}index.html`);
@@ -31,13 +38,14 @@ test("published pages offer contextual email links with no visitor data", () => 
   for (const [route, inquiry] of [
     ["", "General question"],
     ["planning/", "Planning question"],
+    ["kubernetes-consulting/", "Consulting question"],
     ["implementation/", "Implementation question"],
     ["about/", "General question"],
     ["deliverables/", "Deliverables question"],
   ]) {
     const html = built(`${route}index.html`);
-    const links = [...html.matchAll(/href="(mailto:[^"]+)"/g)].map((match) =>
-      new URL(match[1].replaceAll("&amp;", "&")),
+    const links = [...html.matchAll(/href="(mailto:[^"]+)"/g)].map(
+      (match) => new URL(match[1].replaceAll("&amp;", "&")),
     );
     assert.ok(links.length > 0, `${route || "home"} has an email link`);
     const contextual = links.find((link) =>
@@ -47,7 +55,9 @@ test("published pages offer contextual email links with no visitor data", () => 
     assert.equal(contextual.pathname, "contact@studioember.com");
     assert.match(contextual.searchParams.get("body"), /My question:\n/);
     assert.ok(
-      contextual.searchParams.get("body").includes(`https://studioember.com/${route}`),
+      contextual.searchParams
+        .get("body")
+        .includes(`https://studioember.com/${route}`),
     );
     assert.doesNotMatch(contextual.href, /utm_|email=|referrer=/i);
   }
@@ -73,6 +83,9 @@ test("new pages describe bounded offers and label illustrative evidence", () => 
 
 test("retired prices and routes are absent from the published site", () => {
   const html = routes.map((route) => built(`${route}index.html`)).join("\n");
-  assert.doesNotMatch(html, /data-configurator|\$\s*[\d,]+|EXAMPLE PLACEHOLDER/);
+  assert.doesNotMatch(
+    html,
+    /data-configurator|\$\s*[\d,]+|EXAMPLE PLACEHOLDER/,
+  );
   assert.doesNotMatch(built("sitemap.xml"), /cloud-sovereignty|\/services\//);
 });
