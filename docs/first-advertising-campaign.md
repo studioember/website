@@ -6,14 +6,14 @@ Destination: `/kubernetes-consulting/`. Audience: development teams and engineer
 
 Focus the first paid test on Google Search. Someone searching for a Kubernetes consultant is expressing a need that closely matches this offer. That is the strongest starting hypothesis for Studio Ember; it is not a proven channel winner or a promise of cheap leads. Validate keyword demand and economics before activating anything.
 
-Put the entire initial paid-media allocation into one channel. Alongside it, share the intro video and project story through Nathan's existing professional network. Organic distribution can help test the message without dividing a small ad budget.
+Put the entire initial paid-media allocation into one channel. Alongside it, share the landing page and project story through Nathan's existing professional network. Organic distribution can help test the message without dividing a small ad budget.
 
 | Channel                      | Role for Studio Ember                                                                                                                                                       | First decision                                                                                                           |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | Google Search                | Reach people actively looking for consulting or assessment help. Strong offer alignment, but search volume and click costs remain unknown.                                  | First paid experiment, subject to Keyword Planner and measurement checks.                                                |
 | Reddit                       | Reach technical communities with useful, specific engineering content. Community participation does not establish purchasing authority or an active consulting need.        | Second paid experiment after the message and lead flow work; start with a helpful decision guide or project explanation. |
 | Meta: Facebook and Instagram | Test founder-led video and, later, re-engagement with people who already know the business. The current narrow consulting offer has no demonstrated cold-audience fit here. | Defer paid acquisition until there is evidence about effective creative and qualified leads.                             |
-| YouTube                      | Host the introduction and build a library of useful explanations. Hosting a video does not require running video ads.                                                       | Use organically and on the landing page first.                                                                           |
+| YouTube                      | Host the introduction and build a library of useful explanations. Hosting a video does not require running video ads.                                                       | Consider for organic use and a future landing-page introduction.                                                                           |
 
 Reddit supports community, interest, and keyword targeting; community targeting concerns people who have engaged with communities, not a guarantee of placement only inside a chosen subreddit. Check targeting expansion and available controls before any later pilot. [Reddit targeting](https://www.business.reddit.com/advertise/targeting/community-and-interest)
 
@@ -191,7 +191,7 @@ Use fixed public slugs compatible with the site's validator. Avoid `{keyword}` i
 
 - Publish and verify the campaign route before setting it as a live ad destination; a localhost preview is not an ad destination.
 - Keep the headline, paid planning offer, project example, and discovery CTA aligned with the ad. Use only the existing substantiated project story and clearly label illustrative deliverables.
-- For the paid launch, replace the video placeholder with the real introduction or remove the unfinished block. Recording the video is useful but should not indefinitely delay a complete text-first page.
+- The landing page uses Nathan's profile photo for the first campaign. A future introduction video is optional and does not need to delay launch.
 - Check mobile layout, keyboard use, page speed on a real connection, in-page navigation, FAQs, contact links, booking availability, and booking notifications.
 - Reserve time for follow-up. Proposed internal target: respond to legitimate inquiries within one business day. This is an operating plan, not a public response-time promise.
 - Keep a private lead log with received date, declared/measured source, company, problem, service fit, stage, next action, proposal amount when real, outcome, and loss reason. Do not commit personal lead records or send them as analytics parameters.
@@ -252,14 +252,14 @@ If Search demand is too small, invest first in useful technical content, profess
 - [ ] Keyword research supports a useful test; chosen keywords, negatives, and CPC limit are documented.
 - [ ] Campaign, networks, expansion controls, budget mechanism, end date, and conversion goals are verified in paused state.
 - [ ] Ad assets and live landing page are approved, consistent, and complete.
-- [ ] Video is live with captions, or the unfinished placeholder is removed for paid launch.
+- [ ] Profile photo and name/role caption render correctly on mobile and desktop.
 - [ ] Booking availability, inquiry delivery, privacy/consent handling, and paid-click attribution have been checked.
 - [ ] Primary conversion is a genuine booking; clicks and duplicate actions are excluded.
 - [ ] Nathan owns daily launch checks, follow-up, weekly review, and the scheduled stop decision.
 
 Research checked September 24, 2026 against the linked first-party documentation. Keyword volume, auction prices, ad approval, account feature availability, conversion performance, and platform account setup remain unverified. Recommendations and examples are explicitly provisional.
 
-## Video outline
+## Optional future video outline
 
 Aim for a conversational 60–90 seconds. This is a suggested recording length, not a performance claim.
 
@@ -271,11 +271,11 @@ Aim for a conversational 60–90 seconds. This is a suggested recording length, 
 
 Use clear audio, a simple background, and accurate captions. Put the essential message in page text too. Avoid autoplay.
 
-## Replace the placeholder when the video is ready
+## Add a video later
 
-The landing template contains a `.consulting-video` element with placeholder copy, `role="img"`, and a placeholder-specific accessible label. Replace that entire element with the real embed; remove the coming-soon copy and placeholder attributes. Do not insert an iframe inside the existing image role.
+The first campaign uses a `.consulting-portrait` image and `.consulting-profile-caption` in the landing template. If an introduction video is added later, replace the portrait with the real embed and update the caption to describe it.
 
-Use the actual published YouTube video's embed URL, a descriptive iframe title, `loading="lazy"`, `allowfullscreen`, and a responsive 16:9 wrapper. Prefer the `youtube-nocookie.com` embed host and decide third-party consent behavior before launch. Add a direct watch-on-YouTube link and an accessible transcript or equivalent summary. Confirm captions, keyboard operation, and layout on mobile. No YouTube embed or video tracking is installed in this placeholder version.
+Use the actual published YouTube video's embed URL, a descriptive iframe title, `loading="lazy"`, `allowfullscreen`, and a responsive 16:9 wrapper. Prefer the `youtube-nocookie.com` embed host and decide third-party consent behavior before launch. Add a direct watch-on-YouTube link and an accessible transcript or equivalent summary. Confirm captions, keyboard operation, and layout on mobile. No YouTube embed or video tracking is installed in this profile-photo version.
 
 ## Campaign handoff
 

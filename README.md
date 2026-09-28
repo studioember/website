@@ -39,4 +39,4 @@ The GitHub Pages workflow deploys on pushes to `main` or manual dispatch after i
 
 ## First advertising campaign
 
-`kubernetes-consulting/index.njk` is the dedicated planning campaign landing page. It shares the existing navigation, booking, contact, and SEO layout. The video area is a clearly labeled, non-interactive YouTube placeholder; it does not load YouTube or claim a video is playable. See [the campaign guide](docs/first-advertising-campaign.md) for the recording outline, replacement instructions, and launch checklist.
+`kubernetes-consulting/index.njk` is the dedicated planning campaign landing page. It shares the existing navigation, booking, contact, and SEO layout. The introduction uses Nathan Grey's existing profile photo with a name and role caption. See [the campaign guide](docs/first-advertising-campaign.md) for the optional future video outline and launch checklist.

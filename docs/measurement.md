@@ -91,6 +91,6 @@ No JavaScript or blocked analytics means no measurement; links continue to work.
 
 ## Kubernetes consulting campaign
 
-`/kubernetes-consulting/` uses `page_type=kubernetes_consulting` and establishes `service_path=planning`, including when selected from another service page. This makes campaign landing visits distinguishable from the general planning page. Include this landing page in planning-service funnel cohorts, retaining landing-page breakdowns. Existing contact intent and confirmed embedded booking semantics apply. The video placeholder emits no play or lead events.
+`/kubernetes-consulting/` uses `page_type=kubernetes_consulting` and establishes `service_path=planning`, including when selected from another service page. This makes campaign landing visits distinguishable from the general planning page. Include this landing page in planning-service funnel cohorts, retaining landing-page breakdowns. Existing contact intent and confirmed embedded booking semantics apply. The profile photo emits no play or lead events.
 
 Example ad destination: `https://studioember.com/kubernetes-consulting/?utm_source=google&utm_medium=cpc&utm_campaign=kubernetes_consulting&utm_content=intro`.
