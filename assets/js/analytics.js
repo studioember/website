@@ -93,13 +93,39 @@
   } catch {
     /* Direct visits have no referrer. */
   }
+  // Preserve landing attribution for Google's automatic tag handling. These
+  // IDs stay out of booking context/storage; never copy the raw query or hash.
+  const attribution = new URLSearchParams();
+  const clickId = /^[a-z0-9][a-z0-9_-]{0,199}$/i;
+  const numericId = /^[0-9]{1,20}$/;
+  for (const [name, pattern] of [
+    ["gclid", clickId],
+    ["gbraid", clickId],
+    ["wbraid", clickId],
+    ["gad_source", numericId],
+    ["gad_campaignid", numericId],
+  ]) {
+    const values = incoming.getAll(name);
+    if (values.length === 1 && pattern.test(values[0]))
+      attribution.set(name, values[0]);
+  }
+  let pageLocation = `${origin}${path}`;
+  // GA limits page_location to 1,000 characters. Prefer click IDs and omit
+  // whole excess fields rather than corrupting an ID or a campaign slug.
+  const pageQuery = new URLSearchParams();
+  for (const [name, value] of [...attribution, ...Object.entries(campaign)]) {
+    pageQuery.set(name, value);
+    const candidate = `${origin}${path}?${pageQuery}`;
+    if (candidate.length <= 1000) pageLocation = candidate;
+    else pageQuery.delete(name);
+  }
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () {
     window.dataLayer.push(arguments);
   };
   window.gtag("js", new Date());
   window.gtag("config", settings.measurementId, {
-    page_location: `${origin}${path}`,
+    page_location: pageLocation,
     page_referrer: referrer,
     content_group: pageType,
     allow_google_signals: false,

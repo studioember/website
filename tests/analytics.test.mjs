@@ -9,6 +9,7 @@ function analytics({
   hostname = "studioember.com",
   pathname = "/",
   search = "",
+  hash = "",
   saved,
   storageBlocked = false,
   observer = true,
@@ -48,7 +49,7 @@ function analytics({
   let notifyObserver;
   const observed = new Set();
   const window = {
-    location: { hostname, pathname, search },
+    location: { hostname, pathname, search, hash },
     sessionStorage: {
       getItem(key) {
         if (storageBlocked) throw Error("blocked");
@@ -159,7 +160,10 @@ test("one production tag and clean page/referrer URLs; safe UTM campaign attribu
       "https://www.googletagmanager.com/gtag/js?id=G-NYVTLFQRSZ",
     );
     const config = a.window.dataLayer[1][2];
-    assert.equal(config.page_location, "https://studioember.com/planning/");
+    assert.equal(
+      config.page_location,
+      "https://studioember.com/planning/?utm_source=newsletter&utm_medium=email&utm_campaign=platform_2026&utm_content=header",
+    );
     assert.equal(config.page_referrer, "https://search.example/");
     assert.equal(config.campaign_name, "platform_2026");
     assert.equal(config.campaign_source, "newsletter");
@@ -171,6 +175,82 @@ test("one production tag and clean page/referrer URLs; safe UTM campaign attribu
       /private@|private%40/,
     );
   }
+});
+
+test("GA page URLs retain only validated landing attribution with decoding and case preserved", () => {
+  const a = analytics({
+    pathname: "/kubernetes-consulting/",
+    search:
+      "?utm_source=%67oogle&utm_medium=cpc&utm_campaign=Kubernetes_2026&utm_content=intro-1&utm_term=cloud_native&gclid=AbC%5F123-xyz&gbraid=GB_1&wbraid=WB-2&gad_source=1&gad_campaignid=1234567890&email=private%40example.com&token=secret&fbclid=unneeded&gad_unknown=secret",
+    hash: "#email=private@example.com",
+  });
+  const config = a.window.dataLayer[1][2];
+  const url = new URL(config.page_location);
+  assert.equal(url.pathname, "/kubernetes-consulting/");
+  assert.equal(url.hash, "");
+  assert.deepEqual(Object.fromEntries(url.searchParams), {
+    gclid: "AbC_123-xyz",
+    gbraid: "GB_1",
+    wbraid: "WB-2",
+    gad_source: "1",
+    gad_campaignid: "1234567890",
+    utm_source: "google",
+    utm_medium: "cpc",
+    utm_campaign: "Kubernetes_2026",
+    utm_content: "intro-1",
+    utm_term: "cloud_native",
+  });
+  assert.equal(config.campaign_source, "google");
+  assert.equal(config.allow_ad_personalization_signals, false);
+  const stored = a.storage.get("ember-interest-v1");
+  assert.doesNotMatch(stored, /gclid|gbraid|wbraid|gad_|secret|private/);
+  const b = booking(a.window.emberAnalytics.campaign);
+  b.scripts[0].onload();
+  for (const value of [b.link.href, b.attributes["data-cal-config"]]) {
+    assert.doesNotMatch(value, /gclid|gbraid|wbraid|gad_|secret|private/);
+    assert.match(value, /utm_campaign/);
+  }
+  assert.equal(b.window.Cal.config.forwardQueryParams, false);
+});
+
+test("missing, malformed, sensitive and ambiguous attribution stays out of GA URLs", () => {
+  for (const search of [
+    "",
+    "?email=private%40example.com&token=secret",
+    "?utm_source=&utm_medium=has+spaces&utm_campaign=private%40example.com&utm_content=%253Cscript%253E&utm_term=%E0%A4%A",
+    `?utm_source=${"a".repeat(81)}&gclid=${"a".repeat(201)}`,
+    "?gclid=private%40example.com&gbraid=https%3A%2F%2Fexample.com&wbraid=bad%0Avalue&gad_source=secret&gad_campaignid=-1",
+    "?gclid=first&gclid=second&gbraid=&wbraid=%25bad&gad_source=1&gad_source=2",
+  ]) {
+    const a = analytics({ search, hash: "#private" });
+    assert.equal(
+      a.window.dataLayer[1][2].page_location,
+      "https://studioember.com/",
+    );
+    assert.deepEqual(Object.keys(a.window.emberAnalytics.campaign), []);
+  }
+});
+
+test("GA URL length is bounded without truncating attribution values", () => {
+  const input = new URLSearchParams({
+    gclid: "G".repeat(200),
+    gbraid: "B".repeat(200),
+    wbraid: "W".repeat(200),
+    gad_source: "1",
+    gad_campaignid: "1".repeat(20),
+    ...Object.fromEntries(
+      ["source", "medium", "campaign", "content", "term"].map((name) => [
+        `utm_${name}`,
+        "a".repeat(80),
+      ]),
+    ),
+  });
+  const a = analytics({ search: `?${input}` });
+  const location = a.window.dataLayer[1][2].page_location;
+  assert.ok(location.length <= 1000);
+  const retained = new URL(location).searchParams;
+  assert.equal(retained.get("gclid"), input.get("gclid"));
+  for (const [name, value] of retained) assert.equal(value, input.get(name));
 });
 
 test("contact intent includes exact placement and service; only completion records a lead", () => {
@@ -232,6 +312,10 @@ test("service attribution survives internal navigation, expires, and tolerates b
   assert.equal(a.window.emberAnalytics.campaign.utm_source, "newsletter");
   assert.equal(a.window.emberAnalytics.campaign.utm_campaign, undefined);
   assert.equal(a.window.dataLayer[1][2].campaign_source, undefined);
+  assert.equal(
+    a.window.dataLayer[1][2].page_location,
+    "https://studioember.com/about/",
+  );
   for (const options of [
     { saved: { ...saved, at: Date.now() - 31 * 60 * 1000 } },
     { saved: { ...saved, service: "private-name" } },
@@ -286,7 +370,7 @@ test("topic exposure requires sustained foreground visibility and deduplicates",
   assert.equal(a.events("topic_view").length, 1);
 });
 
-function booking() {
+function booking(campaign = { utm_source: "newsletter" }) {
   const scripts = [],
     attributes = {},
     listeners = {},
@@ -311,7 +395,7 @@ function booking() {
     document,
     location: { search: "?email=private@example.com&utm_source=newsletter" },
     emberAnalytics: {
-      campaign: { utm_source: "newsletter" },
+      campaign,
       bookingComplete: () => events.push("lead"),
     },
   };
